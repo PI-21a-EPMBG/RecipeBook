@@ -5,30 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RecipeBook"
         mc:Ignorable="d"
-        Title="Кулинарная книга" Height="450" Width="800">
-    <DockPanel>
-        <Menu DockPanel.Dock="Top" Height="16">
-            <MenuItem Header="Файл"/>
-            <MenuItem Header=""/>
-        </Menu>
-        <TabControl>
-            <TabItem Header="Рецепты">
+        Title="Кулинарная книга" Height="450" Width="800" FontSize="16">
+    <Window.Resources>
+        <FontFamily x:Key="Helvetica">interface/helvetica_regular.otf#Helvetica</FontFamily>
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="\interface\fon.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+    <StackPanel>
+        <Grid Height="60" VerticalAlignment="Top">
+            <Rectangle Grid.Row="0" Stroke="#7F000000" Fill="White" Opacity="0.9"/>
+            <Border BorderThickness="0,0,0,2" BorderBrush="Black" Margin="0,10,0,0" Height="32" VerticalAlignment="Top" HorizontalAlignment="Center" Width="325"  />
+            <Label Grid.Row="1" Grid.Column="1" FontFamily="{StaticResource Helvetica}" Content="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР " Margin="0,10,0,0" Height="32" VerticalAlignment="Top" HorizontalAlignment="Center" />
+            <Image Source="H:\Это пиздец\RecipeBook\RecipeBook\interface\иконки\035cook_113744.png" HorizontalAlignment="Left" Height="32" Margin="30,10,0,0" VerticalAlignment="Top" Width="33"/>
+        </Grid>
+        <Grid Height="374">
+            <Border CornerRadius="15" Background="#FFF0F0F0" Margin="220,26,130,260" Opacity="0.75" BorderThickness="1.5" BorderBrush="Black">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="37"/>
-                        <RowDefinition Height="353*"/>
-                    </Grid.RowDefinitions>
-
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-
-                        <TextBox MinWidth="200" Height="20" VerticalAlignment="Center"/>
-                        <Button VerticalAlignment="Center"
-                                Margin="10 0 0 0" Height="20" Width="60">Поиск!</Button>
-                    </StackPanel>
-                    
-
+                    <Image Margin="18,10,362,10" Visibility="Visible"/>
+                    <TextBlock Text="Your text here" Margin="18,10,324,10" Visibility="Collapsed"/>
+                    <Label FontFamily="{StaticResource Helvetica}" Content="текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст" Margin="108,10,10,10" FontSize="14">
+                        <Label.ContentTemplate>
+                            <DataTemplate>
+                                <TextBlock TextWrapping="Wrap" Text="{Binding}" TextTrimming="CharacterEllipsis"/>
+                            </DataTemplate>
+                        </Label.ContentTemplate>
+                    </Label>
                 </Grid>
-            </TabItem>
-        </TabControl>
-    </DockPanel>
+            </Border>
+            <Border CornerRadius="15" Background="#FFF0F0F0" Margin="220,136,130,150" Opacity="0.75" BorderThickness="1.5" BorderBrush="Black">
+                <Grid>
+                    <Image Margin="18,10,362,10" Visibility="Visible"/>
+                    <TextBlock Text="Your text here" Margin="18,10,324,10" Visibility="Collapsed"/>
+                    <Label FontFamily="{StaticResource Helvetica}" Content="текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст" Margin="108,10,10,10" FontSize="14">
+                        <Label.ContentTemplate>
+                            <DataTemplate>
+                                <TextBlock TextWrapping="Wrap" Text="{Binding}" TextTrimming="CharacterEllipsis"/>
+                            </DataTemplate>
+                        </Label.ContentTemplate>
+                    </Label>
+                </Grid>
+            </Border>
+            <Border CornerRadius="15" Background="#FFF0F0F0" Margin="220,251,130,35" Opacity="0.75" BorderThickness="1.5" BorderBrush="Black">
+                <Grid>
+                    <Image Margin="18,10,362,10" Visibility="Visible"/>
+                    <TextBlock Text="Your text here" Margin="18,10,324,10" Visibility="Collapsed"/>
+                    <Label FontFamily="{StaticResource Helvetica}" Content="текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст-текст" Margin="108,10,10,10" FontSize="14">
+                        <Label.ContentTemplate>
+                            <DataTemplate>
+                                <TextBlock TextWrapping="Wrap" Text="{Binding}" TextTrimming="CharacterEllipsis"/>
+                            </DataTemplate>
+                        </Label.ContentTemplate>
+                    </Label>
+                </Grid>
+            </Border>
+        </Grid>
+    </StackPanel>
 </Window>
