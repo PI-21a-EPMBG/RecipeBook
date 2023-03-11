@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -36,5 +37,52 @@ namespace RecipeBook
         {
 
         }
+
+        private void menuBorder_MouseEnter(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void menuBorder_MouseLeave(object sender, MouseEventArgs e)
+        {
+            menuBorder.Visibility = Visibility.Collapsed;
+            border.Visibility = Visibility.Visible;
+        }
+
+        private void Border_MouseEnter(object sender, MouseEventArgs e)
+        {
+            menuBorder.Visibility = Visibility.Visible;
+            border.Visibility = Visibility.Collapsed;
+        }
+
+        private void Button2_Click(object sender, RoutedEventArgs e)
+        {
+            // Показываем третью кнопку и три надписи
+            if(Label1.Visibility == Visibility.Collapsed)
+            {
+                Label1.Visibility = Visibility.Visible;
+                Label2.Visibility = Visibility.Visible;
+                Label3.Visibility = Visibility.Visible;
+
+                // Сдвигаем третью кнопку вниз)
+
+                myGrid.RowDefinitions[4].Height = new GridLength(2, GridUnitType.Star);        
+                myGrid.RowDefinitions[12].Height = new GridLength(38, GridUnitType.Star);
+                Grid.SetRow(Button3, 11);
+            }
+            else
+            {
+                Label1.Visibility = Visibility.Collapsed;
+                Label2.Visibility = Visibility.Collapsed;
+                Label3.Visibility = Visibility.Collapsed;
+
+                // Сдвигаем третью кнопку вниз)
+
+                myGrid.RowDefinitions[4].Height = new GridLength(5, GridUnitType.Star);
+                myGrid.RowDefinitions[12].Height = new GridLength(35, GridUnitType.Star);
+
+                Grid.SetRow(Button3, 5);
+            }
+        }
+
     }
 }
