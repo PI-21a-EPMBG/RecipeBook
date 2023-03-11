@@ -5,10 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RecipeBook"
         mc:Ignorable="d"
-        Title="Кулинарная книга" Height="450" Width="800" FontSize="16" SizeToContent="WidthAndHeight">
+        Title="Кулинарная книга" MinHeight="450" MinWidth="800" FontSize="16" >
     <Window.Resources>
         <FontFamily x:Key="Helvetica">interface/helvetica_regular.otf#Helvetica</FontFamily>
-        <local:WindowWidthToFontSizeConverter x:Key="WindowWidthToFontSizeConverter"/>
     </Window.Resources>
     
     <Window.Background>
@@ -42,7 +41,9 @@
                         <ColumnDefinition Width="10*" />
                     </Grid.ColumnDefinitions>
                     <Border Grid.Column="1" Grid.Row="1" BorderThickness="0,0,0,2" BorderBrush="Black">
-                        <Label Grid.Column="0" Grid.Row="0" FontFamily="{StaticResource Helvetica}" Content=" СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР " VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="{Binding ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Converter={StaticResource WindowWidthToFontSizeConverter}}"/>
+                        <Viewbox>
+                            <TextBlock Text=" СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР " VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                        </Viewbox>
                     </Border>
                 </Grid>
                 <Grid>
