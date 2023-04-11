@@ -11,6 +11,16 @@
     <None Remove="fon.jpg" />
     <None Remove="interface\fon.jpg" />
     <None Remove="interface\иконки\035cook_113744.png" />
+    <None Remove="interface\иконки\book_read_icon-icons.com_49930.png" />
+    <None Remove="interface\иконки\chickenhanddrawnmeatpieces_114685.png" />
+    <None Remove="interface\иконки\icons8-десерт-50.png" />
+    <None Remove="interface\иконки\icons8-рука-с-ручкой-50.png" />
+    <None Remove="interface\иконки\icons8-тарелка-супа-50.png" />
+    <None Remove="interface\иконки\loupe_79257.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="interface\иконки\loupe_79257.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +33,11 @@
     <Resource Include="fon.jpg" />
     <Resource Include="interface\fon.jpg" />
     <Resource Include="interface\иконки\035cook_113744.png" />
+    <Resource Include="interface\иконки\book_read_icon-icons.com_49930.png" />
+    <Resource Include="interface\иконки\chickenhanddrawnmeatpieces_114685.png" />
+    <Resource Include="interface\иконки\icons8-десерт-50.png" />
+    <Resource Include="interface\иконки\icons8-рука-с-ручкой-50.png" />
+    <Resource Include="interface\иконки\icons8-тарелка-супа-50.png" />
   </ItemGroup>
 
 </Project>

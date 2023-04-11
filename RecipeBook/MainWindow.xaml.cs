@@ -56,33 +56,24 @@ namespace RecipeBook
 
         private void Button2_Click(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
             // Показываем третью кнопку и три надписи
-            if(Label1.Visibility == Visibility.Collapsed)
+            if (main_page.Visibility == Visibility.Collapsed)
             {
-                Label1.Visibility = Visibility.Visible;
-                Label2.Visibility = Visibility.Visible;
-                Label3.Visibility = Visibility.Visible;
-
-                // Сдвигаем третью кнопку вниз)
-
-                myGrid.RowDefinitions[4].Height = new GridLength(2, GridUnitType.Star);        
-                myGrid.RowDefinitions[12].Height = new GridLength(38, GridUnitType.Star);
-                Grid.SetRow(Button3, 11);
+                main_page.Visibility = Visibility.Visible;
+                catalog.Visibility = Visibility.Collapsed;
+                heading.Text = " СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР ";
             }
             else
             {
-                Label1.Visibility = Visibility.Collapsed;
-                Label2.Visibility = Visibility.Collapsed;
-                Label3.Visibility = Visibility.Collapsed;
-
-                // Сдвигаем третью кнопку вниз)
-
-                myGrid.RowDefinitions[4].Height = new GridLength(5, GridUnitType.Star);
-                myGrid.RowDefinitions[12].Height = new GridLength(35, GridUnitType.Star);
-
-                Grid.SetRow(Button3, 5);
+                main_page.Visibility = Visibility.Collapsed;
+                catalog.Visibility = Visibility.Visible;
+                heading.Text = " КАТАЛОГ ";
             }
         }
-
     }
 }
