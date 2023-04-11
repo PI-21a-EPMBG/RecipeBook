@@ -4,27 +4,31 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RecipeBook"
+        xmlns:vm="clr-namespace:RecipeBook.ViewModels"
         mc:Ignorable="d"
         Title="Кулинарная книга" Height="450" Width="800" FontSize="16">
     <Window.Resources>
-        <FontFamily x:Key="Helvetica">interface/helvetica_regular.otf#Helvetica</FontFamily>
+        <FontFamily x:Key="Helvetica">Interface/helvetica_regular.otf#Helvetica</FontFamily>
     </Window.Resources>
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
     
     <Window.Background>
-        <ImageBrush ImageSource="/interface/fon.jpg" Stretch="UniformToFill"/>
+        <ImageBrush ImageSource="/Interface/bg.jpg" Stretch="UniformToFill"/>
     </Window.Background>
     <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="15*" />
-                <RowDefinition Height="95*" />
-            </Grid.RowDefinitions>
-            <Border Grid.Row="0" BorderBrush="Gray" Background="#FFF0F0F0" Opacity="0.9" >
-                <Grid>
-                    <Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="95*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderBrush="Gray" Background="#FFF0F0F0" Opacity="0.9" >
+            <Grid>
+                <Grid.RowDefinitions>
                         <RowDefinition Height="80*" />
                         <RowDefinition Height="20*" />
-                    </Grid.RowDefinitions>
-                    <Grid VerticalAlignment="Center" Grid.Row="0">
+                </Grid.RowDefinitions>
+                <Grid VerticalAlignment="Center" Grid.Row="0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="50*" />
                             <RowDefinition Height="50*" />
@@ -40,21 +44,21 @@
                             </Viewbox>
                         </Border>
                     </Grid>
-                    <Grid>
-                        <Grid.RowDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
                             <RowDefinition Height="70*" />
                             <RowDefinition Height="30*" />
                         </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
+                    <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="10*" />
                             <ColumnDefinition Width="80*" />
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Source="/interface/иконки/035cook_113744.png"/>
-                    </Grid>
+                    <Image Grid.Column="0" Source="/Interface/Icons/035cook_113744.png"/>
                 </Grid>
-            </Border>
-            <Grid Grid.Row="1">
-                <Grid x:Name="main_page" Visibility="Visible">
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid x:Name="main_page" Visibility="{Binding MainPageVisibility}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0*" />
                     <RowDefinition Height="5*" />
@@ -86,7 +90,7 @@
                                 <RowDefinition Height="10*" />
                             </Grid.RowDefinitions>
                             <Grid Grid.Column="1" Grid.Row="1">
-                                <Image Grid.Column="1" Source="/interface/иконки/035cook_113744.png"/>
+                                <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
                             </Grid>
                             <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                         </Grid>
@@ -113,13 +117,12 @@
                                 <RowDefinition Height="10*" />
                             </Grid.RowDefinitions>
                             <Grid Grid.Column="1" Grid.Row="1">
-                                <Image Grid.Column="1" Source="/interface/иконки/035cook_113744.png"/>
+                                <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
                             </Grid>
                             <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                         </Grid>
                     </Border>
                 </Grid>
-
                 <Grid Grid.Row="6">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="28*" />
@@ -141,7 +144,7 @@
                                 <RowDefinition Height="10*" />
                             </Grid.RowDefinitions>
                             <Grid Grid.Column="1" Grid.Row="1">
-                                <Image Grid.Column="1" Source="/interface/иконки/035cook_113744.png"/>
+                                <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
                             </Grid>
                             <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                         </Grid>
@@ -159,7 +162,7 @@
                     <ColumnDefinition Width="3*" />
                     <ColumnDefinition Width="97*" />
                 </Grid.ColumnDefinitions>
-                <Border x:Name="border" Grid.Column="0" Grid.Row="1" MouseEnter="Border_MouseEnter" Background="#FFF0F0F0" Opacity="0.7">
+                <Border x:Name="border" Grid.Column="0" Grid.Row="1" Background="#FFF0F0F0" Opacity="0.7">
                     <Viewbox>
                         <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Text=">"/>
                     </Viewbox>
@@ -176,7 +179,7 @@
                     <ColumnDefinition Width="13*" />
                     <ColumnDefinition Width="92*" />
                 </Grid.ColumnDefinitions>
-                <Grid x:Name="menuBorder" Grid.Column="0" Grid.Row="1" MouseLeave="menuBorder_MouseLeave">
+                <Grid x:Name="menuBorder" Grid.Column="0" Grid.Row="1">
                     <Border BorderBrush="Gray" BorderThickness="2" Background="#BBBBBB" Opacity="0.75"/>
                     <Grid x:Name="myGrid">
                         <Grid.RowDefinitions>
@@ -199,7 +202,7 @@
                             <ColumnDefinition Width="80*"/>
                             <ColumnDefinition Width="10*"/>
                         </Grid.ColumnDefinitions>
-
+                        <!--ИЗБРАННОЕ-->
                         <Button Grid.Row="1" Grid.Column="1" Background="White" >
                             <Button.Resources>
                                 <Style TargetType="Border">
@@ -211,7 +214,7 @@
                                     <ColumnDefinition Width="25*" />
                                     <ColumnDefinition Width="69*" />
                                 </Grid.ColumnDefinitions>
-                                <Image Source="/interface/иконки/loupe_79257.png"/>
+                                <Image Source="/Interface/Icons/favorite_icon.png"/>
                                 <Viewbox Grid.Column="1">
                                     <Grid>
                                         <TextBlock Text=" ИЗБРАННОЕ "/>
@@ -220,8 +223,8 @@
                                 </Viewbox>
                             </Grid>
                         </Button>
-
-                        <Button Grid.Row="3" Grid.Column="1" Background="White" Click="Button_Click">
+                        <!--КАТАЛОГ-->
+                        <Button Grid.Row="3" Grid.Column="1" Background="White" Command="{Binding CatalogueToggleCommand}">
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
@@ -232,7 +235,7 @@
                                     <ColumnDefinition Width="25*" />
                                     <ColumnDefinition Width="69*" />
                                 </Grid.ColumnDefinitions>
-                                <Image Source="/interface/иконки/book_read_icon-icons.com_49930.png"/>
+                                <Image Source="/Interface/Icons/book_icon.png"/>
                                 <Viewbox Grid.Column="1">
                                     <Grid>
                                         <TextBlock Text="   КАТАЛОГ   "/>
@@ -240,7 +243,7 @@
                                 </Viewbox>
                             </Grid>
                         </Button>
-
+                        <!--ДОБАВИТЬ-->
                         <Button Grid.Row="5" Grid.Column="1" Background="White">
                             <Button.Resources>
                                 <Style TargetType="Border">
@@ -252,7 +255,7 @@
                                     <ColumnDefinition Width="25*" />
                                     <ColumnDefinition Width="69*" />
                                 </Grid.ColumnDefinitions>
-                                <Image Source="/interface/иконки/icons8-рука-с-ручкой-50.png"/>
+                                <Image Source="/Interface/Icons/add_icon.png"/>
                                 <Viewbox Grid.Column="1">
                                     <Grid>
                                         <TextBlock Text="  ДОБАВИТЬ "/>
@@ -265,8 +268,7 @@
             </Grid>
         
             <!--Каталог-->
-
-            <Grid x:Name="catalog" Visibility="Collapsed">
+            <Grid x:Name="catalog" Visibility="{Binding CatalogueVisibility}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5*"/>
                     <RowDefinition Height="85*"/>
@@ -307,7 +309,7 @@
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
                         <TextBox Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True"/>
-                        <Button Grid.Row="1" Grid.Column="3" Background="#BBBBBB" Click="Button_Click" BorderBrush="Black" BorderThickness="2">
+                        <Button Grid.Row="1" Grid.Column="3" Background="#BBBBBB" BorderBrush="Black" BorderThickness="2">
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
@@ -325,7 +327,7 @@
                                 </Viewbox>
                             </Grid>
                         </Button>
-                        <Button Grid.Row="1" Grid.Column="5" Background="#BBBBBB" Click="Button_Click" BorderBrush="Black" BorderThickness="2">
+                        <Button Grid.Row="1" Grid.Column="5" Background="#BBBBBB" BorderBrush="Black" BorderThickness="2">
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>

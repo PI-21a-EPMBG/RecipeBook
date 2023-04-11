@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace RecipeBook.VIewModels
+namespace RecipeBook.ViewModels
 {
     internal class BaseViewModel : INotifyPropertyChanged, IDisposable
     {
