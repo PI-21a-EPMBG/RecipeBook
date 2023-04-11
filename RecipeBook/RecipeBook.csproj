@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="fon.jpg" />
     <None Remove="Interface\bg.jpg" />
     <None Remove="Interface\Icons\035cook_113744.png" />
     <None Remove="Interface\Icons\add_icon.png" />
@@ -29,7 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="fon.jpg" />
     <Resource Include="Interface\bg.jpg" />
     <Resource Include="Interface\Icons\035cook_113744.png" />
     <Resource Include="Interface\Icons\book_icon.png" />
