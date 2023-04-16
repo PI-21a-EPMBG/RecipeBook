@@ -35,6 +35,13 @@ namespace RecipeBook.ViewModels
             set => Set(ref _favoriteVisibility, value);
         }
         private Visibility _favoriteVisibility;
+        public Visibility AddRecipeVisibility
+        {
+            get => _addRecipeVisibility;
+            set => Set(ref _addRecipeVisibility, value);
+        }
+        private Visibility _addRecipeVisibility;
+
 
         #endregion
 
@@ -52,10 +59,44 @@ namespace RecipeBook.ViewModels
             }
             else
             {
+                CollapseAll();
                 CatalogueVisibility = Visibility.Visible;
-                MainPageVisibility = Visibility.Collapsed;
             }
                 
+        }
+
+        public ICommand AddRecipeToggleCommand { get; private set; }
+        private bool CanAddRecipeToggleCommandExecute(object p) => true;
+        private void OnAddRecipeToggleCommandExecuted(object p)
+        {
+            if (AddRecipeVisibility == Visibility.Visible)
+            {
+                AddRecipeVisibility = Visibility.Collapsed;
+                MainPageVisibility = Visibility.Visible;
+            }
+            else
+            {
+                CollapseAll();
+                AddRecipeVisibility = Visibility.Visible;
+            }
+
+        }
+
+        public ICommand FavoriteToggleCommand { get; private set; }
+        private bool CanFavoriteToggleCommandExecute(object p) => true;
+        private void OnFavoriteToggleCommandExecuted(object p)
+        {
+            if (FavoriteVisibility == Visibility.Visible)
+            {
+                FavoriteVisibility = Visibility.Collapsed;
+                MainPageVisibility = Visibility.Visible;
+            }
+            else
+            {
+                CollapseAll();
+                FavoriteVisibility = Visibility.Visible;
+            }
+
         }
 
         #endregion
@@ -71,8 +112,20 @@ namespace RecipeBook.ViewModels
 
             CatalogueVisibility = Visibility.Collapsed;
             FavoriteVisibility = Visibility.Collapsed;
+            AddRecipeVisibility = Visibility.Collapsed;
 
+            FavoriteToggleCommand = new LambdaCommand(OnFavoriteToggleCommandExecuted, CanFavoriteToggleCommandExecute);
             CatalogueToggleCommand = new LambdaCommand(OnCatalogueToggleCommandExecuted, CanCatalogueToggleCommandExecute);
+            AddRecipeToggleCommand = new LambdaCommand(OnAddRecipeToggleCommandExecuted, CanAddRecipeToggleCommandExecute);
+        
+        }
+
+        private void CollapseAll()
+        {
+            MainPageVisibility = Visibility.Collapsed;
+            FavoriteVisibility = Visibility.Collapsed;
+            CatalogueVisibility = Visibility.Collapsed;
+            AddRecipeVisibility = Visibility.Collapsed;
         }
     }
 }
