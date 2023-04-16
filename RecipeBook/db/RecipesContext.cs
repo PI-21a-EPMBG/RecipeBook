@@ -7,6 +7,7 @@ public partial class RecipesContext : DbContext
 {
     public RecipesContext()
     {
+        Database.EnsureCreated();
     }
 
     public RecipesContext(DbContextOptions<RecipesContext> options)
