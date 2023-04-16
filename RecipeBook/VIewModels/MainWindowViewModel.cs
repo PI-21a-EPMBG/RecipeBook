@@ -86,7 +86,7 @@ namespace RecipeBook.ViewModels
         private bool CanFavoriteToggleCommandExecute(object p) => true;
         private void OnFavoriteToggleCommandExecuted(object p)
         {
-            if (AddRecipeVisibility == Visibility.Visible)
+            if (FavoriteVisibility == Visibility.Visible)
             {
                 FavoriteVisibility = Visibility.Collapsed;
                 MainPageVisibility = Visibility.Visible;
