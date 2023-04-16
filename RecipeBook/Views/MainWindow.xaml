@@ -168,7 +168,7 @@
                     </Viewbox>
                 </Border>
             </Grid>
-        
+
             <!--Боковая панель-->
             <Grid x:Name="side_panel">
                 <Grid.RowDefinitions>
@@ -266,24 +266,145 @@
                     </Grid>
                 </Grid>
             </Grid>
-        
-            <!--Каталог-->
-            <Grid x:Name="catalog" Visibility="{Binding CatalogueVisibility}">
+
+
+            <!--Избранное-->
+            <Grid x:Name="favourites" Visibility="Collapsed">
+                <!--"{Binding FavouritesVisibility}"-->
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5*"/>
                     <RowDefinition Height="85*"/>
                     <RowDefinition Height="5*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="16*"/>
+                    <ColumnDefinition Width="81*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="1" Grid.Column="1" Background="#BBBBBB" Opacity="0.75" BorderBrush="Black" BorderThickness="2"/>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="16*"/>
-                        <ColumnDefinition Width="81*"/>
-                        <ColumnDefinition Width="3*"/>
+
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="90*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFF0F0F0" Opacity="0.75">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="20*" />
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="80*" />
+                                    <ColumnDefinition Width="3*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="10*" />
+                                    <RowDefinition Height="80*" />
+                                    <RowDefinition Height="10*" />
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Column="1" Grid.Row="1">
+                                    <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
+                                </Grid>
+                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="90*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFF0F0F0" Opacity="0.75">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="20*" />
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="80*" />
+                                    <ColumnDefinition Width="3*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="10*" />
+                                    <RowDefinition Height="80*" />
+                                    <RowDefinition Height="10*" />
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Column="1" Grid.Row="1">
+                                    <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
+                                </Grid>
+                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="90*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFF0F0F0" Opacity="0.75">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="20*" />
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="80*" />
+                                    <ColumnDefinition Width="3*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="10*" />
+                                    <RowDefinition Height="80*" />
+                                    <RowDefinition Height="10*" />
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Column="1" Grid.Row="1">
+                                    <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
+                                </Grid>
+                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+
+            <!--Каталог-->
+            <Grid x:Name="catalog" Visibility="Collapsed">
+                <!--"{Binding CatalogueVisibility}"-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="85*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="16*"/>
+                    <ColumnDefinition Width="81*"/>
+                    <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
                 <Border Grid.Row="1" Grid.Column="1" Background="#BBBBBB" Opacity="0.75" BorderBrush="Black" BorderThickness="2"/>
                 <Grid Grid.Row="1" Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="10*"/>
-                        <RowDefinition Height="80*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="20*"/>
                         <RowDefinition Height="5*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -347,11 +468,149 @@
                         </Button>
                         <TextBlock Grid.Row="1" Grid.Column="7" Text="☑" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     </Grid>
-                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-                        <Grid Height="20" Width="20" Background="White">
-                            <!-- Добавьте элементы Grid здесь -->
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="90*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFF0F0F0" Opacity="0.75">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="20*" />
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="80*" />
+                                    <ColumnDefinition Width="3*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="10*" />
+                                    <RowDefinition Height="80*" />
+                                    <RowDefinition Height="10*" />
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Column="1" Grid.Row="1">
+                                    <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
+                                </Grid>
+                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="90*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFF0F0F0" Opacity="0.75">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="20*" />
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="80*" />
+                                    <ColumnDefinition Width="3*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="10*" />
+                                    <RowDefinition Height="80*" />
+                                    <RowDefinition Height="10*" />
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Column="1" Grid.Row="1">
+                                    <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
+                                </Grid>
+                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="90*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFF0F0F0" Opacity="0.75">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="20*" />
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="80*" />
+                                    <ColumnDefinition Width="3*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="10*" />
+                                    <RowDefinition Height="80*" />
+                                    <RowDefinition Height="10*" />
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Column="1" Grid.Row="1">
+                                    <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
+                                </Grid>
+                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+
+            <!--Добавить-->
+            <Grid x:Name="add_recipe" Visibility="Visible">
+                <!--"{Binding CatalogueVisibility}"-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="85*"/>
+                    <RowDefinition Height="13*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="28*"/>
+                    <ColumnDefinition Width="48*"/>
+                    <ColumnDefinition Width="24*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="1" Grid.Column="1" Background="#BBBBBB" Opacity="0.75" BorderBrush="Black" BorderThickness="2"/>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="12*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="16*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="1" BorderBrush="Black" BorderThickness="0,0,0,2" Opacity="0.75"/> <!--Убрать потом-->
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="92*"/>
+                            <ColumnDefinition Width="4*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="1" Background="#BBBBBB" Opacity="0.75" BorderBrush="Black" BorderThickness="2"/> <!--Убрать потом-->
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15*"/>
+                                <RowDefinition Height="85*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="58*"/>
+                                <ColumnDefinition Width="10*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="1" Grid.Row="1" Background="#BBBBBB" Opacity="0.75" BorderBrush="Black" BorderThickness="2"/><!--Убрать потом-->
+                            <Image Grid.Column="0" Grid.RowSpan="2" Source="/Interface/Icons/035cook_113744.png"/>
+
+                            <Viewbox Grid.Column="2" HorizontalAlignment="Left">
+                                <TextBlock Text="Игредиенты:" />
+                            </Viewbox>
+                            <Viewbox Grid.Column="3" HorizontalAlignment="Right">
+                                <TextBlock Text="&lt;>" VerticalAlignment="Top"/>
+                            </Viewbox>
+                            <Viewbox Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left">
+                                <TextBlock Text=" &#x2022; Ингридиент 1 &#x0a; &#x2022; Ингридиент 2 &#x0a; &#x2022; Ингридиент 3 &#x0a; &#x2022; Ингридиент 4 &#x0a; &#x2022; Ингридиент 5" />
+                            </Viewbox>
                         </Grid>
-                    </ScrollViewer>
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>
