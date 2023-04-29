@@ -378,6 +378,34 @@
                             </Grid>
                         </Border>
                     </Grid>
+                    <Grid Grid.Row="7">
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="48*" />
+                                <ColumnDefinition Width="4*" />
+                                <ColumnDefinition Width="48*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10*" />
+                                <RowDefinition Height="80*" />
+                                <RowDefinition Height="10*" />
+                            </Grid.RowDefinitions>
+
+                            <Viewbox Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">
+                                <Button BorderThickness="0" Background="Transparent" Content="❮"/>
+                            </Viewbox>
+                            
+                            <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock Text="1"/>
+                            </Viewbox>
+                            
+                            <Viewbox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <Button BorderThickness="0" Background="Transparent" Content="❯"/>
+                            </Viewbox>
+                        </Grid>
+
+                    </Grid>
                 </Grid>
             </Grid>
 
@@ -549,6 +577,30 @@
                             </Grid>
                         </Border>
                     </Grid>
+                    <Grid Grid.Row="7">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="48*" />
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="48*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10*" />
+                            <RowDefinition Height="80*" />
+                            <RowDefinition Height="10*" />
+                        </Grid.RowDefinitions>
+
+                        <Viewbox Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">
+                            <Button BorderThickness="0" Background="Transparent" Content="❮"/>
+                        </Viewbox>
+
+                        <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock Text="1"/>
+                        </Viewbox>
+
+                        <Viewbox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left">
+                            <Button BorderThickness="0" Background="Transparent" Content="❯"/>
+                        </Viewbox>
+                    </Grid>
                 </Grid>
             </Grid>
 
@@ -624,6 +676,21 @@
                         <TextBlock Grid.Column="1" Grid.Row="0" Text="Рецепт"/>
                         <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Row="1" Grid.Column="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                     </Grid>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="60*"/>
+                        <RowDefinition Height="20*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="60*"/>
+                        <ColumnDefinition Width="20*"/>
+                    </Grid.ColumnDefinitions>
+                    <Viewbox Grid.Row="1" Grid.Column="1" >
+                        <Button Background="#BBBBBB" Content="Сохранить" BorderThickness="3" BorderBrush="#BBBBBB"/>
+                    </Viewbox>
                 </Grid>
             </Grid>
         </Grid>
