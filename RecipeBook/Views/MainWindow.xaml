@@ -659,7 +659,7 @@
                                 <TextBlock Text="&lt;>" VerticalAlignment="Top"/>
                             </Viewbox>
                             <Viewbox Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left">
-                                <TextBlock Text=" &#x2022; Ингридиент 1 &#x0a; &#x2022; Ингридиент 2 &#x0a; &#x2022; Ингридиент 3 &#x0a; &#x2022; Ингридиент 4 &#x0a; &#x2022; Ингридиент 5" />
+                                <TextBox Text=" &#x2022; Ингридиент 1 &#x0a; &#x2022; Ингридиент 2 &#x0a; &#x2022; Ингридиент 3 &#x0a; &#x2022; Ингридиент 4 &#x0a; &#x2022; Ингридиент 5" />
                             </Viewbox>
                         </Grid>
                     </Grid>
@@ -674,7 +674,7 @@
                             <ColumnDefinition Width="4*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="1" Grid.Row="0" Text="Рецепт"/>
-                        <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Row="1" Grid.Column="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                        <TextBox TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="2" Grid.Column="2">
