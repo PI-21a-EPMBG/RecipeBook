@@ -75,26 +75,38 @@
                         <ColumnDefinition Width="54*" />
                         <ColumnDefinition Width="20*" />
                     </Grid.ColumnDefinitions>
-                    <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="2" CornerRadius="5" Background="#FFF0F0F0" Opacity="0.75">
+                    <Button Grid.Column="1" Background="White" BorderBrush="Black" BorderThickness="3">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="0*" />
                                 <ColumnDefinition Width="20*" />
-                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="6*" />
                                 <ColumnDefinition Width="80*" />
                                 <ColumnDefinition Width="3*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="10*" />
-                                <RowDefinition Height="80*" />
+                                <RowDefinition Height="20*" />
+                                <RowDefinition Height="60*" />
                                 <RowDefinition Height="10*" />
                             </Grid.RowDefinitions>
-                            <Grid Grid.Column="1" Grid.Row="1">
-                                <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
+                            <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+                                <Image Source="/Interface/Icons/035cook_113744.png"/>
                             </Grid>
-                            <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                            <TextBlock Grid.Column="2" Grid.Row="1" Width="100"/>
+                            <Border Grid.Column="3" Grid.Row="1" BorderThickness="0,0,0,2" BorderBrush="Black">
+                                <Viewbox>
+                                    <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
+                                </Viewbox>
+                            </Border>
+                            <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                         </Grid>
-                    </Border>
+                    </Button>
                 </Grid>
                 <Grid Grid.Row="4">
                     <Grid.ColumnDefinitions>
@@ -102,26 +114,38 @@
                         <ColumnDefinition Width="54*" />
                         <ColumnDefinition Width="20*" />
                     </Grid.ColumnDefinitions>
-                    <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="2" CornerRadius="5" Background="#FFF0F0F0" Opacity="0.75">
+                    <Button Grid.Column="1" Background="White" BorderBrush="Black" BorderThickness="3">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="0*" />
                                 <ColumnDefinition Width="20*" />
-                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="6*" />
                                 <ColumnDefinition Width="80*" />
                                 <ColumnDefinition Width="3*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="10*" />
-                                <RowDefinition Height="80*" />
+                                <RowDefinition Height="20*" />
+                                <RowDefinition Height="60*" />
                                 <RowDefinition Height="10*" />
                             </Grid.RowDefinitions>
-                            <Grid Grid.Column="1" Grid.Row="1">
-                                <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
+                            <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+                                <Image Source="/Interface/Icons/035cook_113744.png"/>
                             </Grid>
-                            <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                            <TextBlock Grid.Column="2" Grid.Row="1" Width="100"/>
+                            <Border Grid.Column="3" Grid.Row="1" BorderThickness="0,0,0,2" BorderBrush="Black">
+                                <Viewbox>
+                                    <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
+                                </Viewbox>
+                            </Border>
+                            <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                         </Grid>
-                    </Border>
+                    </Button>
                 </Grid>
                 <Grid Grid.Row="6">
                     <Grid.ColumnDefinitions>
@@ -129,26 +153,38 @@
                         <ColumnDefinition Width="54*" />
                         <ColumnDefinition Width="20*" />
                     </Grid.ColumnDefinitions>
-                    <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="2" CornerRadius="5" Background="#FFF0F0F0" Opacity="0.75">
+                    <Button Grid.Column="1" Background="White" BorderBrush="Black" BorderThickness="3">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="0*" />
                                 <ColumnDefinition Width="20*" />
-                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="6*" />
                                 <ColumnDefinition Width="80*" />
                                 <ColumnDefinition Width="3*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="10*" />
-                                <RowDefinition Height="80*" />
+                                <RowDefinition Height="20*" />
+                                <RowDefinition Height="60*" />
                                 <RowDefinition Height="10*" />
                             </Grid.RowDefinitions>
-                            <Grid Grid.Column="1" Grid.Row="1">
-                                <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
+                            <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+                                <Image Source="/Interface/Icons/035cook_113744.png"/>
                             </Grid>
-                            <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                            <TextBlock Grid.Column="2" Grid.Row="1" Width="100"/>
+                            <Border Grid.Column="3" Grid.Row="1" BorderThickness="0,0,0,2" BorderBrush="Black">
+                                <Viewbox>
+                                    <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
+                                </Viewbox>
+                            </Border>
+                            <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                         </Grid>
-                    </Border>
+                    </Button>
                 </Grid>
             </Grid>
 
@@ -303,26 +339,38 @@
                             <ColumnDefinition Width="90*" />
                             <ColumnDefinition Width="5*" />
                         </Grid.ColumnDefinitions>
-                        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFF0F0F0" Opacity="0.75">
+                        <Button Grid.Column="1" Background="White" BorderBrush="Black" BorderThickness="2">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="0*" />
                                     <ColumnDefinition Width="20*" />
-                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="6*" />
                                     <ColumnDefinition Width="80*" />
                                     <ColumnDefinition Width="3*" />
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="10*" />
-                                    <RowDefinition Height="80*" />
+                                    <RowDefinition Height="20*" />
+                                    <RowDefinition Height="60*" />
                                     <RowDefinition Height="10*" />
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Column="1" Grid.Row="1">
-                                    <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
+                                <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+                                    <Image Source="/Interface/Icons/035cook_113744.png"/>
                                 </Grid>
-                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                                <TextBlock Grid.Column="2" Grid.Row="1" Width="100"/>
+                                <Border Grid.Column="3" Grid.Row="1" BorderThickness="0,0,0,2" BorderBrush="Black">
+                                    <Viewbox>
+                                        <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
+                                    </Viewbox>
+                                </Border>
+                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                             </Grid>
-                        </Border>
+                        </Button>
                     </Grid>
                     <Grid Grid.Row="4">
                         <Grid.ColumnDefinitions>
@@ -330,26 +378,38 @@
                             <ColumnDefinition Width="90*" />
                             <ColumnDefinition Width="5*" />
                         </Grid.ColumnDefinitions>
-                        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFF0F0F0" Opacity="0.75">
+                        <Button Grid.Column="1" Background="White" BorderBrush="Black" BorderThickness="2">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="0*" />
                                     <ColumnDefinition Width="20*" />
-                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="6*" />
                                     <ColumnDefinition Width="80*" />
                                     <ColumnDefinition Width="3*" />
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="10*" />
-                                    <RowDefinition Height="80*" />
+                                    <RowDefinition Height="20*" />
+                                    <RowDefinition Height="60*" />
                                     <RowDefinition Height="10*" />
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Column="1" Grid.Row="1">
-                                    <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
+                                <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+                                    <Image Source="/Interface/Icons/035cook_113744.png"/>
                                 </Grid>
-                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                                <TextBlock Grid.Column="2" Grid.Row="1" Width="100"/>
+                                <Border Grid.Column="3" Grid.Row="1" BorderThickness="0,0,0,2" BorderBrush="Black">
+                                    <Viewbox>
+                                        <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
+                                    </Viewbox>
+                                </Border>
+                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                             </Grid>
-                        </Border>
+                        </Button>
                     </Grid>
                     <Grid Grid.Row="6">
                         <Grid.ColumnDefinitions>
@@ -357,26 +417,38 @@
                             <ColumnDefinition Width="90*" />
                             <ColumnDefinition Width="5*" />
                         </Grid.ColumnDefinitions>
-                        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFF0F0F0" Opacity="0.75">
+                        <Button Grid.Column="1" Background="White" BorderBrush="Black" BorderThickness="2">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="0*" />
                                     <ColumnDefinition Width="20*" />
-                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="6*" />
                                     <ColumnDefinition Width="80*" />
                                     <ColumnDefinition Width="3*" />
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="10*" />
-                                    <RowDefinition Height="80*" />
+                                    <RowDefinition Height="20*" />
+                                    <RowDefinition Height="60*" />
                                     <RowDefinition Height="10*" />
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Column="1" Grid.Row="1">
-                                    <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
+                                <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+                                    <Image Source="/Interface/Icons/035cook_113744.png"/>
                                 </Grid>
-                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                                <TextBlock Grid.Column="2" Grid.Row="1" Width="100"/>
+                                <Border Grid.Column="3" Grid.Row="1" BorderThickness="0,0,0,2" BorderBrush="Black">
+                                    <Viewbox>
+                                        <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
+                                    </Viewbox>
+                                </Border>
+                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                             </Grid>
-                        </Border>
+                        </Button>
                     </Grid>
                     <Grid Grid.Row="7">
 
@@ -502,26 +574,38 @@
                             <ColumnDefinition Width="90*" />
                             <ColumnDefinition Width="5*" />
                         </Grid.ColumnDefinitions>
-                        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFF0F0F0" Opacity="0.75">
+                        <Button Grid.Column="1" Background="White" BorderBrush="Black" BorderThickness="2">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="0*" />
                                     <ColumnDefinition Width="20*" />
-                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="6*" />
                                     <ColumnDefinition Width="80*" />
                                     <ColumnDefinition Width="3*" />
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="10*" />
-                                    <RowDefinition Height="80*" />
+                                    <RowDefinition Height="20*" />
+                                    <RowDefinition Height="60*" />
                                     <RowDefinition Height="10*" />
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Column="1" Grid.Row="1">
-                                    <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
+                                <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+                                    <Image Source="/Interface/Icons/035cook_113744.png"/>
                                 </Grid>
-                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                                <TextBlock Grid.Column="2" Grid.Row="1" Width="100"/>
+                                <Border Grid.Column="3" Grid.Row="1" BorderThickness="0,0,0,2" BorderBrush="Black">
+                                    <Viewbox>
+                                        <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
+                                    </Viewbox>
+                                </Border>
+                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                             </Grid>
-                        </Border>
+                        </Button>
                     </Grid>
                     <Grid Grid.Row="4">
                         <Grid.ColumnDefinitions>
@@ -529,26 +613,38 @@
                             <ColumnDefinition Width="90*" />
                             <ColumnDefinition Width="5*" />
                         </Grid.ColumnDefinitions>
-                        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFF0F0F0" Opacity="0.75">
+                        <Button Grid.Column="1" Background="White" BorderBrush="Black" BorderThickness="2">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="0*" />
                                     <ColumnDefinition Width="20*" />
-                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="6*" />
                                     <ColumnDefinition Width="80*" />
                                     <ColumnDefinition Width="3*" />
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="10*" />
-                                    <RowDefinition Height="80*" />
+                                    <RowDefinition Height="20*" />
+                                    <RowDefinition Height="60*" />
                                     <RowDefinition Height="10*" />
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Column="1" Grid.Row="1">
-                                    <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
+                                <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+                                    <Image Source="/Interface/Icons/035cook_113744.png"/>
                                 </Grid>
-                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                                <TextBlock Grid.Column="2" Grid.Row="1" Width="100"/>
+                                <Border Grid.Column="3" Grid.Row="1" BorderThickness="0,0,0,2" BorderBrush="Black">
+                                    <Viewbox>
+                                        <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
+                                    </Viewbox>
+                                </Border>
+                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                             </Grid>
-                        </Border>
+                        </Button>
                     </Grid>
                     <Grid Grid.Row="6">
                         <Grid.ColumnDefinitions>
@@ -556,26 +652,38 @@
                             <ColumnDefinition Width="90*" />
                             <ColumnDefinition Width="5*" />
                         </Grid.ColumnDefinitions>
-                        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="#FFF0F0F0" Opacity="0.75">
+                        <Button Grid.Column="1" Background="White" BorderBrush="Black" BorderThickness="2">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="0*" />
                                     <ColumnDefinition Width="20*" />
-                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="6*" />
                                     <ColumnDefinition Width="80*" />
                                     <ColumnDefinition Width="3*" />
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="10*" />
-                                    <RowDefinition Height="80*" />
+                                    <RowDefinition Height="20*" />
+                                    <RowDefinition Height="60*" />
                                     <RowDefinition Height="10*" />
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Column="1" Grid.Row="1">
-                                    <Image Grid.Column="1" Source="/Interface/Icons/035cook_113744.png"/>
+                                <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+                                    <Image Source="/Interface/Icons/035cook_113744.png"/>
                                 </Grid>
-                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                                <TextBlock Grid.Column="2" Grid.Row="1" Width="100"/>
+                                <Border Grid.Column="3" Grid.Row="1" BorderThickness="0,0,0,2" BorderBrush="Black">
+                                    <Viewbox>
+                                        <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
+                                    </Viewbox>
+                                </Border>
+                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                             </Grid>
-                        </Border>
+                        </Button>
                     </Grid>
                     <Grid Grid.Row="7">
                         <Grid.ColumnDefinitions>
@@ -606,7 +714,7 @@
 
 
             <!--Добавить-->
-            <Grid x:Name="add_recipe" Visibility="{Binding AddRecipeVisibility}">
+            <Grid x:Name="add_recipe" Visibility="{Binding AddRecipeVisibility}"><!--{Binding AddRecipeVisibility}-->
                 <Grid.RowDefinitions>
                     <RowDefinition Height="4*"/>
                     <RowDefinition Height="85*"/>
@@ -629,18 +737,21 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="16*"/>
                     </Grid.ColumnDefinitions>
-                    <!--<Border Grid.Row="1" BorderBrush="Black" BorderThickness="0,0,0,2" Opacity="0.75"/> --><!--Убрать потом-->
+                    <!--<Border Grid.Row="1" BorderBrush="Black" BorderThickness="0,0,0,2" Opacity="0.75"/> -->
+                    <!--Убрать потом-->
                     <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="4*"/>
                             <ColumnDefinition Width="92*"/>
                             <ColumnDefinition Width="4*"/>
                         </Grid.ColumnDefinitions>
-                        <!--<Border Grid.Column="1" Background="#BBBBBB" Opacity="0.75" BorderBrush="Black" BorderThickness="2"/> --><!--Убрать потом-->
+                        <!--<Border Grid.Column="1" Background="#BBBBBB" Opacity="0.75" BorderBrush="Black" BorderThickness="2"/> -->
+                        <!--Убрать потом-->
                         <Grid Grid.Column="1">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="15*"/>
-                                <RowDefinition Height="85*"/>
+                                <RowDefinition Height="15*"/>
+                                <RowDefinition Height="75*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="30*"/>
@@ -649,16 +760,19 @@
                                 <ColumnDefinition Width="10*"/>
                             </Grid.ColumnDefinitions>
                             <!--<Border Grid.Column="1" Grid.Row="1" Background="#BBBBBB" Opacity="0.75" BorderBrush="Black" BorderThickness="2"/>
-                            --><!--Убрать потом-->
-                            <Image Grid.Column="0" Grid.RowSpan="2" Source="/Interface/Icons/035cook_113744.png"/>
-
+                            -->
+                            <!--Убрать потом-->
+                            <Image Grid.Column="0" Grid.RowSpan="3" Source="/Interface/Icons/035cook_113744.png"/>
                             <Viewbox Grid.Column="2" HorizontalAlignment="Left">
+                                <TextBox Text="Название" />
+                            </Viewbox>
+                            <Viewbox Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left">
                                 <TextBlock Text="Игредиенты:" />
                             </Viewbox>
                             <Viewbox Grid.Column="3" HorizontalAlignment="Right">
                                 <TextBlock Text="&lt;>" VerticalAlignment="Top"/>
                             </Viewbox>
-                            <Viewbox Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left">
+                            <Viewbox Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left">
                                 <TextBox Text=" &#x2022; Ингридиент 1 &#x0a; &#x2022; Ингридиент 2 &#x0a; &#x2022; Ингридиент 3 &#x0a; &#x2022; Ингридиент 4 &#x0a; &#x2022; Ингридиент 5" />
                             </Viewbox>
                         </Grid>
@@ -673,7 +787,9 @@
                             <ColumnDefinition Width="92*"/>
                             <ColumnDefinition Width="4*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="1" Grid.Row="0" Text="Рецепт"/>
+                        <Viewbox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left">
+                            <TextBlock Text="Рецепт:"/>
+                        </Viewbox>
                         <TextBox TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                     </Grid>
                 </Grid>
@@ -693,6 +809,104 @@
                     </Viewbox>
                 </Grid>
             </Grid>
+
+            <!--Просмотр-->
+            <Grid x:Name="viewing" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="85*"/>
+                    <RowDefinition Height="13*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="28*"/>
+                    <ColumnDefinition Width="48*"/>
+                    <ColumnDefinition Width="24*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="1" Grid.Column="1" Background="#BBBBBB" Opacity="0.75" BorderBrush="Black" BorderThickness="2"/>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="44*"/>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="44*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="16*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--<Border Grid.Row="1" BorderBrush="Black" BorderThickness="0,0,0,2" Opacity="0.75"/> -->
+                    <!--Убрать потом-->
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="92*"/>
+                            <ColumnDefinition Width="4*"/>
+                        </Grid.ColumnDefinitions>
+                        <!--<Border Grid.Column="1" Background="#BBBBBB" Opacity="0.75" BorderBrush="Black" BorderThickness="2"/> -->
+                        <!--Убрать потом-->
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15*"/>
+                                <RowDefinition Height="15*"/>
+                                <RowDefinition Height="75*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="58*"/>
+                                <ColumnDefinition Width="10*"/>
+                            </Grid.ColumnDefinitions>
+                            <!--<Border Grid.Column="1" Grid.Row="1" Background="#BBBBBB" Opacity="0.75" BorderBrush="Black" BorderThickness="2"/>
+                            -->
+                            <!--Убрать потом-->
+                            <Image Grid.Column="0" Grid.RowSpan="3" Source="/Interface/Icons/035cook_113744.png"/>
+                            <Viewbox Grid.Column="2" HorizontalAlignment="Left">
+                                <TextBlock Text="Название" />
+                            </Viewbox>
+                            <Viewbox Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left">
+                                <TextBlock Text="Игредиенты:" />
+                            </Viewbox>
+                            <Viewbox Grid.Column="3" HorizontalAlignment="Right">
+                                <TextBlock Text="&lt;>" VerticalAlignment="Top"/>
+                            </Viewbox>
+                            <Viewbox Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left">
+                                <TextBlock Text=" &#x2022; Ингридиент 1 &#x0a; &#x2022; Ингридиент 2 &#x0a; &#x2022; Ингридиент 3 &#x0a; &#x2022; Ингридиент 4 &#x0a; &#x2022; Ингридиент 5" />
+                            </Viewbox>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="8*"/>
+                            <RowDefinition Height="92*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="92*"/>
+                            <ColumnDefinition Width="4*"/>
+                        </Grid.ColumnDefinitions>
+                        <Viewbox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left">
+                            <TextBlock Text="Рецепт:"/>
+                        </Viewbox>
+                        <TextBlock TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="60*"/>
+                        <RowDefinition Height="20*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="60*"/>
+                        <ColumnDefinition Width="20*"/>
+                    </Grid.ColumnDefinitions>
+                    <Viewbox Grid.Row="1" Grid.Column="1" >
+                        <Button Background="#BBBBBB" Content="Редактировать" BorderThickness="3" BorderBrush="#BBBBBB"/>
+                    </Viewbox>
+                </Grid>
+            </Grid>
+
         </Grid>
     </Grid>
 </Window>
