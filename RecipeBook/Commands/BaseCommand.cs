@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace RecipeBook.Commands
@@ -14,5 +15,6 @@ namespace RecipeBook.Commands
         public abstract bool CanExecute(object parameter);
 
         public abstract void Execute(object parameter);
+
     }
 }

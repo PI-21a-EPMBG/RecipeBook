@@ -3,13 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RecipeBook"
-        xmlns:vm="clr-namespace:RecipeBook.ViewModels"
+        xmlns:local="clr-namespace:RecipeBook.Commands"
+        xmlns:vm="clr-namespace:RecipeBook.ViewModels" xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="Кулинарная книга" Height="450" Width="800" FontSize="16">
     <Window.Resources>
         <FontFamily x:Key="Helvetica">Interface/helvetica_regular.otf#Helvetica</FontFamily>
+        <local:FontSizeConverter x:Key="FontSizeConverter"/>
     </Window.Resources>
+    
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
@@ -749,9 +751,9 @@
                         <!--Убрать потом-->
                         <Grid Grid.Column="1">
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="20*"/>
                                 <RowDefinition Height="15*"/>
-                                <RowDefinition Height="15*"/>
-                                <RowDefinition Height="75*"/>
+                                <RowDefinition Height="70*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="30*"/>
@@ -763,18 +765,40 @@
                             -->
                             <!--Убрать потом-->
                             <Image Grid.Column="0" Grid.RowSpan="3" Source="/Interface/Icons/035cook_113744.png"/>
-                            <Viewbox Grid.Column="2" HorizontalAlignment="Left">
-                                <TextBox Text="Название" />
-                            </Viewbox>
+                            
+                            
+                            <ScrollViewer Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                                <TextBox Text="Названиеggggggggggggggg" >
+                                    <TextBlock.FontSize>
+                                        <MultiBinding Converter="{StaticResource FontSizeConverter}">
+                                            <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
+                                            <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
+                                            <Binding Source="32" />
+                                        </MultiBinding>
+                                    </TextBlock.FontSize>  <!--Наверное убрать надо скрол бар-->
+                                </TextBox>
+                            </ScrollViewer>
+
                             <Viewbox Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left">
                                 <TextBlock Text="Игредиенты:" />
                             </Viewbox>
                             <Viewbox Grid.Column="3" HorizontalAlignment="Right">
                                 <TextBlock Text="&lt;>" VerticalAlignment="Top"/>
                             </Viewbox>
-                            <Viewbox Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left">
-                                <TextBox Text=" &#x2022; Ингридиент 1 &#x0a; &#x2022; Ингридиент 2 &#x0a; &#x2022; Ингридиент 3 &#x0a; &#x2022; Ингридиент 4 &#x0a; &#x2022; Ингридиент 5" />
-                            </Viewbox>
+                            
+                            <!--Игридиенты запись-->
+                            <ScrollViewer Grid.Column="2" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                                <TextBox Text=" &#x2022; Ингридиент 1 &#x0a; &#x2022; Ингридиент 2 &#x0a; &#x2022; Ингридиент 3 &#x0a; &#x2022; Ингридиент 4 &#x0a; &#x2022; Ингридиент 5   &#x0a; &#x2022; Ингридиент 5 &#x0a; &#x2022; Ингридиент 5" >
+                                        <TextBlock.FontSize>
+                                            <MultiBinding Converter="{StaticResource FontSizeConverter}">
+                                                <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
+                                                <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
+                                                <Binding Source="40" />
+                                            </MultiBinding>
+                                        </TextBlock.FontSize>
+                                    </TextBox>
+                            </ScrollViewer>
+                            
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="3">
@@ -790,7 +814,17 @@
                         <Viewbox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left">
                             <TextBlock Text="Рецепт:"/>
                         </Viewbox>
-                        <TextBox TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                        <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" >
+                            <TextBox TextWrapping="Wrap" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!">
+                            <TextBlock.FontSize>
+                                <MultiBinding Converter="{StaticResource FontSizeConverter}">
+                                    <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
+                                    <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
+                                    <Binding Source="60" />
+                                </MultiBinding>
+                            </TextBlock.FontSize>
+                        </TextBox>
+                        </ScrollViewer>
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="2" Grid.Column="2">
