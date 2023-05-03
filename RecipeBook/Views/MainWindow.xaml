@@ -106,6 +106,9 @@
                                     <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
                                 </Viewbox>
                             </Border>
+                            <Viewbox Grid.Column="4" Grid.Row="1">
+                                <Button Content="★" Background="Transparent" BorderBrush="Transparent"/>
+                            </Viewbox>
                             <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                         </Grid>
                     </Button>
@@ -145,6 +148,9 @@
                                     <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
                                 </Viewbox>
                             </Border>
+                            <Viewbox Grid.Column="4" Grid.Row="1">
+                                <Button Content="★" Background="Transparent" BorderBrush="Transparent"/>
+                            </Viewbox>
                             <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                         </Grid>
                     </Button>
@@ -184,6 +190,9 @@
                                     <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
                                 </Viewbox>
                             </Border>
+                            <Viewbox Grid.Column="4" Grid.Row="1">
+                                <Button Content="★" Background="Transparent" BorderBrush="Transparent"/>
+                            </Viewbox>
                             <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                         </Grid>
                     </Button>
@@ -371,8 +380,13 @@
                                     </Viewbox>
                                 </Border>
                                 <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                                <Viewbox Grid.Column="4" Grid.Row="1">
+                                    <Button Content="★" Background="Transparent" BorderBrush="Transparent"/>
+                                </Viewbox>
                             </Grid>
                         </Button>
+
+
                     </Grid>
                     <Grid Grid.Row="4">
                         <Grid.ColumnDefinitions>
@@ -410,6 +424,9 @@
                                     </Viewbox>
                                 </Border>
                                 <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                                <Viewbox Grid.Column="4" Grid.Row="1">
+                                    <Button Content="★" Background="Transparent" BorderBrush="Transparent"/>
+                                </Viewbox>
                             </Grid>
                         </Button>
                     </Grid>
@@ -449,6 +466,9 @@
                                     </Viewbox>
                                 </Border>
                                 <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                                <Viewbox Grid.Column="4" Grid.Row="1">
+                                    <Button Content="★" Background="Transparent" BorderBrush="Transparent"/>
+                                </Viewbox>
                             </Grid>
                         </Button>
                     </Grid>
@@ -605,6 +625,9 @@
                                         <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
                                     </Viewbox>
                                 </Border>
+                                <Viewbox Grid.Column="4" Grid.Row="1">
+                                    <Button Content="★" Background="Transparent" BorderBrush="Transparent"/>
+                                </Viewbox>
                                 <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                             </Grid>
                         </Button>
@@ -644,6 +667,9 @@
                                         <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
                                     </Viewbox>
                                 </Border>
+                                <Viewbox Grid.Column="4" Grid.Row="1">
+                                    <Button Content="★" Background="Transparent" BorderBrush="Transparent"/>
+                                </Viewbox>
                                 <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                             </Grid>
                         </Button>
@@ -683,6 +709,9 @@
                                         <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
                                     </Viewbox>
                                 </Border>
+                                <Viewbox Grid.Column="4" Grid.Row="1">
+                                    <Button Content="★" Background="Transparent" BorderBrush="Transparent"/>
+                                </Viewbox>
                                 <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                             </Grid>
                         </Button>
@@ -758,16 +787,17 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="30*"/>
                                 <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="58*"/>
+                                <ColumnDefinition Width="43*"/>
+                                <ColumnDefinition Width="15*"/>
                                 <ColumnDefinition Width="10*"/>
                             </Grid.ColumnDefinitions>
                             <!--<Border Grid.Column="1" Grid.Row="1" Background="#BBBBBB" Opacity="0.75" BorderBrush="Black" BorderThickness="2"/>
                             -->
                             <!--Убрать потом-->
                             <Image Grid.Column="0" Grid.RowSpan="3" Source="/Interface/Icons/035cook_113744.png"/>
-                            
-                            
-                            <ScrollViewer Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+
+
+                            <ScrollViewer Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                                 <TextBox Text="Названиеggggggggggggggg" >
                                     <TextBlock.FontSize>
                                         <MultiBinding Converter="{StaticResource FontSizeConverter}">
@@ -779,15 +809,15 @@
                                 </TextBox>
                             </ScrollViewer>
 
-                            <Viewbox Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left">
+                            <Viewbox Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Left">
                                 <TextBlock Text="Игредиенты:" />
                             </Viewbox>
-                            <Viewbox Grid.Column="3" HorizontalAlignment="Right">
-                                <TextBlock Text="&lt;>" VerticalAlignment="Top"/>
+                            <Viewbox Grid.Column="4" HorizontalAlignment="Right">
+                                <Button Content="&lt;>" VerticalAlignment="Top" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent"/>
                             </Viewbox>
-                            
+
                             <!--Игридиенты запись-->
-                            <ScrollViewer Grid.Column="2" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                            <ScrollViewer Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                                 <TextBox Text=" &#x2022; Ингридиент 1 &#x0a; &#x2022; Ингридиент 2 &#x0a; &#x2022; Ингридиент 3 &#x0a; &#x2022; Ингридиент 4 &#x0a; &#x2022; Ингридиент 5   &#x0a; &#x2022; Ингридиент 5 &#x0a; &#x2022; Ингридиент 5" >
                                         <TextBlock.FontSize>
                                             <MultiBinding Converter="{StaticResource FontSizeConverter}">
@@ -797,6 +827,20 @@
                                             </MultiBinding>
                                         </TextBlock.FontSize>
                                     </TextBox>
+                            </ScrollViewer>
+
+                            
+                            <!--Этот элемент должен быть скрыт и появлятся только по кнопке-->
+                            <ScrollViewer  Grid.Row="1" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" >
+                                <TextBox Text=" &#x2022; Ингридиент 1 &#x0a; &#x2022; Ингридиент 2">
+                                    <TextBlock.FontSize>
+                                        <MultiBinding Converter="{StaticResource FontSizeConverter}">
+                                            <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
+                                            <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
+                                            <Binding Source="60" />
+                                        </MultiBinding>
+                                    </TextBlock.FontSize>
+                                </TextBox>
                             </ScrollViewer>
                             
                         </Grid>
@@ -887,7 +931,8 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="30*"/>
                                 <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="58*"/>
+                                <ColumnDefinition Width="43*"/>
+                                <ColumnDefinition Width="15*"/>
                                 <ColumnDefinition Width="10*"/>
                             </Grid.ColumnDefinitions>
                             <!--<Border Grid.Column="1" Grid.Row="1" Background="#BBBBBB" Opacity="0.75" BorderBrush="Black" BorderThickness="2"/>
@@ -900,12 +945,37 @@
                             <Viewbox Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left">
                                 <TextBlock Text="Игредиенты:" />
                             </Viewbox>
-                            <Viewbox Grid.Column="3" HorizontalAlignment="Right">
-                                <TextBlock Text="&lt;>" VerticalAlignment="Top"/>
+
+                            <Viewbox Grid.Column="4" HorizontalAlignment="Right">
+                                <Button Content="&lt;>" VerticalAlignment="Top" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent"/>
                             </Viewbox>
-                            <Viewbox Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left">
-                                <TextBlock Text=" &#x2022; Ингридиент 1 &#x0a; &#x2022; Ингридиент 2 &#x0a; &#x2022; Ингридиент 3 &#x0a; &#x2022; Ингридиент 4 &#x0a; &#x2022; Ингридиент 5" />
-                            </Viewbox>
+                            
+                            <!--Игридиенты запись-->
+                            <ScrollViewer Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Left" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                                <TextBlock Text=" &#x2022; Ингридиент 1 &#x0a; &#x2022; Ингридиент 2 &#x0a; &#x2022; Ингридиент 3 &#x0a; &#x2022; Ингридиент 4 &#x0a; &#x2022; Ингридиент 5   &#x0a; &#x2022; Ингридиент 5 &#x0a; &#x2022; Ингридиент 5" >
+                                    <TextBlock.FontSize>
+                                        <MultiBinding Converter="{StaticResource FontSizeConverter}">
+                                            <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
+                                            <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
+                                            <Binding Source="40" />
+                                        </MultiBinding>
+                                    </TextBlock.FontSize>
+                                </TextBlock>
+                            </ScrollViewer>
+
+
+                            <!--Этот элемент должен быть скрыт и появлятся только по кнопке-->
+                            <ScrollViewer  Grid.Row="1" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" >
+                                <TextBlock Background="White" Text=" &#x2022; Ингридиент 1 &#x0a; &#x2022; Ингридиент 2">
+                                    <TextBlock.FontSize>
+                                        <MultiBinding Converter="{StaticResource FontSizeConverter}">
+                                            <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
+                                            <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
+                                            <Binding Source="60" />
+                                        </MultiBinding>
+                                    </TextBlock.FontSize>
+                                </TextBlock>
+                            </ScrollViewer>
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="3">
@@ -921,7 +991,17 @@
                         <Viewbox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left">
                             <TextBlock Text="Рецепт:"/>
                         </Viewbox>
-                        <TextBlock TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
+                        <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" >
+                            <TextBlock TextWrapping="Wrap" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!">
+                                <TextBlock.FontSize>
+                                    <MultiBinding Converter="{StaticResource FontSizeConverter}">
+                                        <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
+                                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
+                                        <Binding Source="60" />
+                                    </MultiBinding>
+                                </TextBlock.FontSize>
+                            </TextBlock>
+                        </ScrollViewer>
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="2" Grid.Column="2">
