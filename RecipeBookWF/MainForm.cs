@@ -262,7 +262,7 @@ namespace RecipeBookWF
 
             _selectedIndex = index;
             _selectedRecipe = (Recipe)listBox_favourites.Items[index];
-
+            
             RemoveFromFavoritesButton.Enabled = true;
             editRecipeButton_favourites.Enabled = true;
 
@@ -331,6 +331,9 @@ namespace RecipeBookWF
 
             editRecipeButton_favourites.Visible = false;
             RemoveFromFavoritesButton.Visible = false;
+
+            AddToFavoritesButton.Visible= false;
+            editRecipeButton.Visible = false;
         }
 
         private void TurnOffBlackout()
@@ -369,6 +372,9 @@ namespace RecipeBookWF
 
             editRecipeButton_favourites.Visible = true;
             RemoveFromFavoritesButton.Visible = true;
+
+            AddToFavoritesButton.Visible = true;
+            editRecipeButton.Visible = true;
         }
 
         private void CreateNewBookButton_Click(object sender, EventArgs e)
