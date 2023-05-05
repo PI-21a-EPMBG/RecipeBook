@@ -25,11 +25,12 @@ namespace RecipeBookWF
             _isEdited = false;
             _recipes = new BindingList<Recipe>();
 
-            dataGrid.DataSource = _recipes;
+            //dataGrid.DataSource = _recipes;
 
-            dataGrid.Columns["Name"].HeaderText = "Название";
-            dataGrid.Columns["IngridientsString"].HeaderText = "Ингридиенты";
-            dataGrid.Columns["Description"].HeaderText = "Рецепт";
+            //dataGrid.Columns["Name"].HeaderText = "Название";
+
+            //dataGrid.Columns["IngridientsString"].HeaderText = "Ингридиенты";
+            //dataGrid.Columns["Description"].HeaderText = "Рецепт";
 
             Name = "Книга без названия | Кулинарная книга";
             saveFileDialog.Filter = "Книга рецептов|*.book";
@@ -55,7 +56,7 @@ namespace RecipeBookWF
             {
                 _isEdited=true;
                 _recipes.Add(new Recipe(view.Recipe));
-                dataGrid.Update();
+                //dataGrid.Update();
                 UpdateHeader();
             }
         }
