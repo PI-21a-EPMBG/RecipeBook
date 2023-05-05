@@ -12,6 +12,8 @@
         <local:FontSizeConverter x:Key="FontSizeConverter"/>
     </Window.Resources>
 
+    
+    
     <Window.Background>
         <ImageBrush ImageSource="/Interface/bg.jpg" Stretch="UniformToFill"/>
     </Window.Background>
@@ -56,7 +58,7 @@
             </Grid>
         </Border>
         <Grid Grid.Row="1">
-            <Grid x:Name="main_page" Visibility="{Binding MainPageVisibility}">
+            <Grid x:Name="main_page" Visibility="Collapsed">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0*" />
                     <RowDefinition Height="5*" />
@@ -312,7 +314,7 @@
 
 
             <!--Избранное-->
-            <Grid x:Name="favourites" Visibility="{Binding FavoriteVisibility}">
+            <Grid x:Name="favourites" Visibility="Collapsed">
                 <!--"{Binding FavouritesVisibility}"-->
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5*"/>
@@ -501,7 +503,7 @@
 
 
             <!--Каталог-->
-            <Grid x:Name="catalog" Visibility="{Binding CatalogueVisibility}">
+            <Grid x:Name="catalog" Visibility="Visible">
                 <!--"{Binding CatalogueVisibility}"-->
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5*"/>
@@ -514,234 +516,20 @@
                     <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
                 <Border Grid.Row="1" Grid.Column="1" Background="#BBBBBB" Opacity="0.75" BorderBrush="Black" BorderThickness="2"/>
-                <Grid Grid.Row="1" Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="10*"/>
-                        <RowDefinition Height="5*"/>
-                        <RowDefinition Height="20*"/>
-                        <RowDefinition Height="5*"/>
-                        <RowDefinition Height="20*"/>
-                        <RowDefinition Height="5*"/>
-                        <RowDefinition Height="20*"/>
-                        <RowDefinition Height="5*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="16*"/>
-
-                    </Grid.ColumnDefinitions>
-                    <Border BorderBrush="Black" BorderThickness="0,0,0,2" Opacity="0.75"/>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="15*"/>
-                            <RowDefinition Height="70*"/>
-                            <RowDefinition Height="15*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="14*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="33*"/>
-                            <ColumnDefinition Width="6*"/>
-                            <ColumnDefinition Width="33*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="5*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBox Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True"/>
-                        <Button Grid.Row="1" Grid.Column="3" Background="#BBBBBB" BorderBrush="Black" BorderThickness="2">
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="25*" />
-                                    <ColumnDefinition Width="69*" />
-                                </Grid.ColumnDefinitions>
-                                <Viewbox Grid.Column="1">
-                                    <Grid>
-                                        <TextBlock Text="Кухня"/>
-                                    </Grid>
-                                </Viewbox>
-                            </Grid>
-                        </Button>
-                        <Button Grid.Row="1" Grid.Column="5" Background="#BBBBBB" BorderBrush="Black" BorderThickness="2">
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="25*" />
-                                    <ColumnDefinition Width="69*" />
-                                </Grid.ColumnDefinitions>
-                                <Viewbox Grid.Column="1">
-                                    <Grid>
-                                        <TextBlock Text="Ингредиенты "/>
-                                    </Grid>
-                                </Viewbox>
-                            </Grid>
-                        </Button>
-                        <TextBlock Grid.Row="1" Grid.Column="7" Text="☑" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Grid>
-                    <Grid Grid.Row="2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="5*" />
-                            <ColumnDefinition Width="90*" />
-                            <ColumnDefinition Width="5*" />
-                        </Grid.ColumnDefinitions>
-                        <Button Grid.Column="1" Background="White" BorderBrush="Black" BorderThickness="2">
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="0*" />
-                                    <ColumnDefinition Width="20*" />
-                                    <ColumnDefinition Width="6*" />
-                                    <ColumnDefinition Width="80*" />
-                                    <ColumnDefinition Width="3*" />
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="10*" />
-                                    <RowDefinition Height="20*" />
-                                    <RowDefinition Height="60*" />
-                                    <RowDefinition Height="10*" />
-                                </Grid.RowDefinitions>
-                                <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
-                                    <Image Source="/Interface/Icons/035cook_113744.png"/>
-                                </Grid>
-                                <TextBlock Grid.Column="2" Grid.Row="1" Width="100"/>
-                                <Border Grid.Column="3" Grid.Row="1" BorderThickness="0,0,0,2" BorderBrush="Black">
-                                    <Viewbox>
-                                        <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
-                                    </Viewbox>
-                                </Border>
-                                <Viewbox Grid.Column="4" Grid.Row="1">
-                                    <Button Content="★" Background="Transparent" BorderBrush="Transparent"/>
-                                </Viewbox>
-                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
-                            </Grid>
-                        </Button>
-                    </Grid>
-                    <Grid Grid.Row="4">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="5*" />
-                            <ColumnDefinition Width="90*" />
-                            <ColumnDefinition Width="5*" />
-                        </Grid.ColumnDefinitions>
-                        <Button Grid.Column="1" Background="White" BorderBrush="Black" BorderThickness="2">
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="0*" />
-                                    <ColumnDefinition Width="20*" />
-                                    <ColumnDefinition Width="6*" />
-                                    <ColumnDefinition Width="80*" />
-                                    <ColumnDefinition Width="3*" />
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="10*" />
-                                    <RowDefinition Height="20*" />
-                                    <RowDefinition Height="60*" />
-                                    <RowDefinition Height="10*" />
-                                </Grid.RowDefinitions>
-                                <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
-                                    <Image Source="/Interface/Icons/035cook_113744.png"/>
-                                </Grid>
-                                <TextBlock Grid.Column="2" Grid.Row="1" Width="100"/>
-                                <Border Grid.Column="3" Grid.Row="1" BorderThickness="0,0,0,2" BorderBrush="Black">
-                                    <Viewbox>
-                                        <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
-                                    </Viewbox>
-                                </Border>
-                                <Viewbox Grid.Column="4" Grid.Row="1">
-                                    <Button Content="★" Background="Transparent" BorderBrush="Transparent"/>
-                                </Viewbox>
-                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
-                            </Grid>
-                        </Button>
-                    </Grid>
-                    <Grid Grid.Row="6">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="5*" />
-                            <ColumnDefinition Width="90*" />
-                            <ColumnDefinition Width="5*" />
-                        </Grid.ColumnDefinitions>
-                        <Button Grid.Column="1" Background="White" BorderBrush="Black" BorderThickness="2">
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="0*" />
-                                    <ColumnDefinition Width="20*" />
-                                    <ColumnDefinition Width="6*" />
-                                    <ColumnDefinition Width="80*" />
-                                    <ColumnDefinition Width="3*" />
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="10*" />
-                                    <RowDefinition Height="20*" />
-                                    <RowDefinition Height="60*" />
-                                    <RowDefinition Height="10*" />
-                                </Grid.RowDefinitions>
-                                <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
-                                    <Image Source="/Interface/Icons/035cook_113744.png"/>
-                                </Grid>
-                                <TextBlock Grid.Column="2" Grid.Row="1" Width="100"/>
-                                <Border Grid.Column="3" Grid.Row="1" BorderThickness="0,0,0,2" BorderBrush="Black">
-                                    <Viewbox>
-                                        <TextBlock Text="СОЗДАЙ СВОЙ КУЛИНАРНЫЙ ШЕДЕВР" HorizontalAlignment="Center"/>
-                                    </Viewbox>
-                                </Border>
-                                <Viewbox Grid.Column="4" Grid.Row="1">
-                                    <Button Content="★" Background="Transparent" BorderBrush="Transparent"/>
-                                </Viewbox>
-                                <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
-                            </Grid>
-                        </Button>
-                    </Grid>
-                    <Grid Grid.Row="7">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="48*" />
-                            <ColumnDefinition Width="4*" />
-                            <ColumnDefinition Width="48*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="10*" />
-                            <RowDefinition Height="80*" />
-                            <RowDefinition Height="10*" />
-                        </Grid.RowDefinitions>
-
-                        <Viewbox Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right">
-                            <Button BorderThickness="0" Background="Transparent" Content="❮"/>
-                        </Viewbox>
-
-                        <Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <TextBlock Text="1"/>
-                        </Viewbox>
-
-                        <Viewbox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left">
-                            <Button BorderThickness="0" Background="Transparent" Content="❯"/>
-                        </Viewbox>
-                    </Grid>
-                </Grid>
+                <ListView x:Name="catalogueListView"
+                          SelectionChanged="catalogueListView_SelectionChanged">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    
+                </ListView>
             </Grid>
 
 
             <!--Добавить-->
-            <Grid x:Name="add_recipe" Visibility="Visible"><!--{Binding AddRecipeVisibility}-->
+            <Grid x:Name="add_recipe" Visibility="Collapsed"><!--{Binding AddRecipeVisibility}-->
                 <Grid.RowDefinitions>
                     <RowDefinition Height="4*"/>
                     <RowDefinition Height="85*"/>

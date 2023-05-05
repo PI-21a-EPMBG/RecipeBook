@@ -16,14 +16,10 @@ namespace RecipeBook
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void catalogueListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
-
-        //private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
-        //{
-        //    textBlock.InvalidateVisual();
-        //}
     }
 }
