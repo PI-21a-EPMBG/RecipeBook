@@ -35,14 +35,14 @@ namespace RecipeBookWF
         public MainForm()
         {
             InitializeComponent();
-            _isEdited = false;
+            IsEdited = false;
             _recipes = new BindingList<Recipe>();
             _favorites = new BindingList<Recipe>();
 
             listBox.DataSource = _recipes;
             listBox_favourites.DataSource = _favorites;
 
-            Text = "Книга без названия | Кулинарная книга";
+            //Text = "Книга без названия | Кулинарная книга";
             saveFileDialog.Filter = "Книга рецептов|*.book";
             openFileDialog.Filter = "Книга рецептов|*.book";
 
@@ -51,26 +51,6 @@ namespace RecipeBookWF
             AddToFavoritesButton.Enabled = false;
             RemoveFromFavoritesButton.Enabled = false;
         }
-        private void DeleteRecipeCatalogueMenuButton_Click(object sender, EventArgs e)
-        {
-            if(_recipes.Count == 0)
-            {
-                MessageBox.Show("Для удаление требуется добавить минимум 1 рецепт из списка", "Не добавлен рецепт",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (_selectedIndex < 0)
-            {
-                MessageBox.Show("Для удаление требуется выбрать минимум 1 рецепт из списка", "Не выбран рецепт", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            _recipes.RemoveAt(_selectedIndex);
-            IsEdited = true;
-        }
-
 
         private void LoadMenuButton_Click(object sender, EventArgs e)
         {
@@ -100,6 +80,7 @@ namespace RecipeBookWF
                 var recipes = JsonConvert.DeserializeObject<List<Recipe>>(json);
 
                 _recipes.Clear();
+                _favorites.Clear();
                 foreach (var recipe in recipes)
                 {
                     _recipes.Add(new Recipe(recipe));
@@ -117,6 +98,9 @@ namespace RecipeBookWF
 
             AddToFavoritesButton.Enabled = false;
             editRecipeButton.Enabled = false;
+
+            MessageBox.Show("Книга успешно открыта из файла '" + _fileName.Split('\\').Last() + "'", "Открытие книги",
+               MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         private void Save()
@@ -138,10 +122,7 @@ namespace RecipeBookWF
 
         private void UpdateHeader()
         {            
-            var path = _fileName == null ? new string[] {"Книга без названия"} : _fileName.Split('\\');
-
-
-            var fileName = path.Last();
+            var fileName = _fileName == null ? "Книга без названия" : _fileName.Split('\\').Last();
 
             Text = _isEdited ? 
                 "* " + fileName + " | Кулинарная книга" : 
@@ -151,6 +132,8 @@ namespace RecipeBookWF
         private void SaveMenuButton_Click(object sender, EventArgs e)
         {
             Save();
+            MessageBox.Show("Книга успешно сохранена в файл '" + _fileName.Split('\\').Last() + "'", "Сохранение книги",
+               MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
 
@@ -286,5 +269,57 @@ namespace RecipeBookWF
             editRecipeButton.Enabled = false;
             editRecipeButton_favourites.Enabled = false;
         }
+
+        private void CreateNewBookButton_Click(object sender, EventArgs e)
+        {
+            if (_isEdited)
+            {
+                var choice = MessageBox.Show("Вы не сохранили изменения. Хотите ли сохранить сейчас?", "Сохранение", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (choice == DialogResult.Yes)
+                {
+                    Save();
+                }
+                else if (choice == DialogResult.Cancel)
+                {
+                    return;
+                }
+            }
+
+            _recipes.Clear();
+            _favorites.Clear();
+            ClearSelect();
+            _isEdited = false;
+        }
+
+        private void RemoveRecipeButton_Click(object sender, EventArgs e)
+        {
+
+            if (_recipes.Count == 0)
+            {
+                MessageBox.Show("Для удаление требуется добавить минимум 1 рецепт из списка", "Не добавлен рецепт",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (_selectedRecipe == null)
+            {
+                MessageBox.Show("Для удаление требуется выбрать минимум 1 рецепт из списка", "Не выбран рецепт",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            IsEdited = true;
+
+            if (_selectedRecipe.IsFavorite) 
+                _favorites.Remove(_selectedRecipe);
+
+            _recipes.Remove(_selectedRecipe);
+            
+            ClearSelect();
+
+            MessageBox.Show("Рецепт успешно удалён", "Удаление рецепта", 
+                MessageBoxButtons.OK, MessageBoxIcon.Question);
+            
+        }
+
     }
 }

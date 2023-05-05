@@ -30,9 +30,13 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CreateNewBookButton = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadMenuButton = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveMenuButton = new System.Windows.Forms.ToolStripMenuItem();
             this.CloseMenuButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.каталогToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CreateRecipeCatalogueButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.RemoveRecipeButton = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -52,9 +56,6 @@
             this.listBox = new System.Windows.Forms.ListBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.CreateRecipeCatalogueButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -72,9 +73,6 @@
             this.listBox_favourites = new System.Windows.Forms.ListBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.menuStrip3 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
@@ -87,7 +85,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.recipePictureBox)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.menuStrip2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -95,13 +92,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.recipePictureBox_favourites)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.menuStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem});
+            this.файлToolStripMenuItem,
+            this.каталогToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1101, 24);
@@ -111,6 +108,7 @@
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CreateNewBookButton,
             this.LoadMenuButton,
             this.SaveMenuButton,
             this.CloseMenuButton});
@@ -118,25 +116,55 @@
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
+            // CreateNewBookButton
+            // 
+            this.CreateNewBookButton.Name = "CreateNewBookButton";
+            this.CreateNewBookButton.Size = new System.Drawing.Size(190, 22);
+            this.CreateNewBookButton.Text = "Создать новую книгу";
+            this.CreateNewBookButton.Click += new System.EventHandler(this.CreateNewBookButton_Click);
+            // 
             // LoadMenuButton
             // 
             this.LoadMenuButton.Name = "LoadMenuButton";
-            this.LoadMenuButton.Size = new System.Drawing.Size(133, 22);
-            this.LoadMenuButton.Text = "Загрузить";
+            this.LoadMenuButton.Size = new System.Drawing.Size(190, 22);
+            this.LoadMenuButton.Text = "Открыть";
             this.LoadMenuButton.Click += new System.EventHandler(this.LoadMenuButton_Click);
             // 
             // SaveMenuButton
             // 
             this.SaveMenuButton.Name = "SaveMenuButton";
-            this.SaveMenuButton.Size = new System.Drawing.Size(133, 22);
+            this.SaveMenuButton.Size = new System.Drawing.Size(190, 22);
             this.SaveMenuButton.Text = "Сохранить";
             this.SaveMenuButton.Click += new System.EventHandler(this.SaveMenuButton_Click);
             // 
             // CloseMenuButton
             // 
             this.CloseMenuButton.Name = "CloseMenuButton";
-            this.CloseMenuButton.Size = new System.Drawing.Size(133, 22);
+            this.CloseMenuButton.Size = new System.Drawing.Size(190, 22);
             this.CloseMenuButton.Text = "Выход";
+            // 
+            // каталогToolStripMenuItem
+            // 
+            this.каталогToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CreateRecipeCatalogueButton,
+            this.RemoveRecipeButton});
+            this.каталогToolStripMenuItem.Name = "каталогToolStripMenuItem";
+            this.каталогToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.каталогToolStripMenuItem.Text = "Каталог";
+            // 
+            // CreateRecipeCatalogueButton
+            // 
+            this.CreateRecipeCatalogueButton.Name = "CreateRecipeCatalogueButton";
+            this.CreateRecipeCatalogueButton.Size = new System.Drawing.Size(126, 22);
+            this.CreateRecipeCatalogueButton.Text = "Добавить";
+            this.CreateRecipeCatalogueButton.Click += new System.EventHandler(this.CreateRecipeCatalogueButton_Click);
+            // 
+            // RemoveRecipeButton
+            // 
+            this.RemoveRecipeButton.Name = "RemoveRecipeButton";
+            this.RemoveRecipeButton.Size = new System.Drawing.Size(126, 22);
+            this.RemoveRecipeButton.Text = "Удалить";
+            this.RemoveRecipeButton.Click += new System.EventHandler(this.RemoveRecipeButton_Click);
             // 
             // panel1
             // 
@@ -174,7 +202,6 @@
             // 
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.menuStrip2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
@@ -185,9 +212,9 @@
             // 
             this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(215, 24);
+            this.panel3.Location = new System.Drawing.Point(215, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(872, 648);
+            this.panel3.Size = new System.Drawing.Size(872, 672);
             this.panel3.TabIndex = 9;
             // 
             // tableLayoutPanel1
@@ -214,7 +241,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.024692F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.90124F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.32716F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(872, 648);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(872, 672);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -222,7 +249,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(3, 146);
+            this.label1.Location = new System.Drawing.Point(3, 152);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 20);
             this.label1.TabIndex = 1;
@@ -233,7 +260,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(165, 146);
+            this.label2.Location = new System.Drawing.Point(165, 152);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 20);
             this.label2.TabIndex = 3;
@@ -242,7 +269,7 @@
             // cookingTimeTextBox
             // 
             this.cookingTimeTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cookingTimeTextBox.Location = new System.Drawing.Point(702, 138);
+            this.cookingTimeTextBox.Location = new System.Drawing.Point(702, 144);
             this.cookingTimeTextBox.Name = "cookingTimeTextBox";
             this.cookingTimeTextBox.ReadOnly = true;
             this.cookingTimeTextBox.Size = new System.Drawing.Size(167, 25);
@@ -252,7 +279,7 @@
             // editRecipeButton
             // 
             this.editRecipeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.editRecipeButton.Location = new System.Drawing.Point(730, 619);
+            this.editRecipeButton.Location = new System.Drawing.Point(730, 643);
             this.editRecipeButton.Name = "editRecipeButton";
             this.editRecipeButton.Size = new System.Drawing.Size(139, 26);
             this.editRecipeButton.TabIndex = 7;
@@ -263,7 +290,7 @@
             // AddToFavoritesButton
             // 
             this.AddToFavoritesButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AddToFavoritesButton.Location = new System.Drawing.Point(541, 619);
+            this.AddToFavoritesButton.Location = new System.Drawing.Point(541, 643);
             this.AddToFavoritesButton.Name = "AddToFavoritesButton";
             this.AddToFavoritesButton.Size = new System.Drawing.Size(155, 26);
             this.AddToFavoritesButton.TabIndex = 8;
@@ -274,10 +301,10 @@
             // recipeIngridientsTextBox
             // 
             this.recipeIngridientsTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.recipeIngridientsTextBox.Location = new System.Drawing.Point(3, 169);
+            this.recipeIngridientsTextBox.Location = new System.Drawing.Point(3, 175);
             this.recipeIngridientsTextBox.Name = "recipeIngridientsTextBox";
             this.recipeIngridientsTextBox.ReadOnly = true;
-            this.recipeIngridientsTextBox.Size = new System.Drawing.Size(156, 434);
+            this.recipeIngridientsTextBox.Size = new System.Drawing.Size(156, 451);
             this.recipeIngridientsTextBox.TabIndex = 9;
             this.recipeIngridientsTextBox.Text = "";
             // 
@@ -286,10 +313,10 @@
             this.tableLayoutPanel1.SetColumnSpan(this.recipeDescriptionTextBox, 3);
             this.recipeDescriptionTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.recipeDescriptionTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.recipeDescriptionTextBox.Location = new System.Drawing.Point(165, 169);
+            this.recipeDescriptionTextBox.Location = new System.Drawing.Point(165, 175);
             this.recipeDescriptionTextBox.Name = "recipeDescriptionTextBox";
             this.recipeDescriptionTextBox.ReadOnly = true;
-            this.recipeDescriptionTextBox.Size = new System.Drawing.Size(704, 434);
+            this.recipeDescriptionTextBox.Size = new System.Drawing.Size(704, 451);
             this.recipeDescriptionTextBox.TabIndex = 10;
             this.recipeDescriptionTextBox.Text = "";
             // 
@@ -297,7 +324,7 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.recipeName, 3);
             this.recipeName.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.recipeName.Location = new System.Drawing.Point(165, 63);
+            this.recipeName.Location = new System.Drawing.Point(165, 67);
             this.recipeName.Multiline = true;
             this.recipeName.Name = "recipeName";
             this.recipeName.ReadOnly = true;
@@ -309,7 +336,7 @@
             this.recipePictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recipePictureBox.Location = new System.Drawing.Point(3, 3);
             this.recipePictureBox.Name = "recipePictureBox";
-            this.recipePictureBox.Size = new System.Drawing.Size(156, 108);
+            this.recipePictureBox.Size = new System.Drawing.Size(156, 112);
             this.recipePictureBox.TabIndex = 12;
             this.recipePictureBox.TabStop = false;
             // 
@@ -318,9 +345,9 @@
             this.panel4.Controls.Add(this.listBox);
             this.panel4.Controls.Add(this.panel9);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 24);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(215, 648);
+            this.panel4.Size = new System.Drawing.Size(215, 672);
             this.panel4.TabIndex = 8;
             // 
             // listBox
@@ -329,7 +356,7 @@
             this.listBox.FormattingEnabled = true;
             this.listBox.Location = new System.Drawing.Point(0, 32);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(215, 616);
+            this.listBox.Size = new System.Drawing.Size(215, 640);
             this.listBox.TabIndex = 3;
             this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
@@ -353,31 +380,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Рецепты";
             // 
-            // menuStrip2
-            // 
-            this.menuStrip2.BackColor = System.Drawing.Color.White;
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CreateRecipeCatalogueButton,
-            this.toolStripMenuItem6});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1087, 24);
-            this.menuStrip2.TabIndex = 7;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
-            // CreateRecipeCatalogueButton
-            // 
-            this.CreateRecipeCatalogueButton.Name = "CreateRecipeCatalogueButton";
-            this.CreateRecipeCatalogueButton.Size = new System.Drawing.Size(71, 20);
-            this.CreateRecipeCatalogueButton.Text = "Добавить";
-            this.CreateRecipeCatalogueButton.Click += new System.EventHandler(this.CreateRecipeCatalogueButton_Click);
-            // 
-            // toolStripMenuItem6
-            // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(63, 20);
-            this.toolStripMenuItem6.Text = "Удалить";
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel5);
@@ -393,7 +395,6 @@
             // 
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.panel7);
-            this.panel5.Controls.Add(this.menuStrip3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
@@ -404,9 +405,9 @@
             // 
             this.panel6.Controls.Add(this.tableLayoutPanel6);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(215, 24);
+            this.panel6.Location = new System.Drawing.Point(215, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(872, 648);
+            this.panel6.Size = new System.Drawing.Size(872, 672);
             this.panel6.TabIndex = 9;
             // 
             // tableLayoutPanel6
@@ -433,7 +434,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.024692F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.90124F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.32716F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(872, 648);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(872, 672);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // label4
@@ -441,7 +442,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(3, 146);
+            this.label4.Location = new System.Drawing.Point(3, 152);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 20);
             this.label4.TabIndex = 1;
@@ -452,7 +453,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(165, 146);
+            this.label5.Location = new System.Drawing.Point(165, 152);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 20);
             this.label5.TabIndex = 3;
@@ -461,7 +462,7 @@
             // cookingTimeTextBox_favorites
             // 
             this.cookingTimeTextBox_favorites.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cookingTimeTextBox_favorites.Location = new System.Drawing.Point(702, 138);
+            this.cookingTimeTextBox_favorites.Location = new System.Drawing.Point(702, 144);
             this.cookingTimeTextBox_favorites.Name = "cookingTimeTextBox_favorites";
             this.cookingTimeTextBox_favorites.ReadOnly = true;
             this.cookingTimeTextBox_favorites.Size = new System.Drawing.Size(167, 25);
@@ -471,7 +472,7 @@
             // editRecipeButton_favourites
             // 
             this.editRecipeButton_favourites.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.editRecipeButton_favourites.Location = new System.Drawing.Point(730, 619);
+            this.editRecipeButton_favourites.Location = new System.Drawing.Point(730, 643);
             this.editRecipeButton_favourites.Name = "editRecipeButton_favourites";
             this.editRecipeButton_favourites.Size = new System.Drawing.Size(139, 26);
             this.editRecipeButton_favourites.TabIndex = 7;
@@ -481,7 +482,7 @@
             // RemoveFromFavoritesButton
             // 
             this.RemoveFromFavoritesButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.RemoveFromFavoritesButton.Location = new System.Drawing.Point(541, 619);
+            this.RemoveFromFavoritesButton.Location = new System.Drawing.Point(541, 643);
             this.RemoveFromFavoritesButton.Name = "RemoveFromFavoritesButton";
             this.RemoveFromFavoritesButton.Size = new System.Drawing.Size(155, 26);
             this.RemoveFromFavoritesButton.TabIndex = 8;
@@ -492,10 +493,10 @@
             // recipeIngridientsTextBox_favourites
             // 
             this.recipeIngridientsTextBox_favourites.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.recipeIngridientsTextBox_favourites.Location = new System.Drawing.Point(3, 169);
+            this.recipeIngridientsTextBox_favourites.Location = new System.Drawing.Point(3, 175);
             this.recipeIngridientsTextBox_favourites.Name = "recipeIngridientsTextBox_favourites";
             this.recipeIngridientsTextBox_favourites.ReadOnly = true;
-            this.recipeIngridientsTextBox_favourites.Size = new System.Drawing.Size(156, 434);
+            this.recipeIngridientsTextBox_favourites.Size = new System.Drawing.Size(156, 451);
             this.recipeIngridientsTextBox_favourites.TabIndex = 9;
             this.recipeIngridientsTextBox_favourites.Text = "";
             // 
@@ -504,10 +505,10 @@
             this.tableLayoutPanel6.SetColumnSpan(this.recipeDescriptionTextBox_favourites, 3);
             this.recipeDescriptionTextBox_favourites.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.recipeDescriptionTextBox_favourites.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.recipeDescriptionTextBox_favourites.Location = new System.Drawing.Point(165, 169);
+            this.recipeDescriptionTextBox_favourites.Location = new System.Drawing.Point(165, 175);
             this.recipeDescriptionTextBox_favourites.Name = "recipeDescriptionTextBox_favourites";
             this.recipeDescriptionTextBox_favourites.ReadOnly = true;
-            this.recipeDescriptionTextBox_favourites.Size = new System.Drawing.Size(704, 434);
+            this.recipeDescriptionTextBox_favourites.Size = new System.Drawing.Size(704, 451);
             this.recipeDescriptionTextBox_favourites.TabIndex = 10;
             this.recipeDescriptionTextBox_favourites.Text = "";
             // 
@@ -515,7 +516,7 @@
             // 
             this.tableLayoutPanel6.SetColumnSpan(this.recipeName_favourites, 3);
             this.recipeName_favourites.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.recipeName_favourites.Location = new System.Drawing.Point(165, 63);
+            this.recipeName_favourites.Location = new System.Drawing.Point(165, 67);
             this.recipeName_favourites.Multiline = true;
             this.recipeName_favourites.Name = "recipeName_favourites";
             this.recipeName_favourites.ReadOnly = true;
@@ -527,7 +528,7 @@
             this.recipePictureBox_favourites.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recipePictureBox_favourites.Location = new System.Drawing.Point(3, 3);
             this.recipePictureBox_favourites.Name = "recipePictureBox_favourites";
-            this.recipePictureBox_favourites.Size = new System.Drawing.Size(156, 108);
+            this.recipePictureBox_favourites.Size = new System.Drawing.Size(156, 112);
             this.recipePictureBox_favourites.TabIndex = 12;
             this.recipePictureBox_favourites.TabStop = false;
             // 
@@ -536,9 +537,9 @@
             this.panel7.Controls.Add(this.listBox_favourites);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.Location = new System.Drawing.Point(0, 24);
+            this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(215, 648);
+            this.panel7.Size = new System.Drawing.Size(215, 672);
             this.panel7.TabIndex = 8;
             // 
             // listBox_favourites
@@ -547,7 +548,7 @@
             this.listBox_favourites.FormattingEnabled = true;
             this.listBox_favourites.Location = new System.Drawing.Point(0, 32);
             this.listBox_favourites.Name = "listBox_favourites";
-            this.listBox_favourites.Size = new System.Drawing.Size(215, 616);
+            this.listBox_favourites.Size = new System.Drawing.Size(215, 640);
             this.listBox_favourites.TabIndex = 3;
             this.listBox_favourites.SelectedIndexChanged += new System.EventHandler(this.listBox_favourites_SelectedIndexChanged);
             // 
@@ -571,30 +572,6 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Избранные рецепты";
             // 
-            // menuStrip3
-            // 
-            this.menuStrip3.BackColor = System.Drawing.Color.White;
-            this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem3});
-            this.menuStrip3.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(1087, 24);
-            this.menuStrip3.TabIndex = 7;
-            this.menuStrip3.Text = "menuStrip3";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(71, 20);
-            this.toolStripMenuItem1.Text = "Добавить";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(63, 20);
-            this.toolStripMenuItem3.Text = "Удалить";
-            // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog1";
@@ -616,7 +593,6 @@
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -624,11 +600,8 @@
             this.panel4.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
@@ -636,8 +609,6 @@
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.menuStrip3.ResumeLayout(false);
-            this.menuStrip3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -662,9 +633,6 @@
         private System.Windows.Forms.ListBox listBox_favourites;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.MenuStrip menuStrip3;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -691,9 +659,10 @@
         private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem каталогToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CreateRecipeCatalogueButton;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem RemoveRecipeButton;
+        private System.Windows.Forms.ToolStripMenuItem CreateNewBookButton;
     }
 }
 
