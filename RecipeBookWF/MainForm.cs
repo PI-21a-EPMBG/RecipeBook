@@ -48,6 +48,12 @@ namespace RecipeBookWF
             editRecipeButton_favourites.Enabled = false;
             AddToFavoritesButton.Enabled = false;
             RemoveFromFavoritesButton.Enabled = false;
+
+            listBox.SelectedIndex = -1;
+            listBox_favourites.SelectedIndex = -1;
+            _selectedIndex = 1;
+
+            ClearSelect();
         }
         private void LoadMenuButton_Click(object sender, EventArgs e)
         {
@@ -95,6 +101,12 @@ namespace RecipeBookWF
 
             AddToFavoritesButton.Enabled = false;
             editRecipeButton.Enabled = false;
+            
+
+            listBox.SelectedIndex = -1;
+            listBox_favourites.SelectedIndex = -1;
+
+            ClearSelect();
 
             MessageBox.Show("Книга успешно открыта из файла '" + _fileName.Split('\\').Last() + "'", "Открытие книги",
                MessageBoxButtons.OK, MessageBoxIcon.Question);
@@ -148,13 +160,14 @@ namespace RecipeBookWF
         {
             _favorites.Add(_selectedRecipe);
             _selectedRecipe.IsFavorite = true;
-            ClearSelect();
+            AddToFavoritesButton.Enabled = false;
+            //ClearSelect();
         }
         private void RemoveFromFavoritesButton_Click(object sender, EventArgs e)
         {
             _favorites.Remove(_selectedRecipe);
             _selectedRecipe.IsFavorite = false;
-            ClearSelect();
+            //ClearSelect();
         }
         private void CreateRecipeCatalogueButton_Click(object sender, EventArgs e)
         {
@@ -168,7 +181,6 @@ namespace RecipeBookWF
                 IsEdited = true;
             }
         }
-
         private void editRecipeButton_Click(object sender, EventArgs e)
         {
             if (!recipeName.ReadOnly)
@@ -183,15 +195,16 @@ namespace RecipeBookWF
 
             ToggleReadOnlyMode();
         }
-
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = listBox.SelectedIndex;
+            if (index == _selectedIndex) return;
 
             if (!recipeName.ReadOnly)
             {
                 if (MessageBox.Show("Вы не сохранили рецепт. Продолжить?", "Несохранённые изменения", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
+                    listBox.SelectedIndex = _selectedIndex;
                     return;
                 }
                 else
@@ -200,11 +213,19 @@ namespace RecipeBookWF
                 }
             }
 
-            if (index == -1) return;
+            if (index == -1)
+            {
+                //listBox.SelectedIndex = 0;
+                return;
+            }
 
+            TurnOffBlackout();
+
+            _selectedIndex = index;
             _selectedRecipe = (Recipe)listBox.Items[index];
 
-            AddToFavoritesButton.Enabled = true;
+            AddToFavoritesButton.Enabled = !_selectedRecipe.IsFavorite;
+
             editRecipeButton.Enabled = true;
 
             recipeName.Text = _selectedRecipe.Name;
@@ -215,11 +236,13 @@ namespace RecipeBookWF
         private void listBox_favourites_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = listBox_favourites.SelectedIndex;
+            if (index == _selectedIndex) return;
 
             if (!recipeName_favourites.ReadOnly)
             {
                 if (MessageBox.Show("Вы не сохранили рецепт. Продолжить?", "Несохранённые изменения", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
+                    listBox_favourites.SelectedIndex = _selectedIndex;
                     return;
                 }
                 else
@@ -228,8 +251,16 @@ namespace RecipeBookWF
                 }
             }
 
-            if (index == -1) return;
+            if (index == -1)
+            {
+                //listBox_favourites.SelectedIndex = 0;
+                return;
+            }
 
+            TurnOffBlackout();
+            
+
+            _selectedIndex = index;
             _selectedRecipe = (Recipe)listBox_favourites.Items[index];
 
             RemoveFromFavoritesButton.Enabled = true;
@@ -249,6 +280,10 @@ namespace RecipeBookWF
         private void ClearSelect()
         {
             _selectedRecipe = null;
+            _selectedIndex = -2;
+
+            listBox.SelectedIndex = -1;
+            listBox_favourites.SelectedIndex = -1;
 
             recipeName.Text = string.Empty;
             recipeDescriptionTextBox.Text = string.Empty;
@@ -263,8 +298,77 @@ namespace RecipeBookWF
             AddToFavoritesButton.Enabled = false;
             RemoveFromFavoritesButton.Enabled = false;
 
-            editRecipeButton.Enabled = false;
-            editRecipeButton_favourites.Enabled = false;
+            blackout.Visible = true;
+            blackoutFavorites.Visible = true;
+
+            recipeName.Enabled = false;
+            recipeIngridientsTextBox.Enabled = false;
+            recipeDescriptionTextBox.Enabled = false;  
+            recipeIngridientsTextBox.Enabled = false;
+            cookingTimeTextBox.Enabled = false;
+            recipePictureBox.Enabled = false;
+
+            recipeName.Visible = false;
+            cookingTimeTextBox.Visible = false;
+            recipeIngridientsTextBox.Visible = false; label1.Visible = false;
+            recipeDescriptionTextBox.Visible = false; label2.Visible = false;
+            cookingTimeTextBox.Visible = false;
+            recipePictureBox.Visible = false;
+
+            recipeName_favourites.Enabled = false;
+            recipeIngridientsTextBox_favourites.Enabled = false;
+            recipeDescriptionTextBox_favourites.Enabled = false;
+            recipeIngridientsTextBox_favourites.Enabled = false;
+            cookingTimeTextBox_favorites.Enabled = false;
+            recipePictureBox_favourites.Enabled = false;
+
+            recipeName_favourites.Visible = false;
+            cookingTimeTextBox_favorites.Visible = false;
+            recipeIngridientsTextBox_favourites.Visible = false; label4.Visible = false;
+            recipeDescriptionTextBox_favourites.Visible = false; label5.Visible = false;
+            cookingTimeTextBox_favorites.Visible = false;
+            recipePictureBox_favourites.Visible = false;
+
+            editRecipeButton_favourites.Visible = false;
+            RemoveFromFavoritesButton.Visible = false;
+        }
+
+        private void TurnOffBlackout()
+        {
+            blackout.Visible = false;
+            blackoutFavorites.Visible = false;
+
+            recipeName.Enabled = true;
+            recipeIngridientsTextBox.Enabled = true;
+            recipeDescriptionTextBox.Enabled = true;
+            recipeIngridientsTextBox.Enabled = true;
+            cookingTimeTextBox.Enabled = true;
+            recipePictureBox.Enabled = true;
+
+            recipeName.Visible = true;
+            cookingTimeTextBox.Visible = true;
+            recipeIngridientsTextBox.Visible = true; label1.Visible = true;
+            recipeDescriptionTextBox.Visible = true; label2.Visible = true;
+            cookingTimeTextBox.Visible = true;
+            recipePictureBox.Visible = true;
+
+
+            recipeName_favourites.Enabled = true;
+            recipeIngridientsTextBox_favourites.Enabled = true;
+            recipeDescriptionTextBox_favourites.Enabled = true;
+            recipeIngridientsTextBox_favourites.Enabled = true;
+            cookingTimeTextBox_favorites.Enabled = true;
+            recipePictureBox_favourites.Enabled = true;
+
+            recipeName_favourites.Visible = true;
+            cookingTimeTextBox_favorites.Visible = true;
+            recipeIngridientsTextBox_favourites.Visible = true; label4.Visible = true;
+            recipeDescriptionTextBox_favourites.Visible = true; label5.Visible = true;
+            cookingTimeTextBox_favorites.Visible = true;
+            recipePictureBox_favourites.Visible = true;
+
+            editRecipeButton_favourites.Visible = true;
+            RemoveFromFavoritesButton.Visible = true;
         }
 
         private void CreateNewBookButton_Click(object sender, EventArgs e)
@@ -317,6 +421,17 @@ namespace RecipeBookWF
                 MessageBoxButtons.OK, MessageBoxIcon.Question);
 
         }
+
+
+        // ПИСАЛ МАКСИМ БОГОМОЛОВ
+        //          |
+        //          |
+        //          |
+        //          |   
+        //       \  |  /
+        //        \ | /
+        //         \|/
+        //          v
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

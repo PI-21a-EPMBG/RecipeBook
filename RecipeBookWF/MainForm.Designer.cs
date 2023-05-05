@@ -78,7 +78,7 @@ namespace RecipeBookWF
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.blackout = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.blackoutFavorites = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -97,7 +97,7 @@ namespace RecipeBookWF
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.blackout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blackoutFavorites)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -411,7 +411,7 @@ namespace RecipeBookWF
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.pictureBox1);
+            this.panel6.Controls.Add(this.blackoutFavorites);
             this.panel6.Controls.Add(this.tableLayoutPanel6);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(215, 0);
@@ -588,23 +588,25 @@ namespace RecipeBookWF
             // blackout
             // 
             this.blackout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.blackout.Enabled = false;
             this.blackout.Location = new System.Drawing.Point(0, 0);
             this.blackout.Name = "blackout";
             this.blackout.Size = new System.Drawing.Size(872, 672);
             this.blackout.TabIndex = 1;
             this.blackout.TabStop = false;
+            this.blackout.Visible = false;
             this.blackout.Click += new System.EventHandler(this.pictureBox1_Click_1);
             this.blackout.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             // 
-            // pictureBox1
+            // blackoutFavorites
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(872, 672);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint_1);
+            this.blackoutFavorites.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.blackoutFavorites.Location = new System.Drawing.Point(0, 0);
+            this.blackoutFavorites.Name = "blackoutFavorites";
+            this.blackoutFavorites.Size = new System.Drawing.Size(872, 672);
+            this.blackoutFavorites.TabIndex = 2;
+            this.blackoutFavorites.TabStop = false;
+            this.blackoutFavorites.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint_1);
             // 
             // MainForm
             // 
@@ -640,7 +642,7 @@ namespace RecipeBookWF
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.blackout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blackoutFavorites)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -696,7 +698,7 @@ namespace RecipeBookWF
         private System.Windows.Forms.ToolStripMenuItem RemoveRecipeButton;
         private System.Windows.Forms.ToolStripMenuItem CreateNewBookButton;
         private System.Windows.Forms.PictureBox blackout;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox blackoutFavorites;
     }
 }
 
