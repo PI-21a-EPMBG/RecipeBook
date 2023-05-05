@@ -25,6 +25,8 @@ namespace RecipeBookWF
             _isEdited = false;
             _recipes = new BindingList<Recipe>();
 
+            listBox.DataSource = _recipes;
+
             //dataGrid.DataSource = _recipes;
 
             //dataGrid.Columns["Name"].HeaderText = "Название";
@@ -56,7 +58,6 @@ namespace RecipeBookWF
             {
                 _isEdited=true;
                 _recipes.Add(new Recipe(view.Recipe));
-                //dataGrid.Update();
                 UpdateHeader();
             }
         }
@@ -85,13 +86,18 @@ namespace RecipeBookWF
             try
             {
                 var json = File.ReadAllText(_fileName);
-                _recipes = (BindingList<Recipe>)JsonConvert.DeserializeObject(json);
+                var recipes = JsonConvert.DeserializeObject<List<Recipe>>(json);
+
+                _recipes.Clear();
+                foreach (var recipe in recipes)
+                {
+                    _recipes.Add(new Recipe(recipe));
+                }
             }
             catch (Exception)
             {
                 MessageBox.Show("Не удалось прочитать файл");
             }
-            
         }
 
         private void Save()
@@ -106,9 +112,11 @@ namespace RecipeBookWF
 
             _fileName = saveFileDialog.FileName;
 
-            var json = JsonConvert.SerializeObject(_recipes);
-
+            var recipes = _recipes.ToList();
+            var json = JsonConvert.SerializeObject(recipes, Formatting.Indented);
             File.WriteAllText(_fileName, json);
+
+            UpdateHeader();
         }
 
         private void UpdateHeader()
@@ -121,6 +129,11 @@ namespace RecipeBookWF
         private void dataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void SaveMenuButton_Click(object sender, EventArgs e)
+        {
+            Save();
         }
     }
 }
