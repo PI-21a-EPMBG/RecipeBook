@@ -75,7 +75,7 @@
             // name
             // 
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(13, 59);
+            this.name.Location = new System.Drawing.Point(31, 62);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(57, 13);
             this.name.TabIndex = 4;
@@ -84,20 +84,22 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 107);
+            this.label3.Location = new System.Drawing.Point(8, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 39);
             this.label3.TabIndex = 5;
             this.label3.Text = "Ингридиенты:\r\n(писать через \r\nзапятую)";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 219);
+            this.label4.Location = new System.Drawing.Point(45, 219);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Рецепт";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // CancelButton
             // 

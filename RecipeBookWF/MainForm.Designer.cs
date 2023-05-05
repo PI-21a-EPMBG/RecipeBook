@@ -30,9 +30,9 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LoadMenuButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveMenuButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.CloseMenuButton = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -42,6 +42,8 @@
             this.EditRecipeCatalogueButton = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteCatalogueMenuButton = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -63,30 +65,31 @@
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.загрузитьToolStripMenuItem,
-            this.сохранитьToolStripMenuItem,
-            this.выходToolStripMenuItem});
+            this.LoadMenuButton,
+            this.SaveMenuButton,
+            this.CloseMenuButton});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
-            // загрузитьToolStripMenuItem
+            // LoadMenuButton
             // 
-            this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.загрузитьToolStripMenuItem.Text = "Загрузить";
+            this.LoadMenuButton.Name = "LoadMenuButton";
+            this.LoadMenuButton.Size = new System.Drawing.Size(133, 22);
+            this.LoadMenuButton.Text = "Загрузить";
+            this.LoadMenuButton.Click += new System.EventHandler(this.LoadMenuButton_Click);
             // 
-            // сохранитьToolStripMenuItem
+            // SaveMenuButton
             // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            this.SaveMenuButton.Name = "SaveMenuButton";
+            this.SaveMenuButton.Size = new System.Drawing.Size(133, 22);
+            this.SaveMenuButton.Text = "Сохранить";
             // 
-            // выходToolStripMenuItem
+            // CloseMenuButton
             // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.выходToolStripMenuItem.Text = "Выход";
+            this.CloseMenuButton.Name = "CloseMenuButton";
+            this.CloseMenuButton.Size = new System.Drawing.Size(133, 22);
+            this.CloseMenuButton.Text = "Выход";
             // 
             // panel1
             // 
@@ -126,9 +129,11 @@
             this.dataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGrid.Location = new System.Drawing.Point(3, 27);
             this.dataGrid.Name = "dataGrid";
+            this.dataGrid.ReadOnly = true;
+            this.dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrid.Size = new System.Drawing.Size(786, 370);
             this.dataGrid.TabIndex = 1;
-            this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick);
+            this.dataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellClick);
             // 
             // menuStrip2
             // 
@@ -173,7 +178,11 @@
             this.tabPage2.Text = "Избранное";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -181,7 +190,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Кулинарная книга";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -201,9 +210,9 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem LoadMenuButton;
+        private System.Windows.Forms.ToolStripMenuItem SaveMenuButton;
+        private System.Windows.Forms.ToolStripMenuItem CloseMenuButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPage1;
@@ -213,6 +222,8 @@
         private System.Windows.Forms.ToolStripMenuItem EditRecipeCatalogueButton;
         private System.Windows.Forms.ToolStripMenuItem deleteCatalogueMenuButton;
         private System.Windows.Forms.ToolStripMenuItem CreateRecipeCatalogueButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
 

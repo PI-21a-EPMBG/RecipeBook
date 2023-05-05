@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RecipeBookWF.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,14 +14,15 @@ namespace RecipeBookWF
     public partial class CreateRecipe : Form
     {
 
-        public bool Created; 
+        public Recipe Recipe { get; private set; }
+        public bool Result; 
 
         public CreateRecipe()
         {
             InitializeComponent();
             Name = "Добавление рецепта в книгу";
 
-            Created = false;
+            Result = false;
 
             // Ресайз
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -43,8 +45,18 @@ namespace RecipeBookWF
                 return;
             }
 
+            var name = nameTextBox.Text;
+            var ingridients = ingridientsTextBox.Text.Split(',').ToList();
+            var description = recipeTextBox.Text;
 
-            var ingridients = ingridientsTextBox.Text.Split(new char[] { ',' }).ToList();
+            Recipe = new Recipe
+            {
+                Name = name,
+                Ingridients = ingridients,
+                Description = description
+            };
+            Result = true;
+            this.Close();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
