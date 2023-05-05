@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.recipeTextBox = new System.Windows.Forms.RichTextBox();
+            this.ingridientsTextBox = new System.Windows.Forms.RichTextBox();
             this.name = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,28 +49,28 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Добавить рецепт";
             // 
-            // textBox1
+            // nameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 20);
-            this.textBox1.TabIndex = 1;
+            this.nameTextBox.Location = new System.Drawing.Point(94, 59);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(227, 20);
+            this.nameTextBox.TabIndex = 1;
             // 
-            // richTextBox1
+            // recipeTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(94, 237);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(227, 121);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.recipeTextBox.Location = new System.Drawing.Point(94, 216);
+            this.recipeTextBox.Name = "recipeTextBox";
+            this.recipeTextBox.Size = new System.Drawing.Size(227, 121);
+            this.recipeTextBox.TabIndex = 2;
+            this.recipeTextBox.Text = "";
             // 
-            // richTextBox2
+            // ingridientsTextBox
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(94, 104);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(227, 96);
-            this.richTextBox2.TabIndex = 3;
-            this.richTextBox2.Text = "";
+            this.ingridientsTextBox.Location = new System.Drawing.Point(94, 104);
+            this.ingridientsTextBox.Name = "ingridientsTextBox";
+            this.ingridientsTextBox.Size = new System.Drawing.Size(227, 96);
+            this.ingridientsTextBox.TabIndex = 3;
+            this.ingridientsTextBox.Text = "";
             // 
             // name
             // 
@@ -86,14 +86,14 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.Size = new System.Drawing.Size(80, 39);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Ингридиенты";
+            this.label3.Text = "Ингридиенты:\r\n(писать через \r\nзапятую)";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 240);
+            this.label4.Location = new System.Drawing.Point(12, 219);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 6;
@@ -129,9 +129,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.name);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ingridientsTextBox);
+            this.Controls.Add(this.recipeTextBox);
+            this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label1);
             this.Name = "CreateRecipe";
             this.Text = "CreateRecipe";
@@ -143,9 +143,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.RichTextBox recipeTextBox;
+        private System.Windows.Forms.RichTextBox ingridientsTextBox;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
