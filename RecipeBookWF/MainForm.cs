@@ -132,9 +132,9 @@ namespace RecipeBookWF
         }
 
         private void UpdateHeader()
-        {
-            
+        {            
             var path = _fileName == null ? new string[] {"Книга без названия"} : _fileName.Split('\\');
+
 
             var fileName = path.Last();
 
