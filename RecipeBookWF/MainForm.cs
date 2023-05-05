@@ -7,8 +7,6 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RecipeBookWF
@@ -22,13 +20,13 @@ namespace RecipeBookWF
         private BindingList<Recipe> _recipes;
         private BindingList<Recipe> _favorites;
 
-        public bool IsEdited 
-        { 
+        public bool IsEdited
+        {
             get => _isEdited;
-            set 
-            { 
-                _isEdited = value; 
-                UpdateHeader(); 
+            set
+            {
+                _isEdited = value;
+                UpdateHeader();
             }
         }
 
@@ -51,7 +49,6 @@ namespace RecipeBookWF
             AddToFavoritesButton.Enabled = false;
             RemoveFromFavoritesButton.Enabled = false;
         }
-
         private void LoadMenuButton_Click(object sender, EventArgs e)
         {
             if (_isEdited)
@@ -106,7 +103,7 @@ namespace RecipeBookWF
         private void Save()
         {
             saveFileDialog.FileName = "Новая книга";
-            if(saveFileDialog.ShowDialog() != DialogResult.OK)
+            if (saveFileDialog.ShowDialog() != DialogResult.OK)
             {
                 return;
             }
@@ -121,12 +118,12 @@ namespace RecipeBookWF
         }
 
         private void UpdateHeader()
-        {            
+        {
             var fileName = _fileName == null ? "Книга без названия" : _fileName.Split('\\').Last();
 
-            Text = _isEdited ? 
-                "* " + fileName + " | Кулинарная книга" : 
-                       fileName + " | Кулинарная книга"; 
+            Text = _isEdited ?
+                "* " + fileName + " | Кулинарная книга" :
+                       fileName + " | Кулинарная книга";
         }
 
         private void SaveMenuButton_Click(object sender, EventArgs e)
@@ -309,17 +306,98 @@ namespace RecipeBookWF
 
             IsEdited = true;
 
-            if (_selectedRecipe.IsFavorite) 
+            if (_selectedRecipe.IsFavorite)
                 _favorites.Remove(_selectedRecipe);
 
             _recipes.Remove(_selectedRecipe);
-            
+
             ClearSelect();
 
-            MessageBox.Show("Рецепт успешно удалён", "Удаление рецепта", 
+            MessageBox.Show("Рецепт успешно удалён", "Удаление рецепта",
                 MessageBoxButtons.OK, MessageBoxIcon.Question);
-            
+
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+            Control control = (Control)sender;
+            Control parent = control.Parent;
+
+            Bitmap behind = new Bitmap(parent.Width, parent.Height);
+
+            foreach (Control c in parent.Controls)
+                if (c != control)
+                    c.DrawToBitmap(behind, c.Bounds);
+
+            float opacity = 0.8f;
+            Color bgColor = Color.FromArgb(Convert.ToInt32(255 * opacity), 0, 0, 0);
+
+            Graphics g = Graphics.FromImage(behind);
+
+            SolidBrush Brush = new SolidBrush(Color.FromArgb(100, 0, 0, 0));
+            g.FillRectangle(Brush, 0, 0, parent.Width, parent.Height);
+
+            // Добавляем текст
+            string text = "Рецепт не выбран";
+            Font font = new Font("Arial", 30, FontStyle.Bold);
+            Brush brush = new SolidBrush(Color.White);
+
+            // Вычисляем размеры текста
+            SizeF textSize = g.MeasureString(text, font);
+
+            // Вычисляем координаты для вывода текста по центру элемента управления PictureBox
+            float x = (control.Width - textSize.Width) / 2;
+            float y = (control.Height - textSize.Height) / 2;
+
+            g.DrawString(text, font, brush, new PointF(x, y));
+
+            e.Graphics.DrawImage(behind, -control.Left, -control.Top);
+        }
+
+        private void pictureBox1_Paint_1(object sender, PaintEventArgs e)
+        {
+            Control control = (Control)sender;
+            Control parent = control.Parent;
+
+            Bitmap behind = new Bitmap(parent.Width, parent.Height);
+
+            foreach (Control c in parent.Controls)
+                if (c != control)
+                    c.DrawToBitmap(behind, c.Bounds);
+
+            float opacity = 0.8f;
+            Color bgColor = Color.FromArgb(Convert.ToInt32(255 * opacity), 0, 0, 0);
+
+            Graphics g = Graphics.FromImage(behind);
+
+            SolidBrush Brush = new SolidBrush(Color.FromArgb(100, 0, 0, 0));
+            g.FillRectangle(Brush, 0, 0, parent.Width, parent.Height);
+
+            // Добавляем текст
+            string text = "Рецепт не выбран";
+            Font font = new Font("Arial", 30, FontStyle.Bold);
+            Brush brush = new SolidBrush(Color.White);
+
+            // Вычисляем размеры текста
+            SizeF textSize = g.MeasureString(text, font);
+
+            // Вычисляем координаты для вывода текста по центру элемента управления PictureBox
+            float x = (control.Width - textSize.Width) / 2;
+            float y = (control.Height - textSize.Height) / 2;
+
+            g.DrawString(text, font, brush, new PointF(x, y));
+
+            e.Graphics.DrawImage(behind, -control.Left, -control.Top);
+        }
     }
 }

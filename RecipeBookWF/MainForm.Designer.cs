@@ -1,4 +1,6 @@
-﻿namespace RecipeBookWF
+﻿using System.Drawing;
+
+namespace RecipeBookWF
 {
     partial class MainForm
     {
@@ -75,6 +77,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.blackout = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -92,6 +96,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.recipePictureBox_favourites)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.blackout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -210,6 +216,8 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.blackout);
             this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(215, 0);
@@ -403,6 +411,7 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.pictureBox1);
             this.panel6.Controls.Add(this.tableLayoutPanel6);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(215, 0);
@@ -576,6 +585,27 @@
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
+            // blackout
+            // 
+            this.blackout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.blackout.Location = new System.Drawing.Point(0, 0);
+            this.blackout.Name = "blackout";
+            this.blackout.Size = new System.Drawing.Size(872, 672);
+            this.blackout.TabIndex = 1;
+            this.blackout.TabStop = false;
+            this.blackout.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.blackout.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(872, 672);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint_1);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -609,6 +639,8 @@
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.blackout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -663,6 +695,8 @@
         private System.Windows.Forms.ToolStripMenuItem CreateRecipeCatalogueButton;
         private System.Windows.Forms.ToolStripMenuItem RemoveRecipeButton;
         private System.Windows.Forms.ToolStripMenuItem CreateNewBookButton;
+        private System.Windows.Forms.PictureBox blackout;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
