@@ -15,11 +15,22 @@ namespace RecipeBookWF
 {
     public partial class MainForm : Form
     {
+        private int _selectedIndex;
         private string _fileName;
         private bool _isEdited;
         private Recipe _selectedRecipe;
         private BindingList<Recipe> _recipes;
         private BindingList<Recipe> _favorites;
+
+        public bool IsEdited 
+        { 
+            get => _isEdited;
+            set 
+            { 
+                _isEdited = value; 
+                UpdateHeader(); 
+            }
+        }
 
         public MainForm()
         {
@@ -30,14 +41,7 @@ namespace RecipeBookWF
 
             listBox.DataSource = _recipes;
 
-            //dataGrid.DataSource = _recipes;
-
-            //dataGrid.Columns["Name"].HeaderText = "Название";
-
-            //dataGrid.Columns["IngridientsString"].HeaderText = "Ингридиенты";
-            //dataGrid.Columns["Description"].HeaderText = "Рецепт";
-
-            Name = "Книга без названия | Кулинарная книга";
+            Text = "Книга без названия | Кулинарная книга";
             saveFileDialog.Filter = "Книга рецептов|*.book";
             openFileDialog.Filter = "Книга рецептов|*.book";
 
@@ -62,9 +66,8 @@ namespace RecipeBookWF
 
             if (view.Result)
             {
-                _isEdited=true;
                 _recipes.Add(new Recipe(view.Recipe));
-                UpdateHeader();
+                IsEdited=true;
             }
         }
 
@@ -89,6 +92,7 @@ namespace RecipeBookWF
             }
 
             _fileName = openFileDialog.FileName;
+            IsEdited = false;
             try
             {
                 var json = File.ReadAllText(_fileName);
@@ -112,8 +116,6 @@ namespace RecipeBookWF
 
         private void Save()
         {
-            _isEdited = false;
-
             saveFileDialog.FileName = "Новая книга";
             if(saveFileDialog.ShowDialog() != DialogResult.OK)
             {
@@ -126,14 +128,19 @@ namespace RecipeBookWF
             var json = JsonConvert.SerializeObject(recipes, Formatting.Indented);
             File.WriteAllText(_fileName, json);
 
-            UpdateHeader();
+            IsEdited = false;
         }
 
         private void UpdateHeader()
         {
-            Name = _isEdited ? 
-                "* " + _fileName + "| Кулинарная книга" : 
-                       _fileName + "| Кулинарная книга"; 
+            
+            var path = _fileName == null ? new string[] {"Книга без названия"} : _fileName.Split('\\');
+
+            var fileName = path.Last();
+
+            Text = _isEdited ? 
+                "* " + fileName + " | Кулинарная книга" : 
+                       fileName + " | Кулинарная книга"; 
         }
 
         private void SaveMenuButton_Click(object sender, EventArgs e)
@@ -144,6 +151,18 @@ namespace RecipeBookWF
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = listBox.SelectedIndex;
+
+            if (!recipeName.ReadOnly)
+            {
+                if(MessageBox.Show("Вы не сохранили рецепт. Продолжить?", "Несохранённые изменения", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    return;
+                } 
+                else
+                {
+                    ToggleReadOnlyMode();
+                } 
+            }
 
             if(index == -1) return;
 
@@ -166,8 +185,15 @@ namespace RecipeBookWF
                 _selectedRecipe.Ingridients = recipeIngridientsTextBox.Text.Replace("-", "").Split('\n', ',').ToList();
                 _selectedRecipe.Description = recipeDescriptionTextBox.Text;
                 _selectedRecipe.CookingTime = Convert.ToInt32(cookingTimeTextBox.Text.Split(' ')[0]);
+
+                IsEdited = true;
             }
 
+            ToggleReadOnlyMode();
+        }
+
+        private void ToggleReadOnlyMode()
+        {
             recipeName.ReadOnly = !recipeName.ReadOnly;
             recipeDescriptionTextBox.ReadOnly = !recipeDescriptionTextBox.ReadOnly;
             cookingTimeTextBox.ReadOnly = !cookingTimeTextBox.ReadOnly;

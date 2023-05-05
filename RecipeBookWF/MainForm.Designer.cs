@@ -56,12 +56,12 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.recipeDescriptionTextBox = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.cookingTimeTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.editRecipeButton = new System.Windows.Forms.Button();
             this.AddToFavoritesButton = new System.Windows.Forms.Button();
+            this.cookingTimeTextBox = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -355,15 +355,6 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(696, 47);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
-            // cookingTimeTextBox
-            // 
-            this.cookingTimeTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cookingTimeTextBox.Location = new System.Drawing.Point(525, 24);
-            this.cookingTimeTextBox.Name = "cookingTimeTextBox";
-            this.cookingTimeTextBox.ReadOnly = true;
-            this.cookingTimeTextBox.Size = new System.Drawing.Size(168, 20);
-            this.cookingTimeTextBox.TabIndex = 0;
-            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -420,6 +411,16 @@
             this.AddToFavoritesButton.Text = "Добавить в избранное";
             this.AddToFavoritesButton.UseVisualStyleBackColor = true;
             this.AddToFavoritesButton.Click += new System.EventHandler(this.AddToFavoritesButton_Click);
+            // 
+            // cookingTimeTextBox
+            // 
+            this.cookingTimeTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cookingTimeTextBox.Location = new System.Drawing.Point(525, 18);
+            this.cookingTimeTextBox.Name = "cookingTimeTextBox";
+            this.cookingTimeTextBox.ReadOnly = true;
+            this.cookingTimeTextBox.Size = new System.Drawing.Size(168, 26);
+            this.cookingTimeTextBox.TabIndex = 3;
+            this.cookingTimeTextBox.Text = "";
             // 
             // MainForm
             // 
@@ -488,11 +489,11 @@
         private System.Windows.Forms.RichTextBox recipeDescriptionTextBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox cookingTimeTextBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button editRecipeButton;
         private System.Windows.Forms.Button AddToFavoritesButton;
+        private System.Windows.Forms.RichTextBox cookingTimeTextBox;
     }
 }
 
