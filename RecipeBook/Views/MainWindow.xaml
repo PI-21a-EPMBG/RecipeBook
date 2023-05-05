@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RecipeBook.Commands"
-        xmlns:vm="clr-namespace:RecipeBook.ViewModels" xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="Кулинарная книга" Height="450" Width="800" FontSize="16">
     <Window.Resources>
@@ -107,7 +106,7 @@
                                 </Viewbox>
                             </Border>
                             <Viewbox Grid.Column="4" Grid.Row="1">
-                                <Button Content="★" Background="Transparent" BorderBrush="Transparent"/>
+                                <Button Content="★" Background="Transparent" BorderBrush="Transparent" Foreground="{Binding FavoriteColor}"/>
                             </Viewbox>
                             <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                         </Grid>
@@ -149,7 +148,7 @@
                                 </Viewbox>
                             </Border>
                             <Viewbox Grid.Column="4" Grid.Row="1">
-                                <Button Content="★" Background="Transparent" BorderBrush="Transparent"/>
+                                <Button Content="★" Background="Transparent" BorderBrush="Transparent" />
                             </Viewbox>
                             <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Column="3" Grid.Row="2" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!"/>
                         </Grid>
@@ -745,7 +744,7 @@
 
 
             <!--Добавить-->
-            <Grid x:Name="add_recipe" Visibility="{Binding AddRecipeVisibility}"><!--{Binding AddRecipeVisibility}-->
+            <Grid x:Name="add_recipe" Visibility="Visible"><!--{Binding AddRecipeVisibility}-->
                 <Grid.RowDefinitions>
                     <RowDefinition Height="4*"/>
                     <RowDefinition Height="85*"/>
@@ -798,7 +797,7 @@
 
 
                             <ScrollViewer Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-                                <TextBox Text="Названиеggggggggggggggg" >
+                                <TextBox Text="{Binding RecipeName}" >
                                     <TextBlock.FontSize>
                                         <MultiBinding Converter="{StaticResource FontSizeConverter}">
                                             <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
@@ -813,12 +812,13 @@
                                 <TextBlock Text="Игредиенты:" />
                             </Viewbox>
                             <Viewbox Grid.Column="4" HorizontalAlignment="Right">
-                                <Button Content="&lt;>" VerticalAlignment="Top" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent"/>
+                                <Button Content="&lt;>" VerticalAlignment="Top" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent"
+                                        Command="{Binding ToggleTagCommand}"/>
                             </Viewbox>
 
                             <!--Игридиенты запись-->
                             <ScrollViewer Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-                                <TextBox Text=" &#x2022; Ингридиент 1 &#x0a; &#x2022; Ингридиент 2 &#x0a; &#x2022; Ингридиент 3 &#x0a; &#x2022; Ингридиент 4 &#x0a; &#x2022; Ингридиент 5   &#x0a; &#x2022; Ингридиент 5 &#x0a; &#x2022; Ингридиент 5" >
+                                <TextBox Text="{Binding RecipeIngridients}" AcceptsReturn="True">
                                         <TextBlock.FontSize>
                                             <MultiBinding Converter="{StaticResource FontSizeConverter}">
                                                 <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
@@ -832,7 +832,8 @@
                             
                             <!--Этот элемент должен быть скрыт и появлятся только по кнопке-->
                             <ScrollViewer  Grid.Row="1" Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" >
-                                <TextBox Text=" &#x2022; Ингридиент 1 &#x0a; &#x2022; Ингридиент 2">
+                                <TextBox Text="{Binding RecipeTags}" 
+                                         Visibility="{Binding TagsTextBoxVisibility}" AcceptsReturn="True">
                                     <TextBlock.FontSize>
                                         <MultiBinding Converter="{StaticResource FontSizeConverter}">
                                             <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
@@ -859,7 +860,7 @@
                             <TextBlock Text="Рецепт:"/>
                         </Viewbox>
                         <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" >
-                            <TextBox TextWrapping="Wrap" Text="Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир! Привет, мир!">
+                            <TextBox TextWrapping="Wrap" Text="{Binding RecipeDescription}" AcceptsReturn="True">
                             <TextBlock.FontSize>
                                 <MultiBinding Converter="{StaticResource FontSizeConverter}">
                                     <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}" />
@@ -883,7 +884,8 @@
                         <ColumnDefinition Width="20*"/>
                     </Grid.ColumnDefinitions>
                     <Viewbox Grid.Row="1" Grid.Column="1" >
-                        <Button Background="#BBBBBB" Content="Сохранить" BorderThickness="3" BorderBrush="#BBBBBB"/>
+                        <Button Background="#BBBBBB" Content="Сохранить" BorderThickness="3" 
+                                BorderBrush="#BBBBBB" Click="Button_Click"/>
                     </Viewbox>
                 </Grid>
             </Grid>

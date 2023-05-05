@@ -16,6 +16,11 @@ namespace RecipeBook
 
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         //private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         //{
         //    textBlock.InvalidateVisual();
