@@ -40,13 +40,16 @@ namespace RecipeBookWF
             _favorites = new BindingList<Recipe>();
 
             listBox.DataSource = _recipes;
+            listBox_favourites.DataSource = _favorites;
 
             Text = "Книга без названия | Кулинарная книга";
             saveFileDialog.Filter = "Книга рецептов|*.book";
             openFileDialog.Filter = "Книга рецептов|*.book";
 
-            AddToFavoritesButton.Enabled = false;
             editRecipeButton.Enabled = false;
+            editRecipeButton_favourites.Enabled = false;
+            AddToFavoritesButton.Enabled = false;
+            RemoveFromFavoritesButton.Enabled = false;
         }
         private void DeleteRecipeCatalogueMenuButton_Click(object sender, EventArgs e)
         {
@@ -101,6 +104,10 @@ namespace RecipeBookWF
                 {
                     _recipes.Add(new Recipe(recipe));
                 }
+                foreach (var recipe in _recipes.Where(r => r.IsFavorite).ToList())
+                {
+                    _favorites.Add(recipe);
+                }
             }
             catch (Exception)
             {
@@ -122,8 +129,8 @@ namespace RecipeBookWF
 
             _fileName = saveFileDialog.FileName;
 
-            var recipes = _recipes.ToList();
-            var json = JsonConvert.SerializeObject(recipes, Formatting.Indented);
+            var content = _recipes.ToList();
+            var json = JsonConvert.SerializeObject(content, Formatting.Indented);
             File.WriteAllText(_fileName, json);
 
             IsEdited = false;
@@ -160,8 +167,15 @@ namespace RecipeBookWF
         private void AddToFavoritesButton_Click(object sender, EventArgs e)
         {
             _favorites.Add(_selectedRecipe);
+            _selectedRecipe.IsFavorite = true;
+            ClearSelect();
         }
-
+        private void RemoveFromFavoritesButton_Click(object sender, EventArgs e)
+        {
+            _favorites.Remove(_selectedRecipe);
+            _selectedRecipe.IsFavorite = false;
+            ClearSelect();
+        }
         private void CreateRecipeCatalogueButton_Click(object sender, EventArgs e)
         {
             var view = new CreateRecipe();
@@ -217,6 +231,60 @@ namespace RecipeBookWF
             recipeDescriptionTextBox.Text = _selectedRecipe.Description;
             recipeIngridientsTextBox.Text = "-" + string.Join("\n-", _selectedRecipe.Ingridients);
             cookingTimeTextBox.Text = _selectedRecipe.CookingTime.ToString() + " мин.";
+        }
+        private void listBox_favourites_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = listBox_favourites.SelectedIndex;
+
+            if (!recipeName_favourites.ReadOnly)
+            {
+                if (MessageBox.Show("Вы не сохранили рецепт. Продолжить?", "Несохранённые изменения", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                    ToggleReadOnlyMode();
+                }
+            }
+
+            if (index == -1) return;
+
+            _selectedRecipe = (Recipe)listBox_favourites.Items[index];
+
+            RemoveFromFavoritesButton.Enabled = true;
+            editRecipeButton_favourites.Enabled = true;
+
+            recipeName_favourites.Text = _selectedRecipe.Name;
+            recipeDescriptionTextBox_favourites.Text = _selectedRecipe.Description;
+            recipeIngridientsTextBox_favourites.Text = "-" + string.Join("\n-", _selectedRecipe.Ingridients);
+            cookingTimeTextBox_favorites.Text = _selectedRecipe.CookingTime.ToString() + " мин.";
+        }
+
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClearSelect();
+        }
+
+        private void ClearSelect()
+        {
+            _selectedRecipe = null;
+
+            recipeName.Text = string.Empty;
+            recipeDescriptionTextBox.Text = string.Empty;
+            recipeIngridientsTextBox.Text = string.Empty;
+            cookingTimeTextBox.Text = string.Empty;
+
+            recipeName_favourites.Text = string.Empty;
+            recipeDescriptionTextBox_favourites.Text = string.Empty;
+            recipeIngridientsTextBox_favourites.Text = string.Empty;
+            cookingTimeTextBox_favorites.Text = string.Empty;
+
+            AddToFavoritesButton.Enabled = false;
+            RemoveFromFavoritesButton.Enabled = false;
+
+            editRecipeButton.Enabled = false;
+            editRecipeButton_favourites.Enabled = false;
         }
     }
 }

@@ -53,7 +53,7 @@ namespace RecipeBookWF
 
             var name = nameTextBox.Text;
             var ingString = ingridientsTextBox.Text.Replace(", ", ",");
-            var ingridients = ingString.Split(',').ToList();
+            var ingridients = ingString.Split('\n').ToList();
             var description = recipeTextBox.Text;
             int time = (int)cookingTimeTextBox.Value;
 
@@ -62,7 +62,8 @@ namespace RecipeBookWF
                 Name = name,
                 Ingridients = ingridients,
                 Description = description,
-                CookingTime = time
+                CookingTime = time,
+                IsFavorite = false
             };
             Result = true;
             this.Close();

@@ -54,7 +54,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.CreateRecipeCatalogueButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -62,9 +61,9 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.cookingTimeTextBox_favorites = new System.Windows.Forms.RichTextBox();
             this.editRecipeButton_favourites = new System.Windows.Forms.Button();
-            this.AddToFavoritesButton_favourites = new System.Windows.Forms.Button();
+            this.RemoveFromFavoritesButton = new System.Windows.Forms.Button();
             this.recipeIngridientsTextBox_favourites = new System.Windows.Forms.RichTextBox();
             this.recipeDescriptionTextBox_favourites = new System.Windows.Forms.RichTextBox();
             this.recipeName_favourites = new System.Windows.Forms.TextBox();
@@ -158,6 +157,7 @@
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1101, 704);
             this.tabControl.TabIndex = 0;
+            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -358,7 +358,6 @@
             this.menuStrip2.BackColor = System.Drawing.Color.White;
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CreateRecipeCatalogueButton,
-            this.toolStripMenuItem5,
             this.toolStripMenuItem6});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
@@ -372,12 +371,6 @@
             this.CreateRecipeCatalogueButton.Size = new System.Drawing.Size(71, 20);
             this.CreateRecipeCatalogueButton.Text = "Добавить";
             this.CreateRecipeCatalogueButton.Click += new System.EventHandler(this.CreateRecipeCatalogueButton_Click);
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(99, 20);
-            this.toolStripMenuItem5.Text = "Редактировать";
             // 
             // toolStripMenuItem6
             // 
@@ -425,9 +418,9 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.72477F));
             this.tableLayoutPanel6.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label5, 1, 1);
-            this.tableLayoutPanel6.Controls.Add(this.richTextBox1, 3, 1);
+            this.tableLayoutPanel6.Controls.Add(this.cookingTimeTextBox_favorites, 3, 1);
             this.tableLayoutPanel6.Controls.Add(this.editRecipeButton_favourites, 3, 3);
-            this.tableLayoutPanel6.Controls.Add(this.AddToFavoritesButton_favourites, 2, 3);
+            this.tableLayoutPanel6.Controls.Add(this.RemoveFromFavoritesButton, 2, 3);
             this.tableLayoutPanel6.Controls.Add(this.recipeIngridientsTextBox_favourites, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.recipeDescriptionTextBox_favourites, 1, 2);
             this.tableLayoutPanel6.Controls.Add(this.recipeName_favourites, 1, 0);
@@ -465,15 +458,15 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Рецепт";
             // 
-            // richTextBox1
+            // cookingTimeTextBox_favorites
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.richTextBox1.Location = new System.Drawing.Point(702, 138);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(167, 25);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
+            this.cookingTimeTextBox_favorites.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cookingTimeTextBox_favorites.Location = new System.Drawing.Point(702, 138);
+            this.cookingTimeTextBox_favorites.Name = "cookingTimeTextBox_favorites";
+            this.cookingTimeTextBox_favorites.ReadOnly = true;
+            this.cookingTimeTextBox_favorites.Size = new System.Drawing.Size(167, 25);
+            this.cookingTimeTextBox_favorites.TabIndex = 4;
+            this.cookingTimeTextBox_favorites.Text = "";
             // 
             // editRecipeButton_favourites
             // 
@@ -485,15 +478,16 @@
             this.editRecipeButton_favourites.Text = "Редактировать";
             this.editRecipeButton_favourites.UseVisualStyleBackColor = true;
             // 
-            // AddToFavoritesButton_favourites
+            // RemoveFromFavoritesButton
             // 
-            this.AddToFavoritesButton_favourites.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AddToFavoritesButton_favourites.Location = new System.Drawing.Point(541, 619);
-            this.AddToFavoritesButton_favourites.Name = "AddToFavoritesButton_favourites";
-            this.AddToFavoritesButton_favourites.Size = new System.Drawing.Size(155, 26);
-            this.AddToFavoritesButton_favourites.TabIndex = 8;
-            this.AddToFavoritesButton_favourites.Text = "Добавить в избранное";
-            this.AddToFavoritesButton_favourites.UseVisualStyleBackColor = true;
+            this.RemoveFromFavoritesButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.RemoveFromFavoritesButton.Location = new System.Drawing.Point(541, 619);
+            this.RemoveFromFavoritesButton.Name = "RemoveFromFavoritesButton";
+            this.RemoveFromFavoritesButton.Size = new System.Drawing.Size(155, 26);
+            this.RemoveFromFavoritesButton.TabIndex = 8;
+            this.RemoveFromFavoritesButton.Text = "Убрать из избранного";
+            this.RemoveFromFavoritesButton.UseVisualStyleBackColor = true;
+            this.RemoveFromFavoritesButton.Click += new System.EventHandler(this.RemoveFromFavoritesButton_Click);
             // 
             // recipeIngridientsTextBox_favourites
             // 
@@ -555,6 +549,7 @@
             this.listBox_favourites.Name = "listBox_favourites";
             this.listBox_favourites.Size = new System.Drawing.Size(215, 616);
             this.listBox_favourites.TabIndex = 3;
+            this.listBox_favourites.SelectedIndexChanged += new System.EventHandler(this.listBox_favourites_SelectedIndexChanged);
             // 
             // panel8
             // 
@@ -673,9 +668,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox cookingTimeTextBox_favorites;
         private System.Windows.Forms.Button editRecipeButton_favourites;
-        private System.Windows.Forms.Button AddToFavoritesButton_favourites;
+        private System.Windows.Forms.Button RemoveFromFavoritesButton;
         private System.Windows.Forms.RichTextBox recipeIngridientsTextBox_favourites;
         private System.Windows.Forms.RichTextBox recipeDescriptionTextBox_favourites;
         private System.Windows.Forms.TextBox recipeName_favourites;
@@ -698,7 +693,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem CreateRecipeCatalogueButton;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
     }
 }

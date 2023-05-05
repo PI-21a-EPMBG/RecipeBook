@@ -89,9 +89,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 39);
+            this.label3.Size = new System.Drawing.Size(78, 39);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Ингридиенты:\r\n(писать через \r\nзапятую)";
+            this.label3.Text = "Ингридиенты:\r\n(1 строка на \r\n1 ингридиент)";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label4
