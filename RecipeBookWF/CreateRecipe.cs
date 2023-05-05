@@ -35,25 +35,34 @@ namespace RecipeBookWF
         {
             try
             {
-                if (string.IsNullOrEmpty(nameTextBox.Text)) throw new ArgumentNullException();
-                else if (string.IsNullOrEmpty(ingridientsTextBox.Text)) throw new ArgumentNullException();
-                else if (string.IsNullOrEmpty(recipeTextBox.Text)) throw new ArgumentNullException();
+                if (string.IsNullOrEmpty(nameTextBox.Text)) throw new ArgumentNullException("Название");
+                else if (string.IsNullOrEmpty(ingridientsTextBox.Text)) throw new ArgumentNullException("Ингриденты");
+                else if (string.IsNullOrEmpty(recipeTextBox.Text)) throw new ArgumentNullException("Рецепт");
+                else if (cookingTimeTextBox.Value == 0) throw new ArgumentException("Время готовки не может быть равно нулю");
             }
             catch (ArgumentNullException ex)
             {
                 MessageBox.Show("Не заполнено поле: " + ex.ParamName);
                 return;
+            } 
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
             }
 
             var name = nameTextBox.Text;
-            var ingridients = ingridientsTextBox.Text.Split(',').ToList();
+            var ingString = ingridientsTextBox.Text.Replace(", ", ",");
+            var ingridients = ingString.Split(',').ToList();
             var description = recipeTextBox.Text;
+            int time = (int)cookingTimeTextBox.Value;
 
             Recipe = new Recipe
             {
                 Name = name,
                 Ingridients = ingridients,
-                Description = description
+                Description = description,
+                CookingTime = time
             };
             Result = true;
             this.Close();

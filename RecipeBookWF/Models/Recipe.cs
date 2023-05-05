@@ -8,6 +8,7 @@ namespace RecipeBookWF.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public List<string> Ingridients { get; set; }
+        public int CookingTime { get; set; }
         
         [JsonIgnore] public string IngridientsString => string.Join(", ", Ingridients);
 
@@ -21,6 +22,7 @@ namespace RecipeBookWF.Models
             Name = other.Name;
             Description = other.Description;
             Ingridients = new List<string>(other.Ingridients);
+            CookingTime = other.CookingTime;
         }
 
         public override string ToString()

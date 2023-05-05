@@ -37,6 +37,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.CancelButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.cookingTimeTextBox = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.cookingTimeTextBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -58,7 +61,7 @@
             // 
             // recipeTextBox
             // 
-            this.recipeTextBox.Location = new System.Drawing.Point(94, 216);
+            this.recipeTextBox.Location = new System.Drawing.Point(93, 213);
             this.recipeTextBox.Name = "recipeTextBox";
             this.recipeTextBox.Size = new System.Drawing.Size(227, 121);
             this.recipeTextBox.TabIndex = 2;
@@ -66,7 +69,7 @@
             // 
             // ingridientsTextBox
             // 
-            this.ingridientsTextBox.Location = new System.Drawing.Point(94, 104);
+            this.ingridientsTextBox.Location = new System.Drawing.Point(94, 111);
             this.ingridientsTextBox.Name = "ingridientsTextBox";
             this.ingridientsTextBox.Size = new System.Drawing.Size(227, 96);
             this.ingridientsTextBox.TabIndex = 3;
@@ -84,7 +87,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 107);
+            this.label3.Location = new System.Drawing.Point(12, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 39);
             this.label3.TabIndex = 5;
@@ -94,7 +97,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 219);
+            this.label4.Location = new System.Drawing.Point(44, 213);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 6;
@@ -121,11 +124,35 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // cookingTimeTextBox
+            // 
+            this.cookingTimeTextBox.Location = new System.Drawing.Point(94, 85);
+            this.cookingTimeTextBox.Maximum = new decimal(new int[] {
+            10080,
+            0,
+            0,
+            0});
+            this.cookingTimeTextBox.Name = "cookingTimeTextBox";
+            this.cookingTimeTextBox.Size = new System.Drawing.Size(226, 20);
+            this.cookingTimeTextBox.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(5, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 26);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Время готовки\r\n(мин)\r\n";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // CreateRecipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(333, 398);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cookingTimeTextBox);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.label4);
@@ -137,6 +164,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CreateRecipe";
             this.Text = "CreateRecipe";
+            ((System.ComponentModel.ISupportInitialize)(this.cookingTimeTextBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,5 +181,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.NumericUpDown cookingTimeTextBox;
+        private System.Windows.Forms.Label label2;
     }
 }

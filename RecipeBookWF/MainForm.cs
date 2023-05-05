@@ -17,13 +17,16 @@ namespace RecipeBookWF
     {
         private string _fileName;
         private bool _isEdited;
-        private BindingList<Recipe> _recipes; 
+        private Recipe _selectedRecipe;
+        private BindingList<Recipe> _recipes;
+        private BindingList<Recipe> _favorites;
 
         public MainForm()
         {
             InitializeComponent();
             _isEdited = false;
             _recipes = new BindingList<Recipe>();
+            _favorites = new BindingList<Recipe>();
 
             listBox.DataSource = _recipes;
 
@@ -37,6 +40,9 @@ namespace RecipeBookWF
             Name = "Книга без названия | Кулинарная книга";
             saveFileDialog.Filter = "Книга рецептов|*.book";
             openFileDialog.Filter = "Книга рецептов|*.book";
+
+            AddToFavoritesButton.Enabled = false;
+            editRecipeButton.Enabled = false;
         }
         private void DeleteRecipeCatalogueMenuButton_Click(object sender, EventArgs e)
         {
@@ -97,7 +103,11 @@ namespace RecipeBookWF
             catch (Exception)
             {
                 MessageBox.Show("Не удалось прочитать файл");
+                return;
             }
+
+            AddToFavoritesButton.Enabled = false;
+            editRecipeButton.Enabled = false;
         }
 
         private void Save()
@@ -126,14 +136,49 @@ namespace RecipeBookWF
                        _fileName + "| Кулинарная книга"; 
         }
 
-        private void dataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void SaveMenuButton_Click(object sender, EventArgs e)
         {
             Save();
+        }
+
+        private void listBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = listBox.SelectedIndex;
+
+            if(index == -1) return;
+
+            _selectedRecipe = (Recipe)listBox.Items[index];
+
+            AddToFavoritesButton.Enabled = true;
+            editRecipeButton.Enabled = true;
+
+            recipeName.Text = _selectedRecipe.Name;
+            recipeDescriptionTextBox.Text = _selectedRecipe.Description;
+            recipeIngridientsTextBox.Text = "-" + string.Join("\n-", _selectedRecipe.Ingridients);
+            cookingTimeTextBox.Text = _selectedRecipe.CookingTime.ToString() + " мин.";
+        }
+
+        private void editRecipeButton_Click(object sender, EventArgs e)
+        {
+            if (!recipeName.ReadOnly)
+            {
+                _selectedRecipe.Name = recipeName.Text;
+                _selectedRecipe.Ingridients = recipeIngridientsTextBox.Text.Replace("-", "").Split('\n', ',').ToList();
+                _selectedRecipe.Description = recipeDescriptionTextBox.Text;
+                _selectedRecipe.CookingTime = Convert.ToInt32(cookingTimeTextBox.Text.Split(' ')[0]);
+            }
+
+            recipeName.ReadOnly = !recipeName.ReadOnly;
+            recipeDescriptionTextBox.ReadOnly = !recipeDescriptionTextBox.ReadOnly;
+            cookingTimeTextBox.ReadOnly = !cookingTimeTextBox.ReadOnly;
+            recipeIngridientsTextBox.ReadOnly = !recipeIngridientsTextBox.ReadOnly;
+
+            editRecipeButton.Text = recipeName.ReadOnly ? "Редактировать" : "Сохранить";
+        }
+
+        private void AddToFavoritesButton_Click(object sender, EventArgs e)
+        {
+            _favorites.Add(_selectedRecipe);
         }
     }
 }
