@@ -50,12 +50,22 @@ namespace RecipeBookWF
         }
         private void DeleteRecipeCatalogueMenuButton_Click(object sender, EventArgs e)
         {
+            if(_recipes.Count == 0)
+            {
+                MessageBox.Show("Для удаление требуется добавить минимум 1 рецепт из списка", "Не добавлен рецепт",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-        }
+            if (_selectedIndex < 0)
+            {
+                MessageBox.Show("Для удаление требуется выбрать минимум 1 рецепт из списка", "Не выбран рецепт", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-        private void EditRecipeCatalogueButton_Click(object sender, EventArgs e)
-        {
-
+            _recipes.RemoveAt(_selectedIndex);
+            IsEdited = true;
         }
 
         private void CreateRecipeCatalogueButton_Click(object sender, EventArgs e)
