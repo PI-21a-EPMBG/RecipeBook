@@ -68,18 +68,6 @@ namespace RecipeBookWF
             IsEdited = true;
         }
 
-        private void CreateRecipeCatalogueButton_Click(object sender, EventArgs e)
-        {
-            var view = new CreateRecipe();
-
-            view.ShowDialog();
-
-            if (view.Result)
-            {
-                _recipes.Add(new Recipe(view.Recipe));
-                IsEdited=true;
-            }
-        }
 
         private void LoadMenuButton_Click(object sender, EventArgs e)
         {
@@ -158,33 +146,33 @@ namespace RecipeBookWF
             Save();
         }
 
-        private void listBox_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void ToggleReadOnlyMode()
         {
-            int index = listBox.SelectedIndex;
+            recipeName.ReadOnly = !recipeName.ReadOnly;
+            recipeDescriptionTextBox.ReadOnly = !recipeDescriptionTextBox.ReadOnly;
+            cookingTimeTextBox.ReadOnly = !cookingTimeTextBox.ReadOnly;
+            recipeIngridientsTextBox.ReadOnly = !recipeIngridientsTextBox.ReadOnly;
 
-            if (!recipeName.ReadOnly)
+            editRecipeButton.Text = recipeName.ReadOnly ? "Редактировать" : "Сохранить";
+        }
+
+        private void AddToFavoritesButton_Click(object sender, EventArgs e)
+        {
+            _favorites.Add(_selectedRecipe);
+        }
+
+        private void CreateRecipeCatalogueButton_Click(object sender, EventArgs e)
+        {
+            var view = new CreateRecipe();
+
+            view.ShowDialog();
+
+            if (view.Result)
             {
-                if(MessageBox.Show("Вы не сохранили рецепт. Продолжить?", "Несохранённые изменения", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                {
-                    return;
-                } 
-                else
-                {
-                    ToggleReadOnlyMode();
-                } 
+                _recipes.Add(new Recipe(view.Recipe));
+                IsEdited = true;
             }
-
-            if(index == -1) return;
-
-            _selectedRecipe = (Recipe)listBox.Items[index];
-
-            AddToFavoritesButton.Enabled = true;
-            editRecipeButton.Enabled = true;
-
-            recipeName.Text = _selectedRecipe.Name;
-            recipeDescriptionTextBox.Text = _selectedRecipe.Description;
-            recipeIngridientsTextBox.Text = "-" + string.Join("\n-", _selectedRecipe.Ingridients);
-            cookingTimeTextBox.Text = _selectedRecipe.CookingTime.ToString() + " мин.";
         }
 
         private void editRecipeButton_Click(object sender, EventArgs e)
@@ -202,19 +190,33 @@ namespace RecipeBookWF
             ToggleReadOnlyMode();
         }
 
-        private void ToggleReadOnlyMode()
+        private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            recipeName.ReadOnly = !recipeName.ReadOnly;
-            recipeDescriptionTextBox.ReadOnly = !recipeDescriptionTextBox.ReadOnly;
-            cookingTimeTextBox.ReadOnly = !cookingTimeTextBox.ReadOnly;
-            recipeIngridientsTextBox.ReadOnly = !recipeIngridientsTextBox.ReadOnly;
+            int index = listBox.SelectedIndex;
 
-            editRecipeButton.Text = recipeName.ReadOnly ? "Редактировать" : "Сохранить";
-        }
+            if (!recipeName.ReadOnly)
+            {
+                if (MessageBox.Show("Вы не сохранили рецепт. Продолжить?", "Несохранённые изменения", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                    ToggleReadOnlyMode();
+                }
+            }
 
-        private void AddToFavoritesButton_Click(object sender, EventArgs e)
-        {
-            _favorites.Add(_selectedRecipe);
+            if (index == -1) return;
+
+            _selectedRecipe = (Recipe)listBox.Items[index];
+
+            AddToFavoritesButton.Enabled = true;
+            editRecipeButton.Enabled = true;
+
+            recipeName.Text = _selectedRecipe.Name;
+            recipeDescriptionTextBox.Text = _selectedRecipe.Description;
+            recipeIngridientsTextBox.Text = "-" + string.Join("\n-", _selectedRecipe.Ingridients);
+            cookingTimeTextBox.Text = _selectedRecipe.CookingTime.ToString() + " мин.";
         }
     }
 }
