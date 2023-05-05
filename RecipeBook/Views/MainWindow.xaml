@@ -4,17 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:RecipeBook"
         mc:Ignorable="d"
         Title="Кулинарная книга" Height="450" Width="800" FontSize="16">
     <Window.Resources>
         <FontFamily x:Key="Helvetica">Interface/helvetica_regular.otf#Helvetica</FontFamily>
         <local:FontSizeConverter x:Key="FontSizeConverter"/>
     </Window.Resources>
-    
-    <Window.DataContext>
-        <vm:MainWindowViewModel/>
-    </Window.DataContext>
-    
+
     <Window.Background>
         <ImageBrush ImageSource="/Interface/bg.jpg" Stretch="UniformToFill"/>
     </Window.Background>
