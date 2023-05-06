@@ -217,8 +217,8 @@ namespace RecipeBookWF
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Controls.Add(this.blackout);
+            this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(215, 0);
             this.panel3.Name = "panel3";
@@ -430,8 +430,8 @@ namespace RecipeBookWF
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.tableLayoutPanel2);
             this.panel6.Controls.Add(this.blackoutFavorites);
+            this.panel6.Controls.Add(this.tableLayoutPanel2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(215, 0);
             this.panel6.Name = "panel6";
