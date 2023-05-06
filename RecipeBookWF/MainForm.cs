@@ -7,12 +7,15 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Windows;
 using System.Windows.Forms;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace RecipeBookWF
 {
     public partial class MainForm : Form
     {
+
         private int _selectedIndex;
         private string _fileName;
         private bool _isEdited;
@@ -101,7 +104,7 @@ namespace RecipeBookWF
 
             AddToFavoritesButton.Enabled = false;
             editRecipeButton.Enabled = false;
-            
+
 
             listBox.SelectedIndex = -1;
             listBox_favourites.SelectedIndex = -1;
@@ -258,11 +261,11 @@ namespace RecipeBookWF
             }
 
             TurnOffBlackout();
-            
+
 
             _selectedIndex = index;
             _selectedRecipe = (Recipe)listBox_favourites.Items[index];
-            
+
             RemoveFromFavoritesButton.Enabled = true;
             editRecipeButton_favourites.Enabled = true;
 
@@ -303,7 +306,7 @@ namespace RecipeBookWF
 
             recipeName.Enabled = false;
             recipeIngridientsTextBox.Enabled = false;
-            recipeDescriptionTextBox.Enabled = false;  
+            recipeDescriptionTextBox.Enabled = false;
             recipeIngridientsTextBox.Enabled = false;
             cookingTimeTextBox.Enabled = false;
             recipePictureBox.Enabled = false;
@@ -332,7 +335,7 @@ namespace RecipeBookWF
             editRecipeButton_favourites.Visible = false;
             RemoveFromFavoritesButton.Visible = false;
 
-            AddToFavoritesButton.Visible= false;
+            AddToFavoritesButton.Visible = false;
             editRecipeButton.Visible = false;
         }
 
@@ -439,16 +442,6 @@ namespace RecipeBookWF
         //         \|/
         //          v
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
             Control control = (Control)sender;
@@ -485,7 +478,7 @@ namespace RecipeBookWF
             e.Graphics.DrawImage(behind, -control.Left, -control.Top);
         }
 
-        private void pictureBox1_Paint_1(object sender, PaintEventArgs e)
+        private void blackoutFavorites_Paint(object sender, PaintEventArgs e)
         {
             Control control = (Control)sender;
             Control parent = control.Parent;
@@ -519,6 +512,22 @@ namespace RecipeBookWF
             g.DrawString(text, font, brush, new PointF(x, y));
 
             e.Graphics.DrawImage(behind, -control.Left, -control.Top);
+        }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            float newWidth = this.Width;
+            float newHeight = this.Height;
+            recipeName.Font = new Font(recipeName.Font.FontFamily, Math.Min(newWidth / 35, newHeight / 35), recipeName.Font.Style);
+            recipeDescriptionTextBox.Font = new Font(recipeDescriptionTextBox.Font.FontFamily, Math.Min(newWidth / 50, newHeight / 50), recipeDescriptionTextBox.Font.Style);
+            recipeIngridientsTextBox.Font = new Font(recipeIngridientsTextBox.Font.FontFamily, Math.Min(newWidth / 50, newHeight / 50), recipeIngridientsTextBox.Font.Style);
+            cookingTimeTextBox.Font = new Font(cookingTimeTextBox.Font.FontFamily, Math.Min(newWidth / 60, newHeight / 60), cookingTimeTextBox.Font.Style); // пример формулы для изменения размера шрифта
+
+            recipeName_favourites.Font = new Font(recipeName_favourites.Font.FontFamily, Math.Min(newWidth / 35, newHeight / 35), recipeName_favourites.Font.Style);
+            recipeDescriptionTextBox_favourites.Font = new Font(recipeDescriptionTextBox_favourites.Font.FontFamily, Math.Min(newWidth / 50, newHeight / 50), recipeDescriptionTextBox_favourites.Font.Style);
+            recipeIngridientsTextBox_favourites.Font = new Font(recipeIngridientsTextBox_favourites.Font.FontFamily, Math.Min(newWidth / 50, newHeight / 50), recipeIngridientsTextBox_favourites.Font.Style);
+            cookingTimeTextBox_favorites.Font = new Font(cookingTimeTextBox_favorites.Font.FontFamily, Math.Min(newWidth / 60, newHeight / 60), cookingTimeTextBox_favorites.Font.Style); // пример формулы для изменения размера шрифта
+
         }
     }
 }

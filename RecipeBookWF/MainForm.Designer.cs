@@ -44,16 +44,17 @@ namespace RecipeBookWF
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.blackout = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cookingTimeTextBox = new System.Windows.Forms.RichTextBox();
             this.editRecipeButton = new System.Windows.Forms.Button();
             this.AddToFavoritesButton = new System.Windows.Forms.Button();
             this.recipeIngridientsTextBox = new System.Windows.Forms.RichTextBox();
             this.recipeDescriptionTextBox = new System.Windows.Forms.RichTextBox();
             this.recipeName = new System.Windows.Forms.TextBox();
             this.recipePictureBox = new System.Windows.Forms.PictureBox();
+            this.cookingTimeTextBox = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.listBox = new System.Windows.Forms.ListBox();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -61,30 +62,30 @@ namespace RecipeBookWF
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cookingTimeTextBox_favorites = new System.Windows.Forms.RichTextBox();
             this.editRecipeButton_favourites = new System.Windows.Forms.Button();
             this.RemoveFromFavoritesButton = new System.Windows.Forms.Button();
             this.recipeIngridientsTextBox_favourites = new System.Windows.Forms.RichTextBox();
             this.recipeDescriptionTextBox_favourites = new System.Windows.Forms.RichTextBox();
             this.recipeName_favourites = new System.Windows.Forms.TextBox();
             this.recipePictureBox_favourites = new System.Windows.Forms.PictureBox();
+            this.cookingTimeTextBox_favorites = new System.Windows.Forms.TextBox();
+            this.blackoutFavorites = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.listBox_favourites = new System.Windows.Forms.ListBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.blackout = new System.Windows.Forms.PictureBox();
-            this.blackoutFavorites = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.blackout)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recipePictureBox)).BeginInit();
             this.panel4.SuspendLayout();
@@ -92,12 +93,11 @@ namespace RecipeBookWF
             this.tabPage2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recipePictureBox_favourites)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blackoutFavorites)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.blackout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.blackoutFavorites)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -225,71 +225,78 @@ namespace RecipeBookWF
             this.panel3.Size = new System.Drawing.Size(872, 672);
             this.panel3.TabIndex = 9;
             // 
+            // blackout
+            // 
+            this.blackout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.blackout.Enabled = false;
+            this.blackout.Location = new System.Drawing.Point(0, 0);
+            this.blackout.Name = "blackout";
+            this.blackout.Size = new System.Drawing.Size(872, 672);
+            this.blackout.TabIndex = 1;
+            this.blackout.TabStop = false;
+            this.blackout.Visible = false;
+            this.blackout.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.57798F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.11927F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.88991F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.4633F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.72477F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cookingTimeTextBox, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.editRecipeButton, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.AddToFavoritesButton, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.recipeIngridientsTextBox, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.recipeDescriptionTextBox, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.recipeName, 1, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.440367F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.62844F));
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.editRecipeButton, 4, 5);
+            this.tableLayoutPanel1.Controls.Add(this.AddToFavoritesButton, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.recipeIngridientsTextBox, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.recipeDescriptionTextBox, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.recipeName, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.recipePictureBox, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cookingTimeTextBox, 3, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.59259F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.024692F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.90124F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.32716F));
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.911242F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.738095F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.720238F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.464286F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.19643F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.881657F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(872, 672);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(3, 152);
+            this.label1.Location = new System.Drawing.Point(3, 143);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 20);
+            this.label1.Size = new System.Drawing.Size(155, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "Ингридиенты:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(165, 152);
+            this.label2.Location = new System.Drawing.Point(164, 143);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 20);
+            this.label2.Size = new System.Drawing.Size(368, 30);
             this.label2.TabIndex = 3;
             this.label2.Text = "Рецепт";
-            // 
-            // cookingTimeTextBox
-            // 
-            this.cookingTimeTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cookingTimeTextBox.Location = new System.Drawing.Point(702, 144);
-            this.cookingTimeTextBox.Name = "cookingTimeTextBox";
-            this.cookingTimeTextBox.ReadOnly = true;
-            this.cookingTimeTextBox.Size = new System.Drawing.Size(167, 25);
-            this.cookingTimeTextBox.TabIndex = 4;
-            this.cookingTimeTextBox.Text = "";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // editRecipeButton
             // 
-            this.editRecipeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.editRecipeButton.Location = new System.Drawing.Point(730, 643);
+            this.editRecipeButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editRecipeButton.Location = new System.Drawing.Point(728, 641);
             this.editRecipeButton.Name = "editRecipeButton";
-            this.editRecipeButton.Size = new System.Drawing.Size(139, 26);
+            this.editRecipeButton.Size = new System.Drawing.Size(141, 28);
             this.editRecipeButton.TabIndex = 7;
             this.editRecipeButton.Text = "Редактировать";
             this.editRecipeButton.UseVisualStyleBackColor = true;
@@ -297,10 +304,10 @@ namespace RecipeBookWF
             // 
             // AddToFavoritesButton
             // 
-            this.AddToFavoritesButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AddToFavoritesButton.Location = new System.Drawing.Point(541, 643);
+            this.AddToFavoritesButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddToFavoritesButton.Location = new System.Drawing.Point(538, 641);
             this.AddToFavoritesButton.Name = "AddToFavoritesButton";
-            this.AddToFavoritesButton.Size = new System.Drawing.Size(155, 26);
+            this.AddToFavoritesButton.Size = new System.Drawing.Size(154, 28);
             this.AddToFavoritesButton.TabIndex = 8;
             this.AddToFavoritesButton.Text = "Добавить в избранное";
             this.AddToFavoritesButton.UseVisualStyleBackColor = true;
@@ -309,34 +316,34 @@ namespace RecipeBookWF
             // recipeIngridientsTextBox
             // 
             this.recipeIngridientsTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.recipeIngridientsTextBox.Location = new System.Drawing.Point(3, 175);
+            this.recipeIngridientsTextBox.Location = new System.Drawing.Point(3, 176);
             this.recipeIngridientsTextBox.Name = "recipeIngridientsTextBox";
             this.recipeIngridientsTextBox.ReadOnly = true;
-            this.recipeIngridientsTextBox.Size = new System.Drawing.Size(156, 451);
+            this.recipeIngridientsTextBox.Size = new System.Drawing.Size(155, 459);
             this.recipeIngridientsTextBox.TabIndex = 9;
             this.recipeIngridientsTextBox.Text = "";
             // 
             // recipeDescriptionTextBox
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.recipeDescriptionTextBox, 3);
+            this.tableLayoutPanel1.SetColumnSpan(this.recipeDescriptionTextBox, 4);
             this.recipeDescriptionTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.recipeDescriptionTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.recipeDescriptionTextBox.Location = new System.Drawing.Point(165, 175);
+            this.recipeDescriptionTextBox.Location = new System.Drawing.Point(164, 176);
             this.recipeDescriptionTextBox.Name = "recipeDescriptionTextBox";
             this.recipeDescriptionTextBox.ReadOnly = true;
-            this.recipeDescriptionTextBox.Size = new System.Drawing.Size(704, 451);
+            this.recipeDescriptionTextBox.Size = new System.Drawing.Size(705, 459);
             this.recipeDescriptionTextBox.TabIndex = 10;
             this.recipeDescriptionTextBox.Text = "";
             // 
             // recipeName
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.recipeName, 3);
-            this.recipeName.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.recipeName.Location = new System.Drawing.Point(165, 67);
+            this.tableLayoutPanel1.SetColumnSpan(this.recipeName, 4);
+            this.recipeName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.recipeName.Location = new System.Drawing.Point(164, 69);
             this.recipeName.Multiline = true;
             this.recipeName.Name = "recipeName";
             this.recipeName.ReadOnly = true;
-            this.recipeName.Size = new System.Drawing.Size(704, 48);
+            this.recipeName.Size = new System.Drawing.Size(705, 46);
             this.recipeName.TabIndex = 11;
             // 
             // recipePictureBox
@@ -344,9 +351,20 @@ namespace RecipeBookWF
             this.recipePictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recipePictureBox.Location = new System.Drawing.Point(3, 3);
             this.recipePictureBox.Name = "recipePictureBox";
-            this.recipePictureBox.Size = new System.Drawing.Size(156, 112);
+            this.tableLayoutPanel1.SetRowSpan(this.recipePictureBox, 2);
+            this.recipePictureBox.Size = new System.Drawing.Size(155, 112);
             this.recipePictureBox.TabIndex = 12;
             this.recipePictureBox.TabStop = false;
+            // 
+            // cookingTimeTextBox
+            // 
+            this.cookingTimeTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.tableLayoutPanel1.SetColumnSpan(this.cookingTimeTextBox, 2);
+            this.cookingTimeTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cookingTimeTextBox.Location = new System.Drawing.Point(698, 146);
+            this.cookingTimeTextBox.Name = "cookingTimeTextBox";
+            this.cookingTimeTextBox.Size = new System.Drawing.Size(171, 20);
+            this.cookingTimeTextBox.TabIndex = 13;
             // 
             // panel4
             // 
@@ -411,89 +429,84 @@ namespace RecipeBookWF
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.tableLayoutPanel2);
             this.panel6.Controls.Add(this.blackoutFavorites);
-            this.panel6.Controls.Add(this.tableLayoutPanel6);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(215, 0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(872, 672);
             this.panel6.TabIndex = 9;
             // 
-            // tableLayoutPanel6
+            // tableLayoutPanel2
             // 
-            this.tableLayoutPanel6.ColumnCount = 4;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.57798F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.11927F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.4633F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.72477F));
-            this.tableLayoutPanel6.Controls.Add(this.label4, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.label5, 1, 1);
-            this.tableLayoutPanel6.Controls.Add(this.cookingTimeTextBox_favorites, 3, 1);
-            this.tableLayoutPanel6.Controls.Add(this.editRecipeButton_favourites, 3, 3);
-            this.tableLayoutPanel6.Controls.Add(this.RemoveFromFavoritesButton, 2, 3);
-            this.tableLayoutPanel6.Controls.Add(this.recipeIngridientsTextBox_favourites, 0, 2);
-            this.tableLayoutPanel6.Controls.Add(this.recipeDescriptionTextBox_favourites, 1, 2);
-            this.tableLayoutPanel6.Controls.Add(this.recipeName_favourites, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.recipePictureBox_favourites, 0, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 4;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.59259F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.024692F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.90124F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.32716F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(872, 672);
-            this.tableLayoutPanel6.TabIndex = 0;
+            this.tableLayoutPanel2.ColumnCount = 5;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.57798F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.88991F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.4633F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.440367F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.62844F));
+            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label5, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.editRecipeButton_favourites, 4, 5);
+            this.tableLayoutPanel2.Controls.Add(this.RemoveFromFavoritesButton, 2, 5);
+            this.tableLayoutPanel2.Controls.Add(this.recipeIngridientsTextBox_favourites, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.recipeDescriptionTextBox_favourites, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.recipeName_favourites, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.recipePictureBox_favourites, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cookingTimeTextBox_favorites, 3, 3);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 6;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.911242F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.738095F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.720238F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.464286F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.19643F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.881657F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(872, 672);
+            this.tableLayoutPanel2.TabIndex = 1;
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(3, 152);
+            this.label4.Location = new System.Drawing.Point(3, 143);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 20);
+            this.label4.Size = new System.Drawing.Size(155, 30);
             this.label4.TabIndex = 1;
             this.label4.Text = "Ингридиенты:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(165, 152);
+            this.label5.Location = new System.Drawing.Point(164, 143);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 20);
+            this.label5.Size = new System.Drawing.Size(368, 30);
             this.label5.TabIndex = 3;
             this.label5.Text = "Рецепт";
-            // 
-            // cookingTimeTextBox_favorites
-            // 
-            this.cookingTimeTextBox_favorites.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cookingTimeTextBox_favorites.Location = new System.Drawing.Point(702, 144);
-            this.cookingTimeTextBox_favorites.Name = "cookingTimeTextBox_favorites";
-            this.cookingTimeTextBox_favorites.ReadOnly = true;
-            this.cookingTimeTextBox_favorites.Size = new System.Drawing.Size(167, 25);
-            this.cookingTimeTextBox_favorites.TabIndex = 4;
-            this.cookingTimeTextBox_favorites.Text = "";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // editRecipeButton_favourites
             // 
-            this.editRecipeButton_favourites.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.editRecipeButton_favourites.Location = new System.Drawing.Point(730, 643);
+            this.editRecipeButton_favourites.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editRecipeButton_favourites.Location = new System.Drawing.Point(728, 641);
             this.editRecipeButton_favourites.Name = "editRecipeButton_favourites";
-            this.editRecipeButton_favourites.Size = new System.Drawing.Size(139, 26);
+            this.editRecipeButton_favourites.Size = new System.Drawing.Size(141, 28);
             this.editRecipeButton_favourites.TabIndex = 7;
             this.editRecipeButton_favourites.Text = "Редактировать";
             this.editRecipeButton_favourites.UseVisualStyleBackColor = true;
             // 
             // RemoveFromFavoritesButton
             // 
-            this.RemoveFromFavoritesButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.RemoveFromFavoritesButton.Location = new System.Drawing.Point(541, 643);
+            this.RemoveFromFavoritesButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RemoveFromFavoritesButton.Location = new System.Drawing.Point(538, 641);
             this.RemoveFromFavoritesButton.Name = "RemoveFromFavoritesButton";
-            this.RemoveFromFavoritesButton.Size = new System.Drawing.Size(155, 26);
+            this.RemoveFromFavoritesButton.Size = new System.Drawing.Size(154, 28);
             this.RemoveFromFavoritesButton.TabIndex = 8;
             this.RemoveFromFavoritesButton.Text = "Убрать из избранного";
             this.RemoveFromFavoritesButton.UseVisualStyleBackColor = true;
@@ -502,34 +515,34 @@ namespace RecipeBookWF
             // recipeIngridientsTextBox_favourites
             // 
             this.recipeIngridientsTextBox_favourites.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.recipeIngridientsTextBox_favourites.Location = new System.Drawing.Point(3, 175);
+            this.recipeIngridientsTextBox_favourites.Location = new System.Drawing.Point(3, 176);
             this.recipeIngridientsTextBox_favourites.Name = "recipeIngridientsTextBox_favourites";
             this.recipeIngridientsTextBox_favourites.ReadOnly = true;
-            this.recipeIngridientsTextBox_favourites.Size = new System.Drawing.Size(156, 451);
+            this.recipeIngridientsTextBox_favourites.Size = new System.Drawing.Size(155, 459);
             this.recipeIngridientsTextBox_favourites.TabIndex = 9;
             this.recipeIngridientsTextBox_favourites.Text = "";
             // 
             // recipeDescriptionTextBox_favourites
             // 
-            this.tableLayoutPanel6.SetColumnSpan(this.recipeDescriptionTextBox_favourites, 3);
+            this.tableLayoutPanel2.SetColumnSpan(this.recipeDescriptionTextBox_favourites, 4);
             this.recipeDescriptionTextBox_favourites.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.recipeDescriptionTextBox_favourites.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.recipeDescriptionTextBox_favourites.Location = new System.Drawing.Point(165, 175);
+            this.recipeDescriptionTextBox_favourites.Location = new System.Drawing.Point(164, 176);
             this.recipeDescriptionTextBox_favourites.Name = "recipeDescriptionTextBox_favourites";
             this.recipeDescriptionTextBox_favourites.ReadOnly = true;
-            this.recipeDescriptionTextBox_favourites.Size = new System.Drawing.Size(704, 451);
+            this.recipeDescriptionTextBox_favourites.Size = new System.Drawing.Size(705, 459);
             this.recipeDescriptionTextBox_favourites.TabIndex = 10;
             this.recipeDescriptionTextBox_favourites.Text = "";
             // 
             // recipeName_favourites
             // 
-            this.tableLayoutPanel6.SetColumnSpan(this.recipeName_favourites, 3);
-            this.recipeName_favourites.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.recipeName_favourites.Location = new System.Drawing.Point(165, 67);
+            this.tableLayoutPanel2.SetColumnSpan(this.recipeName_favourites, 4);
+            this.recipeName_favourites.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.recipeName_favourites.Location = new System.Drawing.Point(164, 69);
             this.recipeName_favourites.Multiline = true;
             this.recipeName_favourites.Name = "recipeName_favourites";
             this.recipeName_favourites.ReadOnly = true;
-            this.recipeName_favourites.Size = new System.Drawing.Size(704, 48);
+            this.recipeName_favourites.Size = new System.Drawing.Size(705, 46);
             this.recipeName_favourites.TabIndex = 11;
             // 
             // recipePictureBox_favourites
@@ -537,9 +550,30 @@ namespace RecipeBookWF
             this.recipePictureBox_favourites.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recipePictureBox_favourites.Location = new System.Drawing.Point(3, 3);
             this.recipePictureBox_favourites.Name = "recipePictureBox_favourites";
-            this.recipePictureBox_favourites.Size = new System.Drawing.Size(156, 112);
+            this.tableLayoutPanel2.SetRowSpan(this.recipePictureBox_favourites, 2);
+            this.recipePictureBox_favourites.Size = new System.Drawing.Size(155, 112);
             this.recipePictureBox_favourites.TabIndex = 12;
             this.recipePictureBox_favourites.TabStop = false;
+            // 
+            // cookingTimeTextBox_favorites
+            // 
+            this.cookingTimeTextBox_favorites.BackColor = System.Drawing.SystemColors.Control;
+            this.tableLayoutPanel2.SetColumnSpan(this.cookingTimeTextBox_favorites, 2);
+            this.cookingTimeTextBox_favorites.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cookingTimeTextBox_favorites.Location = new System.Drawing.Point(698, 146);
+            this.cookingTimeTextBox_favorites.Name = "cookingTimeTextBox_favorites";
+            this.cookingTimeTextBox_favorites.Size = new System.Drawing.Size(171, 20);
+            this.cookingTimeTextBox_favorites.TabIndex = 13;
+            // 
+            // blackoutFavorites
+            // 
+            this.blackoutFavorites.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.blackoutFavorites.Location = new System.Drawing.Point(0, 0);
+            this.blackoutFavorites.Name = "blackoutFavorites";
+            this.blackoutFavorites.Size = new System.Drawing.Size(872, 672);
+            this.blackoutFavorites.TabIndex = 4;
+            this.blackoutFavorites.TabStop = false;
+            this.blackoutFavorites.Paint += new System.Windows.Forms.PaintEventHandler(this.blackoutFavorites_Paint);
             // 
             // panel7
             // 
@@ -585,29 +619,6 @@ namespace RecipeBookWF
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
-            // blackout
-            // 
-            this.blackout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.blackout.Enabled = false;
-            this.blackout.Location = new System.Drawing.Point(0, 0);
-            this.blackout.Name = "blackout";
-            this.blackout.Size = new System.Drawing.Size(872, 672);
-            this.blackout.TabIndex = 1;
-            this.blackout.TabStop = false;
-            this.blackout.Visible = false;
-            this.blackout.Click += new System.EventHandler(this.pictureBox1_Click_1);
-            this.blackout.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
-            // 
-            // blackoutFavorites
-            // 
-            this.blackoutFavorites.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.blackoutFavorites.Location = new System.Drawing.Point(0, 0);
-            this.blackoutFavorites.Name = "blackoutFavorites";
-            this.blackoutFavorites.Size = new System.Drawing.Size(872, 672);
-            this.blackoutFavorites.TabIndex = 2;
-            this.blackoutFavorites.TabStop = false;
-            this.blackoutFavorites.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint_1);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -619,6 +630,7 @@ namespace RecipeBookWF
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Кулинарная книга";
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -626,6 +638,7 @@ namespace RecipeBookWF
             this.tabPage1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.blackout)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recipePictureBox)).EndInit();
@@ -635,14 +648,13 @@ namespace RecipeBookWF
             this.tabPage2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recipePictureBox_favourites)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blackoutFavorites)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.blackout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.blackoutFavorites)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -667,22 +679,11 @@ namespace RecipeBookWF
         private System.Windows.Forms.ListBox listBox_favourites;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox cookingTimeTextBox_favorites;
-        private System.Windows.Forms.Button editRecipeButton_favourites;
-        private System.Windows.Forms.Button RemoveFromFavoritesButton;
-        private System.Windows.Forms.RichTextBox recipeIngridientsTextBox_favourites;
-        private System.Windows.Forms.RichTextBox recipeDescriptionTextBox_favourites;
-        private System.Windows.Forms.TextBox recipeName_favourites;
-        private System.Windows.Forms.PictureBox recipePictureBox_favourites;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox cookingTimeTextBox;
         private System.Windows.Forms.Button editRecipeButton;
         private System.Windows.Forms.Button AddToFavoritesButton;
         private System.Windows.Forms.RichTextBox recipeIngridientsTextBox;
@@ -699,6 +700,17 @@ namespace RecipeBookWF
         private System.Windows.Forms.ToolStripMenuItem CreateNewBookButton;
         private System.Windows.Forms.PictureBox blackout;
         private System.Windows.Forms.PictureBox blackoutFavorites;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button editRecipeButton_favourites;
+        private System.Windows.Forms.Button RemoveFromFavoritesButton;
+        private System.Windows.Forms.RichTextBox recipeIngridientsTextBox_favourites;
+        private System.Windows.Forms.RichTextBox recipeDescriptionTextBox_favourites;
+        private System.Windows.Forms.TextBox recipeName_favourites;
+        private System.Windows.Forms.PictureBox recipePictureBox_favourites;
+        private System.Windows.Forms.TextBox cookingTimeTextBox;
+        private System.Windows.Forms.TextBox cookingTimeTextBox_favorites;
     }
 }
 
