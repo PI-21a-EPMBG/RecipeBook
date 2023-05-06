@@ -56,6 +56,7 @@ namespace RecipeBookWF
             listBox_favourites.SelectedIndex = -1;
             _selectedIndex = 1;
 
+            FontSizeConverter();
             ClearSelect();
         }
         private void LoadMenuButton_Click(object sender, EventArgs e)
@@ -512,9 +513,10 @@ namespace RecipeBookWF
             g.DrawString(text, font, brush, new PointF(x, y));
 
             e.Graphics.DrawImage(behind, -control.Left, -control.Top);
+
         }
 
-        private void MainForm_Resize(object sender, EventArgs e)
+        private void FontSizeConverter()
         {
             float newWidth = this.Width;
             float newHeight = this.Height;
@@ -527,7 +529,36 @@ namespace RecipeBookWF
             recipeDescriptionTextBox_favourites.Font = new Font(recipeDescriptionTextBox_favourites.Font.FontFamily, Math.Min(newWidth / 50, newHeight / 50), recipeDescriptionTextBox_favourites.Font.Style);
             recipeIngridientsTextBox_favourites.Font = new Font(recipeIngridientsTextBox_favourites.Font.FontFamily, Math.Min(newWidth / 50, newHeight / 50), recipeIngridientsTextBox_favourites.Font.Style);
             cookingTimeTextBox_favorites.Font = new Font(cookingTimeTextBox_favorites.Font.FontFamily, Math.Min(newWidth / 60, newHeight / 60), cookingTimeTextBox_favorites.Font.Style); // пример формулы для изменения размера шрифта
+        }
 
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            FontSizeConverter();
+        }
+
+        private void editRecipeButton_favourites_Click(object sender, EventArgs e)
+        {
+            if (!recipeName_favourites.ReadOnly)
+            {
+                _selectedRecipe.Name = recipeName_favourites.Text;
+                _selectedRecipe.Ingridients = recipeIngridientsTextBox_favourites.Text.Replace("-", "").Split('\n', ',').ToList();
+                _selectedRecipe.Description = recipeDescriptionTextBox_favourites.Text;
+                _selectedRecipe.CookingTime = Convert.ToInt32(cookingTimeTextBox_favorites.Text.Split(' ')[0]);
+
+                IsEdited = true;
+            }
+
+            ToggleReadOnlyMode_favourites();
+        }
+
+        private void ToggleReadOnlyMode_favourites()
+        {
+            recipeName_favourites.ReadOnly = !recipeName_favourites.ReadOnly;
+            recipeDescriptionTextBox_favourites.ReadOnly = !recipeDescriptionTextBox_favourites.ReadOnly;
+            cookingTimeTextBox_favorites.ReadOnly = !cookingTimeTextBox_favorites.ReadOnly;
+            recipeIngridientsTextBox_favourites.ReadOnly = !recipeIngridientsTextBox_favourites.ReadOnly;
+
+            editRecipeButton_favourites.Text = recipeName_favourites.ReadOnly ? "Редактировать" : "Сохранить";
         }
     }
 }

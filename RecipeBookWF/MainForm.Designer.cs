@@ -217,8 +217,8 @@ namespace RecipeBookWF
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.blackout);
             this.panel3.Controls.Add(this.tableLayoutPanel1);
+            this.panel3.Controls.Add(this.blackout);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(215, 0);
             this.panel3.Name = "panel3";
@@ -363,6 +363,7 @@ namespace RecipeBookWF
             this.cookingTimeTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cookingTimeTextBox.Location = new System.Drawing.Point(698, 146);
             this.cookingTimeTextBox.Name = "cookingTimeTextBox";
+            this.cookingTimeTextBox.ReadOnly = true;
             this.cookingTimeTextBox.Size = new System.Drawing.Size(171, 20);
             this.cookingTimeTextBox.TabIndex = 13;
             // 
@@ -500,6 +501,7 @@ namespace RecipeBookWF
             this.editRecipeButton_favourites.TabIndex = 7;
             this.editRecipeButton_favourites.Text = "Редактировать";
             this.editRecipeButton_favourites.UseVisualStyleBackColor = true;
+            this.editRecipeButton_favourites.Click += new System.EventHandler(this.editRecipeButton_favourites_Click);
             // 
             // RemoveFromFavoritesButton
             // 
@@ -562,6 +564,7 @@ namespace RecipeBookWF
             this.cookingTimeTextBox_favorites.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cookingTimeTextBox_favorites.Location = new System.Drawing.Point(698, 146);
             this.cookingTimeTextBox_favorites.Name = "cookingTimeTextBox_favorites";
+            this.cookingTimeTextBox_favorites.ReadOnly = true;
             this.cookingTimeTextBox_favorites.Size = new System.Drawing.Size(171, 20);
             this.cookingTimeTextBox_favorites.TabIndex = 13;
             // 
