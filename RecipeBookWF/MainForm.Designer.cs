@@ -61,7 +61,6 @@ namespace RecipeBookWF
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.blackoutFavorites = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -79,6 +78,7 @@ namespace RecipeBookWF
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.blackout = new System.Windows.Forms.PictureBox();
+            this.blackoutFavorites = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -92,12 +92,12 @@ namespace RecipeBookWF
             this.tabPage2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.blackoutFavorites)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recipePictureBox_favourites)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.blackout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blackoutFavorites)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -419,16 +419,6 @@ namespace RecipeBookWF
             this.panel6.Size = new System.Drawing.Size(872, 672);
             this.panel6.TabIndex = 9;
             // 
-            // blackoutFavorites
-            // 
-            this.blackoutFavorites.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.blackoutFavorites.Location = new System.Drawing.Point(0, 0);
-            this.blackoutFavorites.Name = "blackoutFavorites";
-            this.blackoutFavorites.Size = new System.Drawing.Size(872, 672);
-            this.blackoutFavorites.TabIndex = 2;
-            this.blackoutFavorites.TabStop = false;
-            this.blackoutFavorites.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint_1);
-            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 4;
@@ -608,6 +598,16 @@ namespace RecipeBookWF
             this.blackout.Click += new System.EventHandler(this.pictureBox1_Click_1);
             this.blackout.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             // 
+            // blackoutFavorites
+            // 
+            this.blackoutFavorites.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.blackoutFavorites.Location = new System.Drawing.Point(0, 0);
+            this.blackoutFavorites.Name = "blackoutFavorites";
+            this.blackoutFavorites.Size = new System.Drawing.Size(872, 672);
+            this.blackoutFavorites.TabIndex = 2;
+            this.blackoutFavorites.TabStop = false;
+            this.blackoutFavorites.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint_1);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -635,7 +635,6 @@ namespace RecipeBookWF
             this.tabPage2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.blackoutFavorites)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recipePictureBox_favourites)).EndInit();
@@ -643,6 +642,7 @@ namespace RecipeBookWF
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.blackout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blackoutFavorites)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -697,8 +697,8 @@ namespace RecipeBookWF
         private System.Windows.Forms.ToolStripMenuItem CreateRecipeCatalogueButton;
         private System.Windows.Forms.ToolStripMenuItem RemoveRecipeButton;
         private System.Windows.Forms.ToolStripMenuItem CreateNewBookButton;
-        private System.Windows.Forms.PictureBox blackoutFavorites;
         private System.Windows.Forms.PictureBox blackout;
+        private System.Windows.Forms.PictureBox blackoutFavorites;
     }
 }
 

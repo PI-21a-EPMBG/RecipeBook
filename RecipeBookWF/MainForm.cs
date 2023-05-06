@@ -167,7 +167,7 @@ namespace RecipeBookWF
         {
             _favorites.Remove(_selectedRecipe);
             _selectedRecipe.IsFavorite = false;
-            //ClearSelect();
+            ClearSelect();
         }
         private void CreateRecipeCatalogueButton_Click(object sender, EventArgs e)
         {
