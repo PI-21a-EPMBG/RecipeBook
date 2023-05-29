@@ -42,6 +42,7 @@ namespace RecipeBookWF
             this.SortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SortNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SortTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SortRecipesByIngredientCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -180,7 +181,8 @@ namespace RecipeBookWF
             // 
             this.SortToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SortNameToolStripMenuItem,
-            this.SortTimeToolStripMenuItem});
+            this.SortTimeToolStripMenuItem,
+            this.SortRecipesByIngredientCountToolStripMenuItem});
             this.SortToolStripMenuItem.Name = "SortToolStripMenuItem";
             this.SortToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.SortToolStripMenuItem.Text = "Сортировка";
@@ -188,16 +190,24 @@ namespace RecipeBookWF
             // SortNameToolStripMenuItem
             // 
             this.SortNameToolStripMenuItem.Name = "SortNameToolStripMenuItem";
-            this.SortNameToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.SortNameToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.SortNameToolStripMenuItem.Text = "По имени";
             this.SortNameToolStripMenuItem.Click += new System.EventHandler(this.SortNameToolStripMenuItem_Click);
             // 
             // SortTimeToolStripMenuItem
             // 
             this.SortTimeToolStripMenuItem.Name = "SortTimeToolStripMenuItem";
-            this.SortTimeToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.SortTimeToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.SortTimeToolStripMenuItem.Text = "По времени";
             this.SortTimeToolStripMenuItem.Click += new System.EventHandler(this.SortTimeToolStripMenuItem_Click);
+            // 
+            // SortRecipesByIngredientCountToolStripMenuItem
+            // 
+            this.SortRecipesByIngredientCountToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.SortRecipesByIngredientCountToolStripMenuItem.Name = "SortRecipesByIngredientCountToolStripMenuItem";
+            this.SortRecipesByIngredientCountToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.SortRecipesByIngredientCountToolStripMenuItem.Text = "По ингридиентам";
+            this.SortRecipesByIngredientCountToolStripMenuItem.Click += new System.EventHandler(this.SortRecipesByIngredientCountToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -746,6 +756,7 @@ namespace RecipeBookWF
         private System.Windows.Forms.ToolStripMenuItem SortToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SortNameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SortTimeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SortRecipesByIngredientCountToolStripMenuItem;
     }
 }
 

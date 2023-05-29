@@ -576,5 +576,14 @@ namespace RecipeBookWF
             listBox.DataSource = null;
             listBox.DataSource = _recipes;
         }
+
+
+        private void SortRecipesByIngredientCountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _recipes = new BindingList<Recipe>(_recipes.OrderByDescending(r => r.Ingridients.Count).ToList());
+            listBox.DataSource = null;
+            listBox.DataSource = _recipes;
+        }
     }
+
 }
