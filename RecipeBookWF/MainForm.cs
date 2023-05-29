@@ -609,6 +609,18 @@ namespace RecipeBookWF
                 MessageBox.Show("Не удалось открыть изображение!");
             }
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (IsEdited)
+            {
+                DialogResult result = MessageBox.Show("Есть не сохраненные изенения продолжить ?", "Придупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true; // Отменяем закрытие окна
+                }
+            }
+        }
     }
 
 }
