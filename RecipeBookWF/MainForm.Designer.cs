@@ -39,6 +39,9 @@ namespace RecipeBookWF
             this.каталогToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CreateRecipeCatalogueButton = new System.Windows.Forms.ToolStripMenuItem();
             this.RemoveRecipeButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.SortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SortNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SortTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -79,9 +82,6 @@ namespace RecipeBookWF
             this.label6 = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.SortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SortNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SortTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -165,16 +165,39 @@ namespace RecipeBookWF
             // CreateRecipeCatalogueButton
             // 
             this.CreateRecipeCatalogueButton.Name = "CreateRecipeCatalogueButton";
-            this.CreateRecipeCatalogueButton.Size = new System.Drawing.Size(180, 22);
+            this.CreateRecipeCatalogueButton.Size = new System.Drawing.Size(140, 22);
             this.CreateRecipeCatalogueButton.Text = "Добавить";
             this.CreateRecipeCatalogueButton.Click += new System.EventHandler(this.CreateRecipeCatalogueButton_Click);
             // 
             // RemoveRecipeButton
             // 
             this.RemoveRecipeButton.Name = "RemoveRecipeButton";
-            this.RemoveRecipeButton.Size = new System.Drawing.Size(180, 22);
+            this.RemoveRecipeButton.Size = new System.Drawing.Size(140, 22);
             this.RemoveRecipeButton.Text = "Удалить";
             this.RemoveRecipeButton.Click += new System.EventHandler(this.RemoveRecipeButton_Click);
+            // 
+            // SortToolStripMenuItem
+            // 
+            this.SortToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SortNameToolStripMenuItem,
+            this.SortTimeToolStripMenuItem});
+            this.SortToolStripMenuItem.Name = "SortToolStripMenuItem";
+            this.SortToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.SortToolStripMenuItem.Text = "Сортировка";
+            // 
+            // SortNameToolStripMenuItem
+            // 
+            this.SortNameToolStripMenuItem.Name = "SortNameToolStripMenuItem";
+            this.SortNameToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.SortNameToolStripMenuItem.Text = "По имени";
+            this.SortNameToolStripMenuItem.Click += new System.EventHandler(this.SortNameToolStripMenuItem_Click);
+            // 
+            // SortTimeToolStripMenuItem
+            // 
+            this.SortTimeToolStripMenuItem.Name = "SortTimeToolStripMenuItem";
+            this.SortTimeToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.SortTimeToolStripMenuItem.Text = "По времени";
+            this.SortTimeToolStripMenuItem.Click += new System.EventHandler(this.SortTimeToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -357,6 +380,7 @@ namespace RecipeBookWF
             this.recipePictureBox.Name = "recipePictureBox";
             this.tableLayoutPanel1.SetRowSpan(this.recipePictureBox, 2);
             this.recipePictureBox.Size = new System.Drawing.Size(155, 112);
+            this.recipePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.recipePictureBox.TabIndex = 12;
             this.recipePictureBox.TabStop = false;
             // 
@@ -568,6 +592,7 @@ namespace RecipeBookWF
             this.recipePictureBox_favourites.Name = "recipePictureBox_favourites";
             this.tableLayoutPanel2.SetRowSpan(this.recipePictureBox_favourites, 2);
             this.recipePictureBox_favourites.Size = new System.Drawing.Size(155, 112);
+            this.recipePictureBox_favourites.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.recipePictureBox_favourites.TabIndex = 12;
             this.recipePictureBox_favourites.TabStop = false;
             // 
@@ -625,29 +650,6 @@ namespace RecipeBookWF
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog1";
-            // 
-            // SortToolStripMenuItem
-            // 
-            this.SortToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SortNameToolStripMenuItem,
-            this.SortTimeToolStripMenuItem});
-            this.SortToolStripMenuItem.Name = "SortToolStripMenuItem";
-            this.SortToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.SortToolStripMenuItem.Text = "Сортировка";
-            // 
-            // SortNameToolStripMenuItem
-            // 
-            this.SortNameToolStripMenuItem.Name = "SortNameToolStripMenuItem";
-            this.SortNameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.SortNameToolStripMenuItem.Text = "По имени";
-            this.SortNameToolStripMenuItem.Click += new System.EventHandler(this.SortNameToolStripMenuItem_Click);
-            // 
-            // SortTimeToolStripMenuItem
-            // 
-            this.SortTimeToolStripMenuItem.Name = "SortTimeToolStripMenuItem";
-            this.SortTimeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.SortTimeToolStripMenuItem.Text = "По времени";
-            this.SortTimeToolStripMenuItem.Click += new System.EventHandler(this.SortTimeToolStripMenuItem_Click);
             // 
             // MainForm
             // 

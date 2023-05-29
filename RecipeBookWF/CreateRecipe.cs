@@ -15,7 +15,8 @@ namespace RecipeBookWF
     {
 
         public Recipe Recipe { get; private set; }
-        public bool Result; 
+        public bool Result;
+        private Image _image;
 
         public CreateRecipe()
         {
@@ -39,6 +40,7 @@ namespace RecipeBookWF
                 else if (string.IsNullOrEmpty(ingridientsTextBox.Text)) throw new ArgumentNullException("Ингриденты");
                 else if (string.IsNullOrEmpty(recipeTextBox.Text)) throw new ArgumentNullException("Рецепт");
                 else if (cookingTimeTextBox.Value == 0) throw new ArgumentException("Время готовки не может быть равно нулю");
+                else if (_image == null) throw new ArgumentNullException("Изображение не выбрано");
             }
             catch (ArgumentNullException ex)
             {
@@ -63,7 +65,8 @@ namespace RecipeBookWF
                 Ingridients = ingridients,
                 Description = description,
                 CookingTime = time,
-                IsFavorite = false
+                IsFavorite = false,
+                Image = new Bitmap(_image)
             };
             Result = true;
             this.Close();
@@ -72,6 +75,20 @@ namespace RecipeBookWF
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void addImage_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.png, *.jpg)|*.png;*.jpg|All Files (*.*)|*.*";
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+                _image = new Bitmap(openFileDialog.FileName);
+            }
         }
     }
 }

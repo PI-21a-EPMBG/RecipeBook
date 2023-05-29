@@ -39,6 +39,7 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.cookingTimeTextBox = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
+            this.addImage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cookingTimeTextBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,7 +107,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(245, 363);
+            this.CancelButton.Location = new System.Drawing.Point(245, 369);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 7;
@@ -116,7 +117,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(164, 363);
+            this.SaveButton.Location = new System.Drawing.Point(165, 369);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 8;
@@ -146,11 +147,22 @@
             this.label2.Text = "Время готовки\r\n(мин)\r\n";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // addImage
+            // 
+            this.addImage.Location = new System.Drawing.Point(93, 340);
+            this.addImage.Name = "addImage";
+            this.addImage.Size = new System.Drawing.Size(156, 23);
+            this.addImage.TabIndex = 11;
+            this.addImage.Text = "Добавить изображение";
+            this.addImage.UseVisualStyleBackColor = true;
+            this.addImage.Click += new System.EventHandler(this.addImage_Click);
+            // 
             // CreateRecipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 398);
+            this.ClientSize = new System.Drawing.Size(333, 399);
+            this.Controls.Add(this.addImage);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cookingTimeTextBox);
             this.Controls.Add(this.SaveButton);
@@ -183,5 +195,6 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.NumericUpDown cookingTimeTextBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button addImage;
     }
 }

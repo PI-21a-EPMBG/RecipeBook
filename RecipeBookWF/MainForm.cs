@@ -233,6 +233,7 @@ namespace RecipeBookWF
             editRecipeButton.Enabled = true;
 
             recipeName.Text = _selectedRecipe.Name;
+            recipePictureBox.Image = _selectedRecipe.Image;
             recipeDescriptionTextBox.Text = _selectedRecipe.Description;
             recipeIngridientsTextBox.Text = "-" + string.Join("\n-", _selectedRecipe.Ingridients);
             cookingTimeTextBox.Text = _selectedRecipe.CookingTime.ToString() + " мин.";
@@ -271,6 +272,7 @@ namespace RecipeBookWF
             editRecipeButton_favourites.Enabled = true;
 
             recipeName_favourites.Text = _selectedRecipe.Name;
+            recipePictureBox_favourites.Image = _selectedRecipe.Image;
             recipeDescriptionTextBox_favourites.Text = _selectedRecipe.Description;
             recipeIngridientsTextBox_favourites.Text = "-" + string.Join("\n-", _selectedRecipe.Ingridients);
             cookingTimeTextBox_favorites.Text = _selectedRecipe.CookingTime.ToString() + " мин.";
