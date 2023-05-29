@@ -560,5 +560,19 @@ namespace RecipeBookWF
 
             editRecipeButton_favourites.Text = recipeName_favourites.ReadOnly ? "Редактировать" : "Сохранить";
         }
+
+        private void SortNameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _recipes = new BindingList<Recipe>(_recipes.OrderBy(r => r.Name).ToList());
+            listBox.DataSource = null;
+            listBox.DataSource = _recipes;
+        }
+
+        private void SortTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _recipes = new BindingList<Recipe>(_recipes.OrderBy(r => r.CookingTime).ToList());
+            listBox.DataSource = null;
+            listBox.DataSource = _recipes;
+        }
     }
 }

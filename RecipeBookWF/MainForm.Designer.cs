@@ -62,6 +62,7 @@ namespace RecipeBookWF
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.blackoutFavorites = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -72,13 +73,15 @@ namespace RecipeBookWF
             this.recipeName_favourites = new System.Windows.Forms.TextBox();
             this.recipePictureBox_favourites = new System.Windows.Forms.PictureBox();
             this.cookingTimeTextBox_favorites = new System.Windows.Forms.TextBox();
-            this.blackoutFavorites = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.listBox_favourites = new System.Windows.Forms.ListBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.SortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SortNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SortTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -93,9 +96,9 @@ namespace RecipeBookWF
             this.tabPage2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.blackoutFavorites)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recipePictureBox_favourites)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.blackoutFavorites)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.SuspendLayout();
@@ -153,7 +156,8 @@ namespace RecipeBookWF
             // 
             this.каталогToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CreateRecipeCatalogueButton,
-            this.RemoveRecipeButton});
+            this.RemoveRecipeButton,
+            this.SortToolStripMenuItem});
             this.каталогToolStripMenuItem.Name = "каталогToolStripMenuItem";
             this.каталогToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.каталогToolStripMenuItem.Text = "Каталог";
@@ -161,14 +165,14 @@ namespace RecipeBookWF
             // CreateRecipeCatalogueButton
             // 
             this.CreateRecipeCatalogueButton.Name = "CreateRecipeCatalogueButton";
-            this.CreateRecipeCatalogueButton.Size = new System.Drawing.Size(126, 22);
+            this.CreateRecipeCatalogueButton.Size = new System.Drawing.Size(180, 22);
             this.CreateRecipeCatalogueButton.Text = "Добавить";
             this.CreateRecipeCatalogueButton.Click += new System.EventHandler(this.CreateRecipeCatalogueButton_Click);
             // 
             // RemoveRecipeButton
             // 
             this.RemoveRecipeButton.Name = "RemoveRecipeButton";
-            this.RemoveRecipeButton.Size = new System.Drawing.Size(126, 22);
+            this.RemoveRecipeButton.Size = new System.Drawing.Size(180, 22);
             this.RemoveRecipeButton.Text = "Удалить";
             this.RemoveRecipeButton.Click += new System.EventHandler(this.RemoveRecipeButton_Click);
             // 
@@ -438,6 +442,16 @@ namespace RecipeBookWF
             this.panel6.Size = new System.Drawing.Size(872, 672);
             this.panel6.TabIndex = 9;
             // 
+            // blackoutFavorites
+            // 
+            this.blackoutFavorites.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.blackoutFavorites.Location = new System.Drawing.Point(0, 0);
+            this.blackoutFavorites.Name = "blackoutFavorites";
+            this.blackoutFavorites.Size = new System.Drawing.Size(872, 672);
+            this.blackoutFavorites.TabIndex = 4;
+            this.blackoutFavorites.TabStop = false;
+            this.blackoutFavorites.Paint += new System.Windows.Forms.PaintEventHandler(this.blackoutFavorites_Paint);
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 5;
@@ -568,16 +582,6 @@ namespace RecipeBookWF
             this.cookingTimeTextBox_favorites.Size = new System.Drawing.Size(171, 20);
             this.cookingTimeTextBox_favorites.TabIndex = 13;
             // 
-            // blackoutFavorites
-            // 
-            this.blackoutFavorites.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.blackoutFavorites.Location = new System.Drawing.Point(0, 0);
-            this.blackoutFavorites.Name = "blackoutFavorites";
-            this.blackoutFavorites.Size = new System.Drawing.Size(872, 672);
-            this.blackoutFavorites.TabIndex = 4;
-            this.blackoutFavorites.TabStop = false;
-            this.blackoutFavorites.Paint += new System.Windows.Forms.PaintEventHandler(this.blackoutFavorites_Paint);
-            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.listBox_favourites);
@@ -622,6 +626,29 @@ namespace RecipeBookWF
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
+            // SortToolStripMenuItem
+            // 
+            this.SortToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SortNameToolStripMenuItem,
+            this.SortTimeToolStripMenuItem});
+            this.SortToolStripMenuItem.Name = "SortToolStripMenuItem";
+            this.SortToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SortToolStripMenuItem.Text = "Сортировка";
+            // 
+            // SortNameToolStripMenuItem
+            // 
+            this.SortNameToolStripMenuItem.Name = "SortNameToolStripMenuItem";
+            this.SortNameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SortNameToolStripMenuItem.Text = "По имени";
+            this.SortNameToolStripMenuItem.Click += new System.EventHandler(this.SortNameToolStripMenuItem_Click);
+            // 
+            // SortTimeToolStripMenuItem
+            // 
+            this.SortTimeToolStripMenuItem.Name = "SortTimeToolStripMenuItem";
+            this.SortTimeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SortTimeToolStripMenuItem.Text = "По времени";
+            this.SortTimeToolStripMenuItem.Click += new System.EventHandler(this.SortTimeToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -651,10 +678,10 @@ namespace RecipeBookWF
             this.tabPage2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.blackoutFavorites)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recipePictureBox_favourites)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.blackoutFavorites)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -714,6 +741,9 @@ namespace RecipeBookWF
         private System.Windows.Forms.PictureBox recipePictureBox_favourites;
         private System.Windows.Forms.TextBox cookingTimeTextBox;
         private System.Windows.Forms.TextBox cookingTimeTextBox_favorites;
+        private System.Windows.Forms.ToolStripMenuItem SortToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SortNameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SortTimeToolStripMenuItem;
     }
 }
 
