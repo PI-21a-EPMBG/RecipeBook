@@ -83,6 +83,7 @@ namespace RecipeBookWF
             this.label6 = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.changeImage = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -166,14 +167,14 @@ namespace RecipeBookWF
             // CreateRecipeCatalogueButton
             // 
             this.CreateRecipeCatalogueButton.Name = "CreateRecipeCatalogueButton";
-            this.CreateRecipeCatalogueButton.Size = new System.Drawing.Size(140, 22);
+            this.CreateRecipeCatalogueButton.Size = new System.Drawing.Size(180, 22);
             this.CreateRecipeCatalogueButton.Text = "Добавить";
             this.CreateRecipeCatalogueButton.Click += new System.EventHandler(this.CreateRecipeCatalogueButton_Click);
             // 
             // RemoveRecipeButton
             // 
             this.RemoveRecipeButton.Name = "RemoveRecipeButton";
-            this.RemoveRecipeButton.Size = new System.Drawing.Size(140, 22);
+            this.RemoveRecipeButton.Size = new System.Drawing.Size(180, 22);
             this.RemoveRecipeButton.Text = "Удалить";
             this.RemoveRecipeButton.Click += new System.EventHandler(this.RemoveRecipeButton_Click);
             // 
@@ -184,20 +185,20 @@ namespace RecipeBookWF
             this.SortTimeToolStripMenuItem,
             this.SortRecipesByIngredientCountToolStripMenuItem});
             this.SortToolStripMenuItem.Name = "SortToolStripMenuItem";
-            this.SortToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.SortToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.SortToolStripMenuItem.Text = "Сортировка";
             // 
             // SortNameToolStripMenuItem
             // 
             this.SortNameToolStripMenuItem.Name = "SortNameToolStripMenuItem";
-            this.SortNameToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.SortNameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.SortNameToolStripMenuItem.Text = "По имени";
             this.SortNameToolStripMenuItem.Click += new System.EventHandler(this.SortNameToolStripMenuItem_Click);
             // 
             // SortTimeToolStripMenuItem
             // 
             this.SortTimeToolStripMenuItem.Name = "SortTimeToolStripMenuItem";
-            this.SortTimeToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.SortTimeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.SortTimeToolStripMenuItem.Text = "По времени";
             this.SortTimeToolStripMenuItem.Click += new System.EventHandler(this.SortTimeToolStripMenuItem_Click);
             // 
@@ -205,7 +206,7 @@ namespace RecipeBookWF
             // 
             this.SortRecipesByIngredientCountToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.SortRecipesByIngredientCountToolStripMenuItem.Name = "SortRecipesByIngredientCountToolStripMenuItem";
-            this.SortRecipesByIngredientCountToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.SortRecipesByIngredientCountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.SortRecipesByIngredientCountToolStripMenuItem.Text = "По ингридиентам";
             this.SortRecipesByIngredientCountToolStripMenuItem.Click += new System.EventHandler(this.SortRecipesByIngredientCountToolStripMenuItem_Click);
             // 
@@ -254,8 +255,8 @@ namespace RecipeBookWF
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.blackout);
             this.panel3.Controls.Add(this.tableLayoutPanel1);
+            this.panel3.Controls.Add(this.blackout);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(215, 0);
             this.panel3.Name = "panel3";
@@ -291,14 +292,15 @@ namespace RecipeBookWF
             this.tableLayoutPanel1.Controls.Add(this.recipeName, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.recipePictureBox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.cookingTimeTextBox, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.changeImage, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.911242F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.738095F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.720238F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.464286F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.166667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.017857F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.19643F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.881657F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(872, 672);
@@ -309,9 +311,9 @@ namespace RecipeBookWF
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(3, 143);
+            this.label1.Location = new System.Drawing.Point(3, 146);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 30);
+            this.label1.Size = new System.Drawing.Size(155, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "Ингридиенты:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -321,9 +323,9 @@ namespace RecipeBookWF
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(164, 143);
+            this.label2.Location = new System.Drawing.Point(164, 146);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(368, 30);
+            this.label2.Size = new System.Drawing.Size(368, 27);
             this.label2.TabIndex = 3;
             this.label2.Text = "Рецепт";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -399,7 +401,7 @@ namespace RecipeBookWF
             this.cookingTimeTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel1.SetColumnSpan(this.cookingTimeTextBox, 2);
             this.cookingTimeTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cookingTimeTextBox.Location = new System.Drawing.Point(698, 146);
+            this.cookingTimeTextBox.Location = new System.Drawing.Point(698, 149);
             this.cookingTimeTextBox.Name = "cookingTimeTextBox";
             this.cookingTimeTextBox.ReadOnly = true;
             this.cookingTimeTextBox.Size = new System.Drawing.Size(171, 20);
@@ -661,6 +663,17 @@ namespace RecipeBookWF
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
+            // changeImage
+            // 
+            this.changeImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.changeImage.Location = new System.Drawing.Point(3, 121);
+            this.changeImage.Name = "changeImage";
+            this.changeImage.Size = new System.Drawing.Size(155, 22);
+            this.changeImage.TabIndex = 14;
+            this.changeImage.Text = "Сменить фото";
+            this.changeImage.UseVisualStyleBackColor = true;
+            this.changeImage.Click += new System.EventHandler(this.changeImage_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -757,6 +770,7 @@ namespace RecipeBookWF
         private System.Windows.Forms.ToolStripMenuItem SortNameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SortTimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SortRecipesByIngredientCountToolStripMenuItem;
+        private System.Windows.Forms.Button changeImage;
     }
 }
 

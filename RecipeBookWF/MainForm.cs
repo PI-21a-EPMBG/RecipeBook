@@ -156,6 +156,7 @@ namespace RecipeBookWF
             recipeDescriptionTextBox.ReadOnly = !recipeDescriptionTextBox.ReadOnly;
             cookingTimeTextBox.ReadOnly = !cookingTimeTextBox.ReadOnly;
             recipeIngridientsTextBox.ReadOnly = !recipeIngridientsTextBox.ReadOnly;
+            changeImage.Visible = !changeImage.Visible;
 
             editRecipeButton.Text = recipeName.ReadOnly ? "Редактировать" : "Сохранить";
         }
@@ -320,6 +321,7 @@ namespace RecipeBookWF
             recipeDescriptionTextBox.Visible = false; label2.Visible = false;
             cookingTimeTextBox.Visible = false;
             recipePictureBox.Visible = false;
+            changeImage.Visible = false;
 
             recipeName_favourites.Enabled = false;
             recipeIngridientsTextBox_favourites.Enabled = false;
@@ -353,6 +355,7 @@ namespace RecipeBookWF
             recipeIngridientsTextBox.Enabled = true;
             cookingTimeTextBox.Enabled = true;
             recipePictureBox.Enabled = true;
+            
 
             recipeName.Visible = true;
             cookingTimeTextBox.Visible = true;
@@ -583,6 +586,28 @@ namespace RecipeBookWF
             _recipes = new BindingList<Recipe>(_recipes.OrderByDescending(r => r.Ingridients.Count).ToList());
             listBox.DataSource = null;
             listBox.DataSource = _recipes;
+        }
+
+        private void changeImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.png,*.jpg)|*.png;*.jpg|All Files (*.*)|*.*";
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
+            Bitmap image;
+
+            try
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    image = new Bitmap(openFileDialog.FileName);
+                    _selectedRecipe.Image = new Bitmap(image);
+                    recipePictureBox.Image = _selectedRecipe.Image;
+                }
+            }catch(Exception)
+            {
+                MessageBox.Show("Не удалось открыть изображение!");
+            }
         }
     }
 
